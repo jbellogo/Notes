@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{algorithm} %
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+
+\usepackage{tcolorbox}
+\newtcolorbox{greenbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1}
+
+
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem*{remark}{Remark}
+
+
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{argmin} % no space, limits underneath in displays
+
+
+
+\setlength{\parindent}{0pt} % for getting rid of first line indentation
+
+
+
+
+\title{CO 353}
+\author{juan pablo bello gonález}
+\date{January 2024}
+
+\begin{document}
+
+
+
+\maketitle
+
+\section{Greedy Algorithms}
+pick the best local choice and assume it leads to global best. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Djikstra}
+\begin{algorithm}
+\caption{Djikstra}\label{alg:cap}
+% Initialize $A \leftarrow \{s\}, d(s) = 0, l(v) \leftarrow \infty \forall v \not \in A$
+Initialize:
+\begin{algorithmic}[1]
+% \State $y \gets 1$
+\State $A \gets \{s\}$ \Comment{Explored vertices}
+\State $d(s) \gets 0$ \Comment{Absolute shortest-path distances}
+\State $l(v) \gets \infty \forall v \not \in A$
+\While{$A \neq V$}
+\State $X = \{x \not \in A : \exists u \in A  [u \rightarrow x \in E] \}$  \Comment{nbrs A}
+\For{$v \in X$}
+% Display mode
+\[ l(v) = \min \{ l(v),  \min_{ \{u \in A : uv \in E \}} (d(u)+ c_{uv}) \} \]
+\EndFor
+\State $w \gets \argmin_{v \in X} l(v)$
+\State $A \gets A \cup {w}$
+\State $d(w) = l(w)$ 
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{remark}
+This doesn't give the short paths yet. Needs to be modified slightly.
+Implementaiton details missing. Optimal implementation includes Fibonacci Heaps. 
+\end{remark}
+
+\subsubsection{Correctness}
+\begin{proof}
+
+Assume there exists an $s \rightarrow u$ path in $G \forall u \in V$. (Weaker assumption than connectedness since G is directed)
+
+Let $d_{Alg}(v)$ be the d-value (ie absolute shortest $sv-$path distance) computed by the algorithm.
+
+To prove the correctness of Djikstra, the goal is to show that at every timepoint $d_{Alg}(v) = d(v) \forall v \in V$. Since at every timepoint we add only one new vertex to set A and compute its invariant d-value for the first and last time, we can do strong induction on $|A|$
+
+Base case. If $|A|=1$, $A = \{s\}$ and $d_{Alg}(v)= d(s)$ by initialization. As desired. 
+
+Inductive hypothesis: Let us assume that the statement is correct when $|A| \leq k$ for some $k \in \mathbb{N}$, ie assume we have correctly computed shortest path distances for all $k$ vertex elements in A.
+
+Let us also show that the statement holds when a vertex $w$ is added to A. Recall that for addding vertex $w$ to $A$, it must be such that 
+\[ w \gets \argmin_{v \in X} l(v) \]
+Where:
+\[  X = \{x \not \in A : \exists u \in A  [u \rightarrow x \in E] \} \]
+
+We know $\exists u \in A$ such that $l(w) = d(u) + c_{uw}$ *****
+
+Set up a contradiction:
+Let us assume that $l(w)$ is not equal to the distance from $s$ to $w$, ie $l(w) \neq d(w)$
+Let us asusme that there is an $sw-$path $P'$ of length $< l(w)$. Such path $P$ originates from $s$ therefore it must \textbf{cross} $A$ thorugh some edge $f=xy : x\in A, y\not\in A$
+
+\[ l(y) \leq d(x) + c_{x,y} \leq L(P) < d(w) \]
+
+So $l(y) < l(w)$ and $y\in X$ which contradicts the selection of $w$ to be $\argmin_{x\in X}l(x)$
+
+\end{proof}
+
+\subsection{Minimum Cost Spanning Trees (MST)}
+\textbf{Problem}: Given a connected, undirected, weighted graph $G=(V,E)$, find a spanning tree $T=(V,F)$ of $G$ of minimum total edge cost defined as $c(T) = \sum_{f\in F}c_{f}$
+\begin{definition}[tree]
+A tree is a connected acyclic graph.
+\end{definition}
+
+\begin{definition}
+    Given a graph $G=(V,E)$, a spaning tree of $G$ is a graph $T=(V,F)$ such that $F \subset E$ and $T$ is a tree.
+\end{definition}
+
+\begin{definition}
+    Set of incident edges on $v \in V$: $\delta(v) = \{ uv \in E \}$
+\end{definition}
+
+\begin{definition}
+    Set of incident edges on $S \subset V$: $\delta(S) = \{ uw \in E  : u \in S, w \not\in S\}$
+\end{definition}
+
+
+\begin{greenbox}{Fundamental Theorem of Trees (FTT)}
+\begin{theorem}
+Let $T=(V,F)$ be a graph, then the following statements are equivalent.
+\begin{itemize}
+    \item $T$ is a tree, ie $T$ is \textbf{connected} and \textbf{acyclic}
+    \item $T$ is \textbf{connected} and $|F| = |V| - 1$.
+    \item $T$ is \textbf{acyclic} and $|F| = |V| - 1$.
+\end{itemize}
+\end{theorem}
+\end{greenbox}
+
+\begin{proof}
+    qed
+\end{proof}
+
+\begin{theorem}[Cut property]
+\textit{Assumming costs are distinct}.
+Let $G=(V,E)$
+Let $\emptyset \neq S\subset V$ ie, $S$ is a nonempty proper subset of $V$.
+Let: 
+\[ e = \argmin_{f \in \delta(S)} c_f \]
+$\implies$ every minimum spanning tree of of $G$ contains the edge $e$.
+\end{theorem}
+The above theorem says "for any proper subset of the vertex set, consider the edges crossing the induced cut. The edge with the minimum cost in this set must be in every spanning tree".
+
+\begin{proof}
+Let us assume the contrary conlcusion
+\begin{center}
+    Given $G=(V,E)$ of distinct costs, $\forall S \subset V$ such that $\emptyset \neq S \neq V$, and $e = \argmin_{f \in \delta(S)} c_f $ 
+    $\implies  \exists T=(V, F)$ s.t $T$ is a MST of $G$ and $e \not \in F$
+
+\end{center}
+
+\end{proof}
+
+
+
+\end{document}
