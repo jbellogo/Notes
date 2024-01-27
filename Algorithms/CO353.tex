@@ -11,6 +11,7 @@
 \usepackage{amsthm}
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 
 \newtheorem*{remark}{Remark}
 
@@ -142,12 +143,29 @@ $\implies$ every minimum spanning tree of of $G$ contains the edge $e$.
 The above theorem says "for any proper subset of the vertex set, consider the edges crossing the induced cut. The edge with the minimum cost in this set must be in every spanning tree".
 
 \begin{proof}
-Let us assume the contrary conlcusion
-\begin{center}
-    Given $G=(V,E)$ of distinct costs, $\forall S \subset V$ such that $\emptyset \neq S \neq V$, and $e = \argmin_{f \in \delta(S)} c_f $ 
-    $\implies  \exists T=(V, F)$ s.t $T$ is a MST of $G$ and $e \not \in F$
+Let us assume the contrary conlcusion (*): there is a MST without $e$:s
+\begin{itemize}
+    \item Given $G=(V,E)$ of distinct costs
+    \item $\forall S \subset V$ such that $\emptyset \neq S \neq V$ and $e = \argmin_{f \in \delta(S)} c_f $ 
+    \item $ \exists T=(V, F)$ s.t $T$ is a MST of $G$ and $e \not \in F$ (*)
+\end{itemize}
 
-\end{center}
+Let us consider the graph resulting from adding edge $e$ to $T$, $(V, F \cup \{e\})$, we claim this graph has a cycle, $C$.
+
+\begin{lemma}
+With the FFT, one can show: \textbf{(1*): Given a tree, adding an edge to it creates a cycle}. \textit{Proof:} A tree is connected, so for any pair of vertices $u,v\in F, \exists$ a $uv-$path $P$, so adding edge $f=uv$ WLOG, creates a cycle. 
+\end{lemma}
+
+We claim $|\delta(S) \cap C|$ is even. This is easy to see since $\delta(S)$ is the set of edges crossing the cut induced by $S$, one of which is $e$ (by definition) and is in the cycle $C$. Thus, $C$ crosses the boundary of $S$, ie some of its vertices are in $S$ and some are not. To enclose the cycle, $C$ must cross the boundary of $S$ an even number of times.
+
+Since $|\delta(S) \cap C|$ is even, we know $|\delta(S) \cap C| \geq 2$, so there is an edge $f \in \delta(S) \cap C$ such that $f \neq e$.
+
+
+Let us now consider $T' = (V, F \cup \{ e \} \setminus \{ f \})$. \textbf{***This inclusion/deletion strategy is quite common in these types of proofs.. see Demain's lecure}
+We are going to show that $T'$ is a tree (add an edge to a tree and then delete another  edge from the resulting cycle creates another tree) and that is of weight strictly less than the original MST T, thus resulting in a contradiction. 
+
+
+
 
 \end{proof}
 
