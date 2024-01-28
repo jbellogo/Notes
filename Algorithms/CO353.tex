@@ -162,7 +162,22 @@ Since $|\delta(S) \cap C|$ is even, we know $|\delta(S) \cap C| \geq 2$, so ther
 
 
 Let us now consider $T' = (V, F \cup \{ e \} \setminus \{ f \})$. \textbf{***This inclusion/deletion strategy is quite common in these types of proofs.. see Demain's lecure}
+
 We are going to show that $T'$ is a tree (add an edge to a tree and then delete another  edge from the resulting cycle creates another tree) and that is of weight strictly less than the original MST T, thus resulting in a contradiction. 
+
+Prove $T'$ is a tree: 
+\begin{itemize}
+\item By the definition of $T'$, $F \cup \{ e \} \setminus \{ f \} = |F| + 1 -1 = |V|-1$ by the FTT since $T$ is a tree and thus $|F| = |V|-1$
+\item $T'$ is connected since $T \cup {e}$ is connected and with a cycle such that $e,f\in C$ therefore if $f=uv$ there is a $uv-$path along $C$ which doesn't use $f$ thus $T' = T \cup {e} \setminus f$ is connected. 
+\end{itemize}
+
+Prove that $T'$ is spanning and with weight less than $T$.
+Consider: 
+\[ c(T') = c(T) + c_e - c_f \]
+We know $c_e < c_f \forall e,f \in \delta(S)$ from the way e is chosen. The inequality is strictly less than since we assume \textbf{all edge costs are distinct}. Therefore:
+\[ c_e-c_f < 0 \implies c(T') < c(T) \]
+Which implies $T'$ is a spanning tree of $G$ with a lower cost than MST: $T$, a contradiction.  
+
 
 
 
