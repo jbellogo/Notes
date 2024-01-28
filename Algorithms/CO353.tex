@@ -39,8 +39,10 @@
 \section{Greedy Algorithms}
 pick the best local choice and assume it leads to global best. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Djikstra}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{algorithm}
 \caption{Djikstra}\label{alg:cap}
 % Initialize $A \leftarrow \{s\}, d(s) = 0, l(v) \leftarrow \infty \forall v \not \in A$
@@ -132,7 +134,8 @@ Let $T=(V,F)$ be a graph, then the following statements are equivalent.
     qed
 \end{proof}
 
-\begin{theorem}[Cut property]
+\begin{greenbox}{Cut property}
+\begin{theorem}
 \textit{Assumming costs are distinct}.
 Let $G=(V,E)$
 Let $\emptyset \neq S\subset V$ ie, $S$ is a nonempty proper subset of $V$.
@@ -140,6 +143,7 @@ Let:
 \[ e = \argmin_{f \in \delta(S)} c_f \]
 $\implies$ every minimum spanning tree of of $G$ contains the edge $e$.
 \end{theorem}
+\end{greenbox}
 The above theorem says "for any proper subset of the vertex set, consider the edges crossing the induced cut. The edge with the minimum cost in this set must be in every spanning tree".
 
 \begin{proof}
@@ -177,12 +181,30 @@ Consider:
 We know $c_e < c_f \forall e,f \in \delta(S)$ from the way e is chosen. The inequality is strictly less than since we assume \textbf{all edge costs are distinct}. Therefore:
 \[ c_e-c_f < 0 \implies c(T') < c(T) \]
 Which implies $T'$ is a spanning tree of $G$ with a lower cost than MST: $T$, a contradiction.  
-
-
-
-
-
 \end{proof}
+
+\begin{greenbox}{Cycle property}
+\begin{theorem}
+Let $C$ be a cycle in $G$ and let:
+\[ e = argmax_{f \in C} c_f\]
+
+then $e$ is contained in \textbf{NO} MST of $G$
+\end{theorem}
+\end{greenbox}
+
+\begin{proof}
+QED
+\end{proof}
+
+More MST and Shortest paths. 
+
+\begin{lemma} Q1
+\begin{itemize}
+\item Let $G = (V, E)$ with costs that are not necessarily unique $c_e : e \in E$. 
+\item Let $T$ be a MST of $G$
+\item (*) $\forall e \in T[\exists S \subset V]$ with $S\neq V$ such that $c_e = min_{f\in \delta(S)}c_f$
+\end{itemize}
+\end{lemma}
 
 
 
