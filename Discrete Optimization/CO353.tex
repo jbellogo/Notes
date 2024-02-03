@@ -1,0 +1,221 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{algorithm} %
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+
+\usepackage{tcolorbox}
+\newtcolorbox{greenbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1}
+
+
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\newtheorem*{remark}{Remark}
+
+
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{argmin} % no space, limits underneath in displays
+
+
+
+\setlength{\parindent}{0pt} % for getting rid of first line indentation
+
+
+
+
+\title{CO 353}
+\author{juan pablo bello gonález}
+\date{January 2024}
+
+\begin{document}
+
+
+
+\maketitle
+
+\section{Greedy Algorithms}
+pick the best local choice and assume it leads to global best. 
+
+\subsection{Djikstra}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{algorithm}
+\caption{Djikstra}\label{alg:cap}
+% Initialize $A \leftarrow \{s\}, d(s) = 0, l(v) \leftarrow \infty \forall v \not \in A$
+Initialize:
+\begin{algorithmic}[1]
+% \State $y \gets 1$
+\State $A \gets \{s\}$ \Comment{Explored vertices}
+\State $d(s) \gets 0$ \Comment{Absolute shortest-path distances}
+\State $l(v) \gets \infty \forall v \not \in A$
+\While{$A \neq V$}
+\State $X = \{x \not \in A : \exists u \in A  [u \rightarrow x \in E] \}$  \Comment{nbrs A}
+\For{$v \in X$}
+% Display mode
+\[ l(v) = \min \{ l(v),  \min_{ \{u \in A : uv \in E \}} (d(u)+ c_{uv}) \} \]
+\EndFor
+\State $w \gets \argmin_{v \in X} l(v)$
+\State $A \gets A \cup {w}$
+\State $d(w) = l(w)$ 
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{remark}
+This doesn't give the short paths yet. Needs to be modified slightly.
+Implementaiton details missing. Optimal implementation includes Fibonacci Heaps. 
+\end{remark}
+
+\subsubsection{Correctness}
+\begin{proof}
+
+Assume there exists an $s \rightarrow u$ path in $G \forall u \in V$. (Weaker assumption than connectedness since G is directed)
+
+Let $d_{Alg}(v)$ be the d-value (ie absolute shortest $sv-$path distance) computed by the algorithm.
+
+To prove the correctness of Djikstra, the goal is to show that at every timepoint $d_{Alg}(v) = d(v) \forall v \in V$. Since at every timepoint we add only one new vertex to set A and compute its invariant d-value for the first and last time, we can do strong induction on $|A|$
+
+Base case. If $|A|=1$, $A = \{s\}$ and $d_{Alg}(v)= d(s)$ by initialization. As desired. 
+
+Inductive hypothesis: Let us assume that the statement is correct when $|A| \leq k$ for some $k \in \mathbb{N}$, ie assume we have correctly computed shortest path distances for all $k$ vertex elements in A.
+
+Let us also show that the statement holds when a vertex $w$ is added to A. Recall that for addding vertex $w$ to $A$, it must be such that 
+\[ w \gets \argmin_{v \in X} l(v) \]
+Where:
+\[  X = \{x \not \in A : \exists u \in A  [u \rightarrow x \in E] \} \]
+
+We know $\exists u \in A$ such that $l(w) = d(u) + c_{uw}$ *****
+
+Set up a contradiction:
+Let us assume that $l(w)$ is not equal to the distance from $s$ to $w$, ie $l(w) \neq d(w)$
+Let us asusme that there is an $sw-$path $P'$ of length $< l(w)$. Such path $P$ originates from $s$ therefore it must \textbf{cross} $A$ thorugh some edge $f=xy : x\in A, y\not\in A$
+
+\[ l(y) \leq d(x) + c_{x,y} \leq L(P) < d(w) \]
+
+So $l(y) < l(w)$ and $y\in X$ which contradicts the selection of $w$ to be $\argmin_{x\in X}l(x)$
+
+\end{proof}
+
+\subsection{Minimum Cost Spanning Trees (MST)}
+\textbf{Problem}: Given a connected, undirected, weighted graph $G=(V,E)$, find a spanning tree $T=(V,F)$ of $G$ of minimum total edge cost defined as $c(T) = \sum_{f\in F}c_{f}$
+\begin{definition}[tree]
+A tree is a connected acyclic graph.
+\end{definition}
+
+\begin{definition}
+    Given a graph $G=(V,E)$, a spaning tree of $G$ is a graph $T=(V,F)$ such that $F \subset E$ and $T$ is a tree.
+\end{definition}
+
+\begin{definition}
+    Set of incident edges on $v \in V$: $\delta(v) = \{ uv \in E \}$
+\end{definition}
+
+\begin{definition}
+    Set of incident edges on $S \subset V$: $\delta(S) = \{ uw \in E  : u \in S, w \not\in S\}$
+\end{definition}
+
+
+\begin{greenbox}{Fundamental Theorem of Trees (FTT)}
+\begin{theorem}
+Let $T=(V,F)$ be a graph, then the following statements are equivalent.
+\begin{itemize}
+    \item $T$ is a tree, ie $T$ is \textbf{connected} and \textbf{acyclic}
+    \item $T$ is \textbf{connected} and $|F| = |V| - 1$.
+    \item $T$ is \textbf{acyclic} and $|F| = |V| - 1$.
+\end{itemize}
+\end{theorem}
+\end{greenbox}
+
+\begin{proof}
+    qed
+\end{proof}
+
+\begin{greenbox}{Cut property}
+\begin{theorem}
+\textit{Assumming costs are distinct}.
+Let $G=(V,E)$
+Let $\emptyset \neq S\subset V$ ie, $S$ is a nonempty proper subset of $V$.
+Let: 
+\[ e = \argmin_{f \in \delta(S)} c_f \]
+$\implies$ every minimum spanning tree of of $G$ contains the edge $e$.
+\end{theorem}
+\end{greenbox}
+The above theorem says "for any proper subset of the vertex set, consider the edges crossing the induced cut. The edge with the minimum cost in this set must be in every spanning tree".
+
+\begin{proof}
+Let us assume the contrary conlcusion (*): there is a MST without $e$:s
+\begin{itemize}
+    \item Given $G=(V,E)$ of distinct costs
+    \item $\forall S \subset V$ such that $\emptyset \neq S \neq V$ and $e = \argmin_{f \in \delta(S)} c_f $ 
+    \item $ \exists T=(V, F)$ s.t $T$ is a MST of $G$ and $e \not \in F$ (*)
+\end{itemize}
+
+Let us consider the graph resulting from adding edge $e$ to $T$, $(V, F \cup \{e\})$, we claim this graph has a cycle, $C$.
+
+\begin{lemma}
+With the FFT, one can show: \textbf{(1*): Given a tree, adding an edge to it creates a cycle}. \textit{Proof:} A tree is connected, so for any pair of vertices $u,v\in F, \exists$ a $uv-$path $P$, so adding edge $f=uv$ WLOG, creates a cycle. 
+\end{lemma}
+
+We claim $|\delta(S) \cap C|$ is even. This is easy to see since $\delta(S)$ is the set of edges crossing the cut induced by $S$, one of which is $e$ (by definition) and is in the cycle $C$. Thus, $C$ crosses the boundary of $S$, ie some of its vertices are in $S$ and some are not. To enclose the cycle, $C$ must cross the boundary of $S$ an even number of times.
+
+Since $|\delta(S) \cap C|$ is even, we know $|\delta(S) \cap C| \geq 2$, so there is an edge $f \in \delta(S) \cap C$ such that $f \neq e$.
+
+
+Let us now consider $T' = (V, F \cup \{ e \} \setminus \{ f \})$. \textbf{***This inclusion/deletion strategy is quite common in these types of proofs.. see Demain's lecure}
+
+We are going to show that $T'$ is a tree (add an edge to a tree and then delete another  edge from the resulting cycle creates another tree) and that is of weight strictly less than the original MST T, thus resulting in a contradiction. 
+
+Prove $T'$ is a tree: 
+\begin{itemize}
+\item By the definition of $T'$, $F \cup \{ e \} \setminus \{ f \} = |F| + 1 -1 = |V|-1$ by the FTT since $T$ is a tree and thus $|F| = |V|-1$
+\item $T'$ is connected since $T \cup {e}$ is connected and with a cycle such that $e,f\in C$ therefore if $f=uv$ there is a $uv-$path along $C$ which doesn't use $f$ thus $T' = T \cup {e} \setminus f$ is connected. 
+\end{itemize}
+
+Prove that $T'$ is spanning and with weight less than $T$.
+Consider: 
+\[ c(T') = c(T) + c_e - c_f \]
+We know $c_e < c_f \forall e,f \in \delta(S)$ from the way e is chosen. The inequality is strictly less than since we assume \textbf{all edge costs are distinct}. Therefore:
+\[ c_e-c_f < 0 \implies c(T') < c(T) \]
+Which implies $T'$ is a spanning tree of $G$ with a lower cost than MST: $T$, a contradiction.  
+\end{proof}
+
+\begin{greenbox}{Cycle property}
+\begin{theorem}
+Let $C$ be a cycle in $G$ and let:
+\[ e = argmax_{f \in C} c_f\]
+
+then $e$ is contained in \textbf{NO} MST of $G$
+\end{theorem}
+\end{greenbox}
+
+\begin{proof}
+QED
+\end{proof}
+
+More MST and Shortest paths. 
+
+\begin{lemma} Q1
+\begin{itemize}
+\item Let $G = (V, E)$ with costs that are not necessarily unique $c_e : e \in E$. 
+\item Let $T$ be a MST of $G$
+\item (*) $\forall e \in T[\exists S \subset V]$ with $S\neq V$ such that $c_e = min_{f\in \delta(S)}c_f$
+\end{itemize}
+\end{lemma}
+
+
+\section{Time Complexity}
+Where does the $O(\log(n))$ come from in complexity?
+First in CS we often assume the base is two, so we will be \textit{halving}. When you see this think BST traversals or recursion in which we are halving the input size for each work.
+
+Interpretation $O(n*log(n))$: Multiplication is commutative so consider the log first. 
+\begin{itemize}
+\item $log_b(n)$ means we are going to divide the input of size $n$ (halve if b=2) by $b$ until we can't do i (ie, we get a 1). This number is the number of times we need to multiple $b$ by itself to get $n$, ie, the logarithm. 
+\item for every $log_b(n)$ level of work we are going to iterate through the original input $n$ in linear time. 
+\end{itemize}
+
+
+\end{document}
