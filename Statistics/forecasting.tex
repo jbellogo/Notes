@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{algorithm} %
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+
+\usepackage{tcolorbox}
+\newtcolorbox{greenbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1}
+
+
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\newtheorem*{remark}{Remark}
+
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{argmin} % no space, limits underneath in displays
+
+
+
+\setlength{\parindent}{0pt} % for getting rid of first line indentation
+
+
+% ================================================
+% =====================  BEGIN DOCUMENT 
+% ================================================
+
+\title{Forecasting}
+\author{Juan Pablo Bello Gonzalez}
+\date{January 2024}
+
+\begin{document}
+
+
+
+\maketitle
+
+\section{Introduction to Forecasting}
+
+\begin{definition}
+Time series: A sequence of random variables indexed by time $\{ X_t : t\in T \subset \mathbb{N}\}$. It is a special case of a stochastic process. 
+\end{definition}
+
+\begin{definition}
+Stochastic process: a collection of random variables (they don't need to have the same distribution!) indexed by a set $I$. $I$ could be continuous or discrete.
+\end{definition}
+
+We often want to model time series data with \textit{non-stationary trends}:
+\begin{itemize}
+\item Seasonality
+\item trending mean
+\item Non-constant variance (fanning in our out pattern)
+\end{itemize}
+
+Ideally given a time series $\{X_1, X_2, ... X_n\}$ we would know the \textit{joint distribution} of such vectors. 
+\[ F(x_1, x_2, \dots x_n) = P(X_1, X_2, \dots X_n)\]
+
+This is because individual (marginal) distributions of $X_i$ don't tell you about the combined behaviour.
+
+We want to study a stochastic process as a mathematical which is a sequence of RV's with some predictable distribution ie not just a vector of n random and unrelated numbers. As such, the existence of a stochastic process should always be questioned. Kolmogorov's theorem tells us about the existence of  discrete time stochastic process build from $X_i's$ as long as the $X_i$ satisfy the two xonsistency conditions. 
+
+If all finite dimensional distributions exist, and they are consistent with each other under marginalization, then the stochastic process exists.  Then \textbf{we can use finite dimensional models ot define a general process}.*****
+
+All finite dimensional distributions of $X_1, X_2, \dots X_n$ are those of all non-empty subsets of the sequence ie $\{ X_1, X_2, \dots X_n \}^*$ so it is impossible to have all of these in practice since, if we are sampling, we don't even have the distribution of a single $X_i$ and must do with estimates. 
+
+Fortunately, in most application we can get by with knowing $E[X_t], E[X_t^2], E[X_tX_j]$
+
+
+
+
+
+
+
+
+
+\end{document}
