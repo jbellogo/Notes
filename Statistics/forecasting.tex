@@ -41,7 +41,8 @@
 \begin{itemize}
 \item Forecasting means prediction 
 \item Predicting a single number tells you nothing because we are dealing with probabilities and randomness, so always produce a confidence interval.
-\item Pick a model, then residual diagnostics, if they pass you can do inference and forecasting.
+\item Pick a model, then residual diagnostics, if they pass you can do inference (prediction, condifence intervals, p-values). 
+\item The idea behind residual diagnostics is to see if the random component of your model is truly random and does not include deterministic patterns you should be using in the model.
 \item $Cov(X_i, X_j) = 0$ for uncorrelated RVs
 \item for two RVs, Independence is a stronger condition than non-correlation
 \item WHAT ARE DEGREES OF FREEDOM?
@@ -155,6 +156,20 @@ The reason we don't need as many \textbf{indicator variables} as the period is t
 We use regression for $m_t$ and $S_t$, nothing new so far. The trend $m_t$ need not follow a linear regression model, we can model it to be any regular function ie. $m_t = \beta_0 + \exp{\beta_1t}$.
 
 If we have monthly data, the period need not be $12$, it might be biweekly if we are measuring something that is correlated to paydays. 
+
+\section{Loss Functions}
+Measure the quality of the fit. As you imagine, there are several ways to measure "quality"
+
+
+
+\section{Residual Diagnostics}
+
+\subsection{plot of residuals vs fitted values}
+Don't shake them up because then you may introduce patterns that don't reallt exist, the fitted values x axis is just for indexing position. 
+Examine this by eye to make sure nothing is obviously wrong. Don't look at it too long. This is not enough to determine randomness, or normality of residuals. you will need tests and normal !! plots in addition to this. 
+
+\subsection{ACF}
+Auto correlation plot: Will be good for forecasting. Blue bands measure serial correlation. for determining if the residuals are white noise you'd want about 95\% of the spikes to be within the blue lines 
 
 
 
