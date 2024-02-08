@@ -39,8 +39,12 @@
 
 \section{Statistics stuff}
 \begin{itemize}
+\item Forecasting means prediction 
+\item Predicting a single number tells you nothing because we are dealing with probabilities and randomness, so always produce a confidence interval.
+\item Pick a model, then residual diagnostics, if they pass you can do inference and forecasting.
 \item $Cov(X_i, X_j) = 0$ for uncorrelated RVs
 \item for two RVs, Independence is a stronger condition than non-correlation
+\item WHAT ARE DEGREES OF FREEDOM?
 
 
 \end{itemize}
@@ -117,11 +121,41 @@ What is the relationship between \textit{white noise} and \textit{iid noise}?
 Independence is a stronger condition than non-correlation. For independence we need to know joint distributions but for non-correlation we don't. So we'd rather work with white noise. 
 
 \section{Classical decomposition}
-Fitting models with trend and seasonality. 
-
 In regression we are always modelling $Y|X$ and not just $Y$ since we are actually using the explanatory variable to fit $Y$.
 
 The general framework is to remove the \textbf{trend}, \textbf{seasonality}, and \textbf{non-constant variance} patterns in the data  so that \textit{hopefully} we are left with a stationary process. Then model the detrendized and deseasonalized data. 
+
+\subsection{Additive classical decomposition}
+Fitting models with trend and seasonality:
+\[ X_t = m_t +S_t +Y_t \]
+
+where,
+\begin{itemize}
+\item $X_t$ is value of the process at time $t$
+\item $S_t$ models the periodic deterministic component of $X_t$ at time $t$
+\item $m_t$ is the TREND deterministic component. Doesn't have to be linear.
+\item $Y_t$ is the stochastic component, white noise 
+\end{itemize}
+
+
+Note that the expected value of the process depends on time: $E[X_t] = E[S_t] + E[m_t]$. Particularly if the expectation for the trend component is non-zero as the expectation of periodic functions is often constant.
+
+We don't need Fourier series to model periodic patterns (in discrete stochastic processes), we can figure out the period $d$ and then use $d-1$ indicator variables whose coefficients give the period height at each point of time. Let's assume the period for some time series is 12 corresponding to 12 months, we use $d-1=11$ indicator variables $X_1, X_2, \dots, X_11$ to represent:
+\begin{equation}
+x_1 = 
+\{
+    \begin{cases}
+        1, & \text{if month is February}\\
+        0, & \text{else}
+    \end{cases}
+\end{equation}
+The reason we don't need as many \textbf{indicator variables} as the period is that we can measure the first point (January) with just trend $X_1 = m_t+Y_t$ and then have the remaining $d-1$ coefficients $\beta_j$ tell us the deviation of point $X_{i+1}$ relative to $X_1$ it is the baseline. 
+
+
+We use regression for $m_t$ and $S_t$, nothing new so far. The trend $m_t$ need not follow a linear regression model, we can model it to be any regular function ie. $m_t = \beta_0 + \exp{\beta_1t}$.
+
+If we have monthly data, the period need not be $12$, it might be biweekly if we are measuring something that is correlated to paydays. 
+
 
 
 
