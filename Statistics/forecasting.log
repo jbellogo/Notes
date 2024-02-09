@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.27)  9 FEB 2024 06:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.27)  9 FEB 2024 08:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -555,7 +555,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (15.9293pt too wide) in paragraph at lines 83--84
+Overfull \hbox (15.9293pt too wide) in paragraph at lines 85--86
 []\OT1/cmr/m/n/10 Fortunately, in most ap-pli-ca-tion we can get by with know-i
 ng $\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X[]\OT1/cmr/m/n/10 ]\OM
 L/cmm/m/it/10 ; E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X[]\OT1/cmr/m/n/10 ]\OML/cmm
@@ -563,14 +563,14 @@ L/cmm/m/it/10 ; E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X[]\OT1/cmr/m/n/10 ]\OML/cmm
  []
 
 [2]
-Overfull \hbox (0.22581pt too wide) in paragraph at lines 129--130
+Overfull \hbox (0.22581pt too wide) in paragraph at lines 131--132
 []\OT1/cmr/m/n/10 The gen-eral frame-work is to re-move the \OT1/cmr/bx/n/10 tr
 end\OT1/cmr/m/n/10 , \OT1/cmr/bx/n/10 sea-son-al-ity\OT1/cmr/m/n/10 , and \OT1/
 cmr/bx/n/10 non-constant
  []
 
 [3] [4]
-Overfull \hbox (0.59964pt too wide) in paragraph at lines 220--221
+Overfull \hbox (0.59964pt too wide) in paragraph at lines 222--223
 \OT1/cmr/m/n/10 We call the risk un-der the as-sumed lin-ear model the \OT1/cmr
 /bx/n/10 Resid-ual Sum of Squares\OT1/cmr/m/n/10 .
  []
@@ -603,7 +603,7 @@ onts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfo
 nts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msbm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publi
 c/cm-super/sfrm1000.pfb>
-Output written on forecasting.pdf (7 pages, 222314 bytes).
+Output written on forecasting.pdf (7 pages, 226277 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
