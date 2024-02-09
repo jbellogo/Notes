@@ -9,6 +9,8 @@
 
 
 \usepackage{amsthm}
+\usepackage{bm}
+
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -207,6 +209,46 @@ Minimized by the median
 
 
 \section{Regression}
+The MSE is minimized by the conditional expection $E(Y|X)$. But we don't really know how to get this, so we take a step back and assume the form of $f(X)= \bm X \bm \beta + \epsilon$ in the risk minimization problem (called OLS, RSSQ) and then solve for the coefficients using matrix methods. 
+
+In multiple regression we have some simplifying assumptions s.t. 
+\[ f(X;\bm \beta) = E[Y|X] = \beta_0 + \sum_{i=0}^{n} \beta_i X_i = \bm X \bm \beta + \epsilon\]
+
+Where $X$ is the $n \times (p-1)$ design matrix. 
+
+\subsubsection{OLS}
+We call the risk under the assumed linear model the \textbf{Residual Sum of Squares}. To estimate the vector of parameters $\bm \beta$ using $\{ (y_i, \bm x_i) \vert i \in [n] \}$ where $x_i = (x_{i1}, x_{i2}, \dots x_{ip})$ represents a row on the design matrix where each $j$ column is a variate (rooms, bathrooms, parking spots) or an attribute (bathrooms squared $x_i^p$) of the $i-$th observation/unit.
+
+\[ RSS(\bm \beta)  := \sum_{i=1}^n(y_i - \beta_0 - \sum_{j=1}^p x_{ij})\]
+
+As a function of the coefficient vector, our estimate for $\bm \hat \beta$ in quadratic matrix form is:
+
+\[ \bm \hat \beta = \argmin_{\bm \beta} (\bm y - \bm X \bm \beta)^T (\bm y - \bm X \bm \beta) \]
+
+The OLS extimate for the coefficient vector is:
+
+\[ \bm \beta_{OLS} = (X^T X)^{-1}X^T\]
+
+We consider the hat matrix $H = X(X^T X)^{-1} X^T$ which:
+\begin{itemize}
+\item is an \textit{orthogonal projection} matrix since it is indempotent.
+\item is indempotent, so  $H^2 = H$
+\item the fitted values are the projection of the observed values in the training set y onto the linear subspace spanned by the columnds of \textbf{X}. ie $\hat y = H y$
+\item the estimated residuals are the corresponding orthogonal complement $\hat r  = y - Hy = (I-H)y$
+\end{itemize}
+
+Properties of the $\tilde{\beta}$
+
+
+\subsubsection{Assumptions on the residuals}
+\begin{itemize}
+\item The error terms and thus the $Y_i$ are independent. 
+\item The error tersm and thus $Y_i$ are normally distributed (Not uniformly if you want to estimate conditional probabilities for some reason)
+\item the error terms and thus $Y_i$ have a constant variance. 
+\item the erro terms have a constant mean of 0. Not $Y_i$ necessarily though.n
+\end{itemize}
+
+\section{Matrix Differentiation}
 
 
 \section{Residual Diagnostics}
