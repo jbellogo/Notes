@@ -273,20 +273,117 @@ We consider the hat matrix $H = X(X^T X)^{-1} X^T$ which:
 \end{itemize}
 
 \subsubsection{Regression in R}
-Consider the output of $lm$.
+\paragraph{lm}
+Consider the output of $lm$. The $p-$values of the coefficients test the hypothesis $H_0 : \beta_j = 0$ , so small $p-$values mean the that the $beta_j$ are useful/necessary and large ones mean that the variable $X_j$ is not adding much to the prediction or maybe it's information is also captured by another correlated variable. if $p > 0.5$ not a good fit. 
+
+The $F-$statistic $p-$value is the probability that all coefficients (except the intercept $\beta_0$) are zero and we can model $Y_i$ better with just a constant $\beta_0$. 
+
+
+If lots of coefficient $p-$values are large but the $p-$val of the $F-$statistic is small, this is a sign of colinearity. 
+
+\begin{itemize}
+\item \textbf{Residual standard error} "2.92" on $n-p-1$ degrees of freedom. 
+\item Multiple $R-$squared: percentage of variability explained by the model. 
+\item Adjusted $R-$squared
+\item $F-$statistic $p-value$. Overall significance of th model. $H_0: \beta_1 = \beta_2 = \dots = \beta_p$
+\end{itemize}
+
+
+\paragraph{anova(model.fit.1::lm, model.fit.2::lm, etc)}
+Analysis of variance between two modesl. The F statistic $p-$value tests $H_0: \beta_{\text{big model}} \setminus \beta_{\text{small model}} = 0 $. Basically testing if all of the \textbf{extra} parameters in the big model are worth it. If our $p-$value is large, we may say that the are not (accept the null)
+
 
 \section{Matrix Differentiation}
 
 
 \section{Residual Diagnostics}
+Figure out if $\epsilon_i \sim^{iid} N(0, \sigma ^2)$. 
+
+All models are wrong, some are useful. If a model passes residual diagnostics it does not mean we have found the absolute predictor of the process, we just have something that fits the given data alright for interpolation. If our model fails a single residual diagnostics check, then we know it's no good. It's like when the doctor checks you, if you pass all tests it doesn't mean you're 100\% healthy, it just means he didn't find any indications of common disease. 
+
+There are 4 assumptions about residuals, and here is how we test them:
+\begin{itemize}
+\item Normality
+\subitem Look for bell-shape in histogram
+\subitem q/q plots 
+\subitem Shapiro-Wilk
+\item Zero-mean
+\subitem residuals plot look random about zero 
+\item Constant-Variance 
+\subitem Fligner-Killeen 
+\subitem residuals plot bounded by straight vertical lines. 
+\item Independent (random):
+\subitem the only way to check independece is to see if joint equals product of marginals.
+\end{itemize}
+
+\subsection{Normality}
+\subsubsection{Q-Q Plot}
+We want more or less a straight line within the bounded blue lines.
+
+from a Q-Q plot you can determin the shape of the histogram: 
+* if there are points outside and above the blue line on the RHS, then you have a RH tail.
+* If there are points outside and bellow the blue line on the LHS, you have a LH tail
+
+\subsubsection{Histogram}
+Look for bell-shape in histogram
+
+If you say nah not normal -> go back and transform the data. 
+
+\subsubsection{Shapiro-Wilk test of Normality}
+A more formal, non-parametric test.
+\[ H_0: Y_1, \dots Y_n \text{come from a Gaussian distribution} \]
+
+The test is formal, sure, but is it really better than judging normality from a qq-plot by eye? 
+- Well it works well at assessing normality towards the center of the distribution ... which is easy to cehck by eye. The problem with checking by eye is deciding if tails outside of the range are still normal.. this test does not tell us much about this... I haven't looked at the math, just took my profs word for it. 
+
+\subsection{Constant Variance}
+Plotting the data in different segments and them comapring the variability for each segment is a graphical method. 
+
+A more formal mehtod is the Fligner-Kileen test
+\subsubsection{Fligner-Kileen}
+\[ H_0: \sigma_1^2 = \sigma_2^2 = \dots = \sigma_k^2 \]
+
+recall: small p-value, strong evidence against $H_0$
+
 
 \subsection{plot of residuals vs fitted values}
 Don't shake them up because then you may introduce patterns that don't reallt exist, the fitted values x axis is just for indexing position. 
 Examine this by eye to make sure nothing is obviously wrong. Don't look at it too long. This is not enough to determine randomness, or normality of residuals. you will need tests and normal !! plots in addition to this. 
 
-\subsection{ACF}
+\subsection{Independence}
+It's impossible to test for independence without the joint probability distribution, so we will test for consequences of independence like  uncorrelatedness ie just the lack of a linear relationship, not the lack of any relationship at all. We know correlation -> dependence so we will run a blood test to make sure nothing is seriously wrong. 
+\subsubsection{ACF}
 Auto correlation plot: Will be good for forecasting. Blue bands measure serial correlation. for determining if the residuals are white noise you'd want about 95\% of the spikes to be within the blue lines 
 
+Significant spikes at lags(x-position) 1 and 2 can be worrisome. 
+
+Also, a slow ie. linear decay in this ACF plot confirms the existence of a trend in the residuals. 
+
+
+\section{Bias-Variance}
+\section{Variable Selection}
+Some model selection criteria for fit
+\begin{itemize}
+\item $R^2$ and adjusted $R^2$
+\item Akaike's Information Criterion (AIC, AICc)
+\item Bayesian Information Criterion (BIC). 
+\item Stepwise method in variable selection \
+\end{itemize}
+
+Some model selection criteria for predictive power: 
+\begin{itemize}
+\item Prediction Stanrdard error. 
+\item $MSE_{prediction}$ criterion (cross-validation)
+\end{itemize}
+
+Note that modern modelling techniques involving regularization methods such as LASSO, and elastic net  already incorporate variable selection  in the process of parameter estimation. 
+
+\subsubsection{R^2}
+amount of variability explained by the model. Measures the squared correlation between fitted and observed. 
+Adding explanatory variates ALWAYS increases $R^2$
+Adding explanatory variates does not always improve forecasting (can just add noise) hence a larger $R^2$ does not necessarily mean a better forecasting model. 
+\subsubsection{Adjusted R-squared}
+penalizes $R^2$ for the complexity of the model ie the number of parameters in the model.
 
 
 
