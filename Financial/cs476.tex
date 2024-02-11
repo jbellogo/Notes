@@ -1,0 +1,192 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{algorithm} %
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+
+\usepackage{tcolorbox}
+\newtcolorbox{greenbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1}
+
+
+\usepackage{amsthm}
+\usepackage{bm}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\newtheorem*{remark}{Remark}
+
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{argmin} % no space, limits underneath in displays
+
+
+
+\setlength{\parindent}{0pt} % for getting rid of first line indentation
+
+
+% ================================================
+% =====================  BEGIN DOCUMENT 
+% ================================================
+
+\title{Financial Math}
+\author{Juan Pablo Bello Gonzalez}
+\date{January 2024}
+
+\begin{document}
+\subsection{Introduction}
+
+\subsubsection{European Call option}
+I am confident the stock price will increase over one year from current price $S_0$ above the threshold $K$. I can enter the following \textbf{bet}: 
+\begin{itemize}
+\item At time $t=0$ (today) I pay the \textbf{price of the option} $C_0 \geq 0$ to enter the bet. 
+\item At \textbf{maturity}, say $T=1$. I have the \textit{right but not the obligation} to buy the stock for the \textbf{strike price}. I would choose to exercise this option if the price at time $S_T > K$. That way I can buy the option for less that what it is worth at the time and make profit off that disparity. $S_t$ is a random variable, we do not know the evolution of the stock price $S_t$ otherwise we'd be rich. 
+\end{itemize}
+The payout for use at time $C_T$ is also a random variable which is a function of $S_t$, i.e. $C_T = max\{S_t - K, 0\}$. If the stock price at time $T$ is greater than the strike price $S_t > K$, then I should buy the shares \textit{(Is the number of shares I can buy for the strike price also stipulated on the contract?**)} and then sell them. in whcih my profit would be $S_t-K > 0.$
+
+On the other hand if the stock price is bellow the strike price $S_t < K$ then I should not exercise the option as I would end up loosing money in the transaction $S_t - K <0$.
+
+Such a contract is a \textbf{derivative}, as its payout at time $T$ is \textit{derived} from the evolution of an underlying asset (ie the stock-price at maturity). A less fancy word for a derivstive is a good ol BET on the performance of an asset. 
+
+Now the central questions is what should the price of this derivative (European Call Option) be?
+
+\begin{center}
+What is a fair price for $C_0$?
+\end{center}
+
+Moreover, maybe we want to sell the derivative, or we are interested in its price trajectory $C_t$  overtime as we realize the evolution of the stock $S_t$.
+
+\begin{center}
+What is a fair price for $C_t , t \in [0, T)$?
+\end{center}
+
+Under the Black-Scholes model there is a closed form $C_0$ and $C_t$. 
+
+\subsection{Option}
+An option is a derivative (a financial bet/contract on an asset). Just like a bet we can bet on all the outcomes... that's how they lure you in.
+
+The buyer is the one that places the bet, they win when the option/call returns profit. 
+
+The seller (maybe banks?) are the one that issue the bet certificate. they take your bet and make money when you dont: the stock goes the oposite way from your prediction or it stays the same.
+ 
+In a \textbf{call} option, you buy $C_0$ the right to buy the stock for the strikeprice $K$ at maturity because you think the stock price will be higher then $K$ then
+
+In a \textbf{put} option, you buy the right to sell an option at maturity. 
+
+Now, once we have determined what outcome we want to bet on, let's think about the specifics.
+
+Let's see if an European Option is good for us. Such option says that we will make money if we are right about our prediction exactly at time $T$. Predicting points is much harder and unreliable than predicting trends, especialy if the stock price is 1) volatile asf in absolute changes (reallly big up and downs to scale.). So maybe, under a call option, the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endagered tiger and then at time $T$ the stock price is bellow the strike price for something no one could have predicted... Then we are not making money. 
+
+To protect against such things we may look to bet on trends and not point, or more formally on path-dependant options like the Asian or American Option. 
+
+In an Asian Option, the payout is averaged thourghout the trajectory (discretized between trading days... maybe you can look at the continuous average too). Path dependent features are much more complicated to price. 
+
+Say you believe the stock is going to go down but you don't have the stomach to short it (cuz you can loose an unbounded amount of money) you can buy a put option. Then you have the right to sell high. If you don't have the asset before the option expires, you can buy at the "predicted lower price" if it is really lower than your strikeprice, and then sell it to the option issuer to make profit. You don't borrow and sell it in advanced, it's al functionally done on the day you decide to exercise the optiona nd only if you do go through with it. 
+
+
+Let's say a stock starts at $50$ and then it cal go to $80$ or $20$. We have respective put and call options which we can buy for $5$ at strike prices of 60\$ for the call and 40\$ for the put. 
+\begin{center}
+Profit
+\begin{tabular}{||c c c c c||} 
+ \hline
+ Security & Upfront Capital & Call & Short & Put\\ [0.5ex] 
+ \hline
+ \hline
+ 80 & 30 & 15 & -30  & \$5 \\ 
+ \hline
+ 20 & -30 & -5 & 30 & \$15 \\
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\% gain and loss
+\begin{tabular}{||c c c c||} 
+ \hline
+ Security & Upfront Capital & \% Gain & \% Loss \\ [0.5ex] 
+ \hline
+ \hline
+ Stock & 50 & 60\% & 60\% \\ 
+ \hline
+ Call & 5 & 300\% & 100\% \\
+ \hline
+\end{tabular}
+\end{center}
+
+From this table we see that the call option gives us \textit{leverage}. Putting leverage on your bet = "multiplying your potential gains or losses"
+
+\section{vocabulary}
+\begin{itemize}
+\item Risk-free interest rate 
+\item stock: A share in ownership of a company's equity. 
+\item Dividend: payment to shareholders from profits. Some stocks don't have dividends. 
+\item Option: financial contract stipulated today at time $t=0$ whose value at the future expiry time maturity) is determined by the market price of an underlying asset. 
+\item Asset: stock commodity, market index, interest rate/bond, ... random value at t usually denoted $S_t$.
+\item Long position: held by the holder (=buyer) of an option
+\item short position: held by the writed (=seller) of an option. There is usually an upfront capital you have to put down for the shorting of a stock, you don't just sign you'll give it back in the future and take the money out of thin air. 
+\end{itemize}
+
+We use the following language when talking about an option: 
+\begin{itemize}
+\item Call: right to buy at strike price (profit from stock increase)
+\item Put: right to sell at strike price (profit from stock decrease)
+\item European type: at maturity T.
+\item American type: Anytime between now and maturity. 
+\item Strikeprice K: specified at $t=0$.... if you are the issuer (short position?), how do you set a a strike price
+\end{itemize}
+
+
+We \textit{assume} that $(S_t)$ is s stochastic process. We can model this stochastic process in discrete time, i.e. at times $0 < t_1 < \dots t_N = 0$ we observe the stock prices $S_{t1} \dots S_{tN}$. We can also model in continuous time. 
+
+Denote by $V_t = V(S_t,t )$ the value of the option at time $t$ it depends on the value of the underlying asset at time $t$ ie $S_t$ and sometimes, like in the Asian option case, it depends on the entire evolution up to time $t$. For each time $t > 0$, $S_T$ is a random variable ... and I think $S_t$ and $S_j$ don't have the same distribution, that's what makes them exciting, we don't have the joint but we can infer things
+
+Tading options is considered risky, we see how the payouts are all or nothing. trading options is considered  riskier than trading the stock. 
+
+This si teh leverage effect: The relative loss in the option can be much more than the relative loss in teh asset. Becuae of the all or nothing payout in options, you loose 100\% of what you paid to get into the bet $C_0 = V_0$.
+
+\[ |\frac{S_t - S_0}{S_0}| << |\frac{V_s-V_0}{V_0}|\]
+
+On a call/put option, when do we get the ultimate payout as the buyer of the option? when the difference $S_t-C$ is largest 
+
+Let's think about american options because the maximization of european options depends entireley on $S_T$. For american options, we get to decide when we want to cash out. 
+
+\section{Risk free asset}
+We assume our cash-accounts continuously compound at risk free rate $r \geq 0$.
+
+\begin{definition}{Risk-free rate}
+interest rate an investor can expect to earn on an investment that carries 0 risk. Why would lending money to the bank carry risk? because money depreciates due to inflation, so the risk free interest rate is the rate to whoch you the interet you make is just enough to keep you from functionally 'loosing' moeny to inflation. If you don't compount interest, your money is loosing value to inflation. 
+
+Compensates investors for the time-value of money. 
+
+risk-free rate compensates investors for the time their money is tied up.
+\end{definition}
+
+Definition makes sense, in practice, how do we get the risk free rate? We read whatever the "US treasury" rate says. Well you need this r for your caclualtions, it doesn't matter much what it is since you want to get results independent of its realized constant value. 
+
+Our first, most simple equation, 
+
+\[ dB(\tau) = r  B(\tau) d\tau \]
+
+
+\subsection{Put-Call parity}
+If the equation does not hold there may be an arbitrage opportunity. 
+
+
+\subsubsection{Pricing Options}
+We can value options by finding a replicating portfolio. 
+
+Another approach is by computing the discounted expected payout under a special probability measure $\mathbb{Q}$ which we call \textbf{risk neutral} or \textbf{arbitrage free pricing measure}.
+
+The idea with the latter is to find $\mathbb{Q}$ such that:
+\[ \mathbb{E}^{\mathbb{Q}}(S_t) = e^{rT}S_0 \]
+
+also 
+\[S_0 = e^{-rT}\mathbb{E}^{\mathbb{Q}}\]
+
+That is, todays price fo the stock is equal to the discounted expected value of the stock price at time $T$ given by $S_T$
+
+
+\end{document}
+
+
+\maketitle
