@@ -33,8 +33,63 @@
 \author{Juan Pablo Bello Gonzalez}
 \date{January 2024}
 
+
 \begin{document}
-\subsection{Introduction}
+\section{Vocabulary}
+
+
+\begin{definition}
+\textbf{Risk-free interest rate} is the rate an investor can expect to earn on an investment that carries 0 risk. Why would lending money to the bank carry risk? because of the time value of money (TVM). Compensates investors for the time-value of money: Their money is tied up and so they can't put it to use and inflation rises.
+\end{definition}
+
+\begin{definition}
+\textbf{Time Value of Money}
+A sum of money is worth more now than the same sum will be worth in the future. Main reasons are \textbf{inflation}, and due to its earnings potential in the interim.
+\end{definition}
+
+\begin{definition}
+In a company: \textit{Equity = Assets - Liabilities}. 
+\begin{itemize}
+\item \textbf{Assets}: Everything you own which has value: infrastructure, patents, bonds, stocs, commodities. They have a random value over time $S_t$. 
+\item \textbf{Liabilities}: Future debt 
+\item \textbf{Owner's Equity}: What the owners would get if they sold the company. 
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+\textbf{Stock}: A share in ownership of a company's equity. 
+\begin{itemize}
+\item Dividend: payment to shareholders from profits. Some stocks don't have dividends. 
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+\textbf{Security:} A tradable financial asset. A house, stock, etc. 
+\end{definition}
+
+\begin{definition}
+\textbf{Derivative:} A "secondary" security. A contract that derives its value and risk from  particular security. On option is a derivative of a stock because it is a "bet" on the stock, it has "derived" value from the stock.
+\end{definition}
+
+
+\begin{definition}
+\textbf{Option}: A financial derivative/contract stipulated today ($t=0$) that gives the buyer the right to buy or sell the underlying asset within a specified period up to maturity $t=T$ and at a specified strikeprice independent of the asset value $S_t$.
+\begin{itemize}
+\item Long position: held by the holder (=buyer) of an option
+\item short position: held by the writed (=seller) of an option. There is usually an upfront capital you have to put down for the shorting of a stock, you don't just sign you'll give it back in the future and take the money out of thin air. 
+\item In theory, the short and long position profits will always mirror each other since they are the only ones involved in the bet. There are hidden fees in practice.
+\end{itemize}
+\end{definition}
+
+We use the following language when talking about an option: 
+\begin{itemize}
+\item Call: right to buy at strike price (profit from stock increase)
+\item Put: right to sell at strike price (profit from stock decrease)
+\item European type: at maturity T.
+\item American type: Anytime between now and maturity. 
+\item Strikeprice K: specified at $t=0$.... if you are the issuer (short position?), how do you set a a strike price
+\end{itemize}
+
 
 \subsubsection{European Call option}
 I am confident the stock price will increase over one year from current price $S_0$ above the threshold $K$. I can enter the following \textbf{bet}: 
@@ -75,7 +130,7 @@ In a \textbf{put} option, you buy the right to sell an option at maturity.
 
 Now, once we have determined what outcome we want to bet on, let's think about the specifics.
 
-Let's see if an European Option is good for us. Such option says that we will make money if we are right about our prediction exactly at time $T$. Predicting points is much harder and unreliable than predicting trends, especialy if the stock price is 1) volatile asf in absolute changes (reallly big up and downs to scale.). So maybe, under a call option, the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endagered tiger and then at time $T$ the stock price is bellow the strike price for something no one could have predicted... Then we are not making money. 
+Let's see if an European Option is good for us. Such option says that we will make money if we are right about our prediction exactly at time $T$. Predicting points is much harder and unreliable than predicting trends, especially if the stock price is 1) volatile asf in absolute changes (reallly big up and downs to scale.). So maybe, under a call option, the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endagered tiger and then at time $T$ the stock price is bellow the strike price for something no one could have predicted... Then we are not making money. 
 
 To protect against such things we may look to bet on trends and not point, or more formally on path-dependant options like the Asian or American Option. 
 
@@ -115,25 +170,6 @@ Profit
 
 From this table we see that the call option gives us \textit{leverage}. Putting leverage on your bet = "multiplying your potential gains or losses"
 
-\section{vocabulary}
-\begin{itemize}
-\item Risk-free interest rate 
-\item stock: A share in ownership of a company's equity. 
-\item Dividend: payment to shareholders from profits. Some stocks don't have dividends. 
-\item Option: financial contract stipulated today at time $t=0$ whose value at the future expiry time maturity) is determined by the market price of an underlying asset. 
-\item Asset: stock commodity, market index, interest rate/bond, ... random value at t usually denoted $S_t$.
-\item Long position: held by the holder (=buyer) of an option
-\item short position: held by the writed (=seller) of an option. There is usually an upfront capital you have to put down for the shorting of a stock, you don't just sign you'll give it back in the future and take the money out of thin air. 
-\end{itemize}
-
-We use the following language when talking about an option: 
-\begin{itemize}
-\item Call: right to buy at strike price (profit from stock increase)
-\item Put: right to sell at strike price (profit from stock decrease)
-\item European type: at maturity T.
-\item American type: Anytime between now and maturity. 
-\item Strikeprice K: specified at $t=0$.... if you are the issuer (short position?), how do you set a a strike price
-\end{itemize}
 
 
 We \textit{assume} that $(S_t)$ is s stochastic process. We can model this stochastic process in discrete time, i.e. at times $0 < t_1 < \dots t_N = 0$ we observe the stock prices $S_{t1} \dots S_{tN}$. We can also model in continuous time. 
@@ -150,16 +186,9 @@ On a call/put option, when do we get the ultimate payout as the buyer of the opt
 
 Let's think about american options because the maximization of european options depends entireley on $S_T$. For american options, we get to decide when we want to cash out. 
 
+
 \section{Risk free asset}
 We assume our cash-accounts continuously compound at risk free rate $r \geq 0$.
-
-\begin{definition}{Risk-free rate}
-interest rate an investor can expect to earn on an investment that carries 0 risk. Why would lending money to the bank carry risk? because money depreciates due to inflation, so the risk free interest rate is the rate to whoch you the interet you make is just enough to keep you from functionally 'loosing' moeny to inflation. If you don't compount interest, your money is loosing value to inflation. 
-
-Compensates investors for the time-value of money. 
-
-risk-free rate compensates investors for the time their money is tied up.
-\end{definition}
 
 Definition makes sense, in practice, how do we get the risk free rate? We read whatever the "US treasury" rate says. Well you need this r for your caclualtions, it doesn't matter much what it is since you want to get results independent of its realized constant value. 
 
@@ -171,6 +200,7 @@ Our first, most simple equation,
 \subsection{Put-Call parity}
 If the equation does not hold there may be an arbitrage opportunity. 
 
+\section{One period Binomial}
 
 \subsubsection{Pricing Options}
 We can value options by finding a replicating portfolio. 
@@ -183,8 +213,10 @@ The idea with the latter is to find $\mathbb{Q}$ such that:
 also 
 \[S_0 = e^{-rT}\mathbb{E}^{\mathbb{Q}}\]
 
-That is, todays price fo the stock is equal to the discounted expected value of the stock price at time $T$ given by $S_T$
+That is, today's price of the stock is equal to the discounted expected value of the stock price at time $T$ given by $S_T$.
 
+
+Recall that the price of an option \textit{does not depend} on the real world measure $\mathbb{P}$. the probability measure $\mathbb{Q}$ is what the market prices imply the price should be so that no arbitrage is possible. It is not the true probability measure. 
 
 \end{document}
 
