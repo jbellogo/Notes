@@ -129,11 +129,12 @@ Under the Black-Scholes model there is a closed form $C_0$ and $C_t$.
 \subsection{Options}
 All options carry their associated risk. 
 
-Let's see if an European Option is good for us. Such option says that we will make money if we are right about our prediction exactly at time $T$. Predicting points is much harder and unreliable than predicting trends, especially if the stock price is 1) volatile asf in absolute changes (reallly big up and downs to scale.). So maybe, under a call option, the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endagered tiger and then at time $T$ the stock price is bellow the strike price for something no one could have predicted... Then we are not making money. 
+Consider an \textbf{European Option}. We make money if we are right about our prediction ($S_T > K$ for the call, $S_T < K$ for the put) exactly at time $T$. Predicting points is much harder and unreliable than predicting trends, especially if the stock price is relatively volatile (really big up and downs to relative to stock price). Say we have a call option and the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endangered tiger which causes the $S_T$ to plummet bellow $K$. 
 
-To protect against such things we may look to bet on trends and not point, or more formally on path-dependant options like the Asian or American Option. 
+To protect against such things we may look to bet on path-dependant options like the Asian or American Option. This way we bet on trends and not on points.  \textbf{We expect these to be less risky?}
 
-In an Asian Option, the payout is averaged thourghout the trajectory (discretized between trading days... maybe you can look at the continuous average too). Path dependent features are much more complicated to price. 
+
+When you "short" a stock, there is no derivatives involved. You borrow the shares from the broker and sell them at time 0. You are counting on the stock price dropping to make a profit. If the stock has indeed dropped bellow the price you paid and you decide it's reached a minimum, you buy it at the current price and give back the shares you borrowed and sold from the broker. Theoretically, if the stock drops to zero your profit is 100\% of what you sold it for $S_0$. On the other hand, if the stock keeps rising above the. 
 
 Say you believe the stock is going to go down but you don't have the stomach to short it (cuz you can loose an unbounded amount of money) you can buy a put option. Then you have the right to sell high. If you don't have the asset before the option expires, you can buy at the "predicted lower price" if it is really lower than your strikeprice, and then sell it to the option issuer to make profit. You don't borrow and sell it in advanced, it's al functionally done on the day you decide to exercise the optiona nd only if you do go through with it. 
 
