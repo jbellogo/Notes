@@ -215,6 +215,40 @@ And the million dollar question: If it is the case that the relative stock price
 Basically things with an exp... kind of. They have some nice statistical properties.
 
 
+\subsection{Moment Generating Functions}
+For a random variable we want to study two things: 
+
+\begin{itemize}
+\item  study \textit{statistics} which are derived from its moments. We want to study the k-th moment $E[X^k]$ and to do so we use the MGF which encodes all the moments of X. It encodes ALL statistical information about the random variable. 
+\item study \textit{long-term}/large-scale behaviour. We don't have control over each of the random variables individually BUT we kno that the more we have they will approximate a normal distribution by the CLT. What can we say, what kinds of events can happen with high probability. 
+\end{itemize}
+
+Remarks about M.G.F:
+\begin{itemize}
+\item MGF does not necessarily exist. 
+\item Log-normal distribution does not have a m.g.f.
+\item The kth derivative of the M.G.F is the k-th moment of the RV
+\end{itemize}
+
+\begin{theorem}
+If $X, Y$ have the same m.g.f then they have the same distributions. This says that if the m.g.f exists it encodes everything about your random variable. The ultimate tool. All the secrets of $X$.
+\end{theorem}
+
+Remark: This does not imply that all random vars with equal k-th moments have the same distribution. Maybe the mgf does not exist for one random var. 
+
+\subsection{Weak Law of Large Numbers}
+
+For a sequence of iid random variables, as the size of the sequence grows, its sample mean gets closer to the independent mean. 
+
+What does this imply? a small advantage will become apparent for sufficiently large amount of trials. At the casino maybe they have a 51\% change of winning against any one individual player playing an optimum strategy. It doesn't look like a good business but really this tiny edge makes them money in the long run over several customers. It's like your metaphor with slopes: the steeper one will always catch up ... eventually. 
+
+Now the casino may loose money in the short term, you may loose against someone not as skilled once or twice... and as humans this affects us, but if we are right about our beliefs, the player with the advantage will win in the long term. Keep your faith in the math. 
+
+
+\subsection{Central Limit Theorem}
+In WLLN we took the average over iid RV's. For the CLM these RVs need to be special: they need to have mean zero. 
+
+Now we will not take the conventional average $\frac{1}{n} \sum X_i$. We will take this average $\frac{1}{\sqrt{n}} \sum X_i$. Why is this special? well the variance of this is independent of $n$. Which is interesting. 
 \section{Stochastic processes}
 A \textit{stochastic process} is:
 \begin{itemize}
@@ -258,6 +292,8 @@ In the study of sp's we are interested in three types of questions:
 
 \subsection{Discrete}
 \subsubsection{Simple Random Walk}
+THE fundamental discrete time stochastic process.
+
 Denote our "steps of the walk" as $Y_i$ \textbf{i.i.d} random variables with: 
 \[ Y_i = 
 \begin{cases}
@@ -270,7 +306,26 @@ then the \textit{one-dimensional} \textbf{random walk} $X_t$ is:
 It is one dimensional analogous to a drunk guy walking frowards and backwards along a straight line. Diagonal Motzkin paths make for a clearer picture. 
 
 How does the random walk behave as time grows?
-What is the distribution at time $t$? This is CLT stuff, the variance will be $t$ and the mean will be zero. Why is the variance t? well that's the maximum height about zero that the walk can achieve at time $t$ and it is only achieved if all steps are in one direction.  
+What is the distribution at time $t$? This is CLT stuff, the variance will be $t$ and the mean will be zero. Why is the variance t? well that's the maximum height about zero that the walk can achieve at time $t$ and it is only achieved if all steps are in one direction. 
+
+
+The random walk is theoretically bounded by the lines $t$ and $-t$ which correspond to all up-steps and all down steps up to time $t$. In practice however, there is a smaller "sort of bound." It's something like a confidence interval asymptote in the shape of a $y^2 = t$ parabola. You can prove that it will cross the $x-$axis and both the  upper $\sqrt{t}$ and lower $-\sqrt{t}$ sides of a parabola (so it is not an asymptote) an infinite amount of times. 
+
+Properties: 
+\begin{enumerate}
+\item $E(X_k) = 0$
+\item Independent increments: If $0=t_0 \leq t_1 \leq \dots \leq t_k$, then $X_{t_{i+1}} -X_{t_i}$ are mutually independent. Ie. any and all disjoint subintervals of the random walk are independent. 
+\item Stationary: For all $h \geq 1, t \geq 0$ the distribution of $X_{t+h}-X_t$ is the same as the distribution of $X_n$.
+\end{enumerate}
+
+\subsubsection{Markov Chain}
+Collection of stochastic process whose effect of the past on the future is summarized \textbf{only} by the current state. These ones are more managable than stuff that depends on entire evolution (like asian options?)
+
+A simple random walk is a markov chain: What happens at $t'$ just depends on where you were at time $t'-1$ since you can only go up or down one step at a time. 
+
+Formally: A discrete time stochastic process $X_1, X_2, \dots$ is a markov chain if: 
+\[ P(X_{t+1}=s | X_0, X_1, \dots , X_t) = P(X_{t+1}=s | X_t)\] 
+
 
 **** Consult CLM. 
 
