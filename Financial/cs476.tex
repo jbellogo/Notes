@@ -177,6 +177,40 @@ Profit
 
 From this table we see that the call option gives us \textit{leverage}. Putting leverage on your bet = "multiplying your potential gains or losses"
 
+
+\section{Probability Theory}
+Random variable is a function from sample space to real line. 
+
+A discrete RV is characterized by its probability \textbf{mass} function. A \textbf{pmf} $f_X$ is such that:
+\[f_X : \Omega \rightarrow \mathbb{R_{\geq 0}} \]
+\[\sum_{x \in \Omega} f_X(x)=1 \]
+
+
+A continuous RV is characterized by its probability \textbf{distribution} function. A \textbf{pdf} $f_Y$ is such that:
+\[f_Y : \Omega=\mathbb{R} \rightarrow \mathbb{R_{\geq 0}} \]
+\[\int_{\Omega} f_Y(y) dy =1 \]
+The sample space for cts rv's is often the reals. 
+
+\subsection{Independence}
+For a sequence of RV's $X_1, X_2, \dots X_n$there are two principal notions of independence: 
+\begin{itemize}
+\item Mutual independence: independence property satisfied for all subsets of ${X_i}_{1<i<n}$.** \textbf{This is the one we are interested in.}
+\item Pairwise independence: independence property satisfied only for pairs.
+\end{itemize}
+
+\subsection{Normal distribution}
+Lets say a stock price is $P_n$. Does it make sense to model/assume the unit increments are normal? ie. $P_n-P_{n-1} \sim N(0,1)$?  Well fixed increases represent a larger percentage increase for smaller values than for large values. To exemplify: if my stock goes from 1 to 2 it increased by 100\%, but if it goes from 400 to 401 then it barely increased. So this is saying that at smaller stock values there is more aggressive changes than for bigger ones. We don't want this for modelling stock prices. The changes should be relative to the current price. Maybe it's human nature that when we are buying a house in the 8 digits we care less about the latter digits, but when we are buying candy we care about single dollar increases because it means large relative increases. Also this assumption would make things simpler:
+\[ P_n-P_{n-1} \sim N(0,1)  \rightarrow P_n \sim N(0, \sqrt{n})\]
+
+Instead we want the relative unit increases to be normally distributed, ie:
+\[ \frac{P_n-P_{n-1}}{P_n} \sim N(0,1)\]
+
+And the million dollar question: If it is the case that the relative stock price unit increments follow a standard normal distribution, what is the distribution of the stock price $P_n$?
+
+\subsection{Log-Normal distribution}
+
+
+
 \section{Stochastic processes}
 A \textit{stochastic process} is:
 \begin{itemize}
@@ -217,6 +251,24 @@ In the study of sp's we are interested in three types of questions:
 \item What is the long term behaviour? Does the sequence converge to something or just bounce around. Law of large numbers and CLT. 
 \item What are the boundary events? Events of interest to me, like how often does a stock drop by 10pts. 
 \end{enumerate}
+
+\subsection{Discrete}
+\subsubsection{Simple Random Walk}
+Denote our "steps of the walk" as $Y_i$ \textbf{i.i.d} random variables with: 
+\[ Y_i = 
+\begin{cases}
+1 \text{, with prob 1/2} \\
+-1 \text{, with prob 1/2} \\
+\end{cases}
+\]
+then the \textit{one-dimensional} \textbf{random walk} $X_t$ is: 
+\[ X_0 = 0 \text{ and } X_t = \sum_{i=1}^t Y_i \forall t>0 \]
+It is one dimensional analogous to a drunk guy walking frowards and backwards along a straight line. Diagonal Motzkin paths make for a clearer picture. 
+
+How does the random walk behave as time grows?
+What is the distribution at time $t$? This is CLT stuff, the variance will be $t$ and the mean will be zero. Why is the variance t? well that's the maximum height about zero that the walk can achieve at time $t$ and it is only achieved if all steps are in one direction.  
+
+**** Consult CLM. 
 
 
 \section{Model}
