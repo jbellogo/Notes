@@ -129,16 +129,23 @@ Under the Black-Scholes model there is a closed form $C_0$ and $C_t$.
 \subsection{Options}
 All options carry their associated risk. 
 
-Consider an \textbf{European Option}. We make money if we are right about our prediction ($S_T > K$ for the call, $S_T < K$ for the put) exactly at time $T$. Predicting points is much harder and unreliable than predicting trends, especially if the stock price is relatively volatile (really big up and downs to relative to stock price). Say we have a call option and the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endangered tiger which causes the $S_T$ to plummet bellow $K$. 
+Consider an \textbf{European Option}. We make money if we are right about our prediction ($S_T > K$ for the call, $S_T < K$ for the put) exactly at time $T$.
+
+Predicting points is much harder and unreliable than predicting trends, especially if the stock price is relatively volatile (really big up and downs to relative to stock price). Say we have a call option and the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endangered tiger which causes the $S_T$ to plummet bellow $K$.
 
 To protect against such things we may look to bet on path-dependant options like the Asian or American Option. This way we bet on trends and not on points.  \textbf{We expect these to be less risky?}
 
+\subsubsection{Shorting Stock}
+When you "short" a stock, there is no derivatives involved. You borrow the \textit{shares} from the broker and sell them at time 0. You are counting on the stock price dropping to make a profit. If the stock has indeed dropped bellow the price you paid and you decide it's reached a minimum, you buy it at the current price and give back the shares you borrowed and sold from the broker. Theoretically, if the stock drops to zero your profit is 100\% of what you sold it for $S_0$ as you can pay nothing to buy it back and repay it to the broker. On the other hand, if the stock keeps rising above the strike price, your debt is unbounded.
 
-When you "short" a stock, there is no derivatives involved. You borrow the shares from the broker and sell them at time 0. You are counting on the stock price dropping to make a profit. If the stock has indeed dropped bellow the price you paid and you decide it's reached a minimum, you buy it at the current price and give back the shares you borrowed and sold from the broker. Theoretically, if the stock drops to zero your profit is 100\% of what you sold it for $S_0$. On the other hand, if the stock keeps rising above the. 
+\subsubsection{Put option}
+Say you believe the stock is going to go down but you don't have the stomach to short it (cuz you can loose an unbounded amount of money) you can buy a put option. Then you have the right to sell high for the strikeprice if the price at maturity is lower. you buy from the market for $S_T$ and sell for $K$. You also don't have the obligation to sell, so you don't have to buy it. Your loss is bounded by 100\%  of $C_0$ if you choose not to exercise the option, which is most likely less than the stock price. 
 
-Say you believe the stock is going to go down but you don't have the stomach to short it (cuz you can loose an unbounded amount of money) you can buy a put option. Then you have the right to sell high. If you don't have the asset before the option expires, you can buy at the "predicted lower price" if it is really lower than your strikeprice, and then sell it to the option issuer to make profit. You don't borrow and sell it in advanced, it's al functionally done on the day you decide to exercise the optiona nd only if you do go through with it. 
+Unlike with shorting, you don't borrow and sell the stock in advanced. 
 
-Let's say a stock starts at $50$ and then it cal go to $80$ or $20$. We have respective put and call options which we can buy for $5$ at strike prices of 60\$ for the call and 40\$ for the put. 
+\subsection{Example}
+
+Let's say a stock starts at $50$ and then it can go to $80$ or $20$. We have respective put and call options which we can buy for $5$ at strike prices of 60\$ for the call and 40\$ for the put. 
 
 \begin{center}
 Profit
@@ -170,11 +177,27 @@ Profit
 
 From this table we see that the call option gives us \textit{leverage}. Putting leverage on your bet = "multiplying your potential gains or losses"
 
+\section{Model}
+We \textit{assume}:
+
+\begin{enumerate}
+\item $(S_t)$ is a \textit{stochastic process} 
+\begin{itemize}
+\item \textbf{Defn(1):} A sequence of random variables indexed by time (e,j. $X_0, X_1, \dots$ for discrete time)
+\item \textbf{Defn(2):} A probability distribution over a space of paths. It is easier to do some math with this definition. 
+\end{itemize}
+
+\item $S_t$ is modelled discretely.
+\begin{itemize}
+\item Discrete time stochastic process: at discrete times $0 < t_1 < \dots t_N = 0$ we observe the respective stock prices $S_{t1} \dots S_{tN}$.
+\item Continuous time sp: for continuous $0 < t < T$ we have $S_t$ is a function with solid lines \textbf{(does not have to be continuous itself though)}. Can't express continuity in computers because we can't express sets of  infinite cardinalities, like subsets of the real line, with finite resources. 
+\end{itemize}
+\item $V_t$ is the value of the option. It is a function of time $t$ and the value of the underlying stock at or up-to time $t$, so: $V_t = V(S_t,t )$.
+
+\end{enumerate}
 
 
-We \textit{assume} that $(S_t)$ is s stochastic process. We can model this stochastic process in discrete time, i.e. at times $0 < t_1 < \dots t_N = 0$ we observe the stock prices $S_{t1} \dots S_{tN}$. We can also model in continuous time. 
-
-Denote by $V_t = V(S_t,t )$ the value of the option at time $t$ it depends on the value of the underlying asset at time $t$ ie $S_t$ and sometimes, like in the Asian option case, it depends on the entire evolution up to time $t$. For each time $t > 0$, $S_T$ is a random variable ... and I think $S_t$ and $S_j$ don't have the same distribution, that's what makes them exciting, we don't have the joint but we can infer things
+Denote by $V_t = V(S_t,t )$ the value of the option at time $t$. It depends on the value of the underlying asset $S_t$ and sometimes, like in the Asian option case, it depends on the entire evolution up to time $t$. For each time $t > 0$, $S_T$ is a random variable ... and I think $S_t$ and $S_j$ don't have the same distribution, that's what makes them exciting, we don't have the joint but we can infer things
 
 Tading options is considered risky, we see how the payouts are all or nothing. trading options is considered  riskier than trading the stock. 
 
