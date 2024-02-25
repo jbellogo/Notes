@@ -41,7 +41,6 @@
 
 \textbf{Question} Is the number of shares I can buy/sell for the strike price also stipulated on the contract?
 
-
 \begin{definition}
 \textbf{Risk-free interest rate} is the rate an investor can expect to earn on an investment that carries 0 risk. Why would lending money to the bank carry risk? because of the time value of money (TVM). Compensates investors for the time-value of money: Their money is tied up and so they can't put it to use and inflation rises.
 \end{definition}
@@ -73,6 +72,10 @@ In a company: \textit{Equity = Assets - Liabilities}.
 
 \begin{definition}
 \textbf{Derivative:} A "secondary" security. A contract that derives its value and risk from  particular security. On option is a derivative of a stock because it is a "bet" on the stock, it has "derived" value from the stock.
+\end{definition}
+
+\begin{definition}
+\textbf{Market risk} risk of loss due to uncertainty in the financial markets. A big question is how can market risk be modelled, measured and analyzed? How can risk be reduced?
 \end{definition}
 
 
@@ -127,6 +130,8 @@ What is a fair price for $C_t , t \in [0, T)$?
 Under the Black-Scholes model there is a closed form $C_0$ and $C_t$. 
 
 \subsection{Options}
+\textbf{We will focus on derivative markets in CS 476.}
+
 All options carry their associated risk. 
 
 Consider an \textbf{European Option}. We make money if we are right about our prediction ($S_T > K$ for the call, $S_T < K$ for the put) exactly at time $T$.
@@ -349,6 +354,20 @@ We \textit{assume}:
 
 \end{enumerate}
 
+Our market and portfolios will often have:
+\begin{enumerate}
+\item one risk-free asset (bond/a bank account earning interest deterministically, or a loan compounding interest in which case we look at its PV )
+\item one (modelled as stochastic process $S_t$) or several, possibly dependent, risky assets (modelled as multivariate stochastic processes $(S_t^1, S_t^2 \dots)$). Typically a stock.
+\item One or more derivatives on the risky asset. ie calls,puts, and such. 
+\end{enumerate}
+We use the risk-free asset to borrow or lend money to finance our trading strategy since we will be looking at money over-time and its intrinsic value changes,  \textbf{so don't hide it under the bed.}
+\begin{itemize}
+\item Lending (depositing) money to the bank BUYING a bond form the bank (Long)
+\item Borrowing is SELLING a bond to the bank. 
+\end{itemize} 
+
+We assume our cash account \textit{continuously} compounds at \textit{constant} risk free rate $r \geq 0$. 
+
 
 Denote by $V_t = V(S_t,t )$ the value of the option at time $t$. It depends on the value of the underlying asset $S_t$ and sometimes, like in the Asian option case, it depends on the entire evolution up to time $t$. For each time $t > 0$, $S_T$ is a random variable ... and I think $S_t$ and $S_j$ don't have the same distribution, that's what makes them exciting, we don't have the joint but we can infer things
 
@@ -371,6 +390,11 @@ Definition makes sense, in practice, how do we get the risk free rate? We read w
 Our first, most simple equation, 
 
 \[ dB(\tau) = r  B(\tau) d\tau \]
+
+The solution to this ODE tells us the time value of money. 
+
+\[ \frac{B(\tau)}{B(t)} = \exp\{r(\tau-t)\} \]
+
 
 
 \subsection{Put-Call parity}
