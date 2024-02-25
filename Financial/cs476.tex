@@ -421,17 +421,41 @@ If we want to price a path-dependent option, we need a model for the stochastic 
 \dots, t_N = T}$ (discrete time). Recall that in the real world we can only deal with discrete time both to physically price and trade the assets and to sample from a computer simulation.
 
 \subsection{Arbitrage free pricing}
-We assume the financial market model is arbitrage free, which means there is "no free lunch"
+Informally: A way to make a guaranteed profit from nothing. by short-selling certain assets at time 0, using the proceeds to buy other assets, and then settling accounts at time t=1
+We assume the financial market model is arbitrage free, which means there is "no free lunch." If there is an arbitrage opportunity, I can make free money by, for instance, buying apples for cheaper in one market and sell them more expensive in another market. 
+
+such a stragy is one in which one of the two holds:
+\begin{itemize}
+\item We start with $\pi_0 = 0$ and always have a gain, i,e,, $\pi_T > 0$ almost surely. 
+\item We start with debt and always repay it. ie $\pi_0 < 0$ and $\pi_T \geq 0$ almost surely.
+\end{itemize}
+
+We assumed 
+\[ 0 < d< 1+r< u \]
+This is necessary for the market to be arbitrage-free. 
+
+Just recall that this above inequality relates the randomized/stochastic performance of the bond ($d$ and $u$) to that of a good ol' predictable risk free bond (savings account) with risk free rate $1+r$. 
+
+Assume we have $1 \leq 1+r < d < u$ instead. Then we can construct an arbitrage strategy by noting that the stock will always outperform the bond independently of weather it goes down or up. This means we can borrow money from the bank and buy stock which is guaranteed to grow more than our debt to the bank... hence arbitrage. There is no options here, we are just buying entire shares. This is in fact a self-financing situation $\pi_0 = 0$ since we don't have to put down a dime in theory. 
 
 
-\section{Put-Call parity}
-If the equation does not hold there may be an arbitrage opportunity. 
 
 \section{One period Binomial}
 
-\subsubsection{Pricing Options}
-We can value options by finding a replicating portfolio. 
+\section{Pricing Options}
+\subsection{Replicating Portfolio}
+We can value options by finding a replicating portfolio. Using the following proposition:
 
+\begin{theorem}
+Suppose a market is arbitrage free. Suppose we have a portfolio of the stock and bond which satisfies $\pi_T = V_T$ at maturity time $T$ almost surely. i.e. the portfolio is replicating the random option payout at time $T$, then
+\[ V_0 = \pi_0\]
+Which means we can price the option using the portfolio.
+\end{theorem}
+\begin{proof}
+If $\pi_T = V_T$ but $\pi_0 > V_0$ or $\pi_0 < V_0$ we can construct an arbitrage, which is a contradiction to the market being arbitrage free. 
+\end{proof}
+
+\subsection{Discounted expected payout}
 Another approach is by computing the discounted expected payout under a special probability measure $\mathbb{Q}$ which we call \textbf{risk neutral} or \textbf{arbitrage free pricing measure}.
 
 The idea with the latter is to find $\mathbb{Q}$ such that:
@@ -444,6 +468,11 @@ That is, today's price of the stock is equal to the discounted expected value of
 
 
 Recall that the price of an option \textit{does not depend} on the real world measure $\mathbb{P}$. the probability measure $\mathbb{Q}$ is what the market prices imply the price should be so that no arbitrage is possible. It is not the true probability measure. 
+
+
+\section{Put-Call parity}
+If the equation does not hold there may be an arbitrage opportunity. 
+
 
 \end{document}
 
