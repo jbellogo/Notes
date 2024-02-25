@@ -336,6 +336,8 @@ Formally: A discrete time stochastic process $X_1, X_2, \dots$ is a markov chain
 
 
 \section{Model}
+
+
 We \textit{assume}:
 
 \begin{enumerate}
@@ -382,7 +384,9 @@ On a call/put option, when do we get the ultimate payout as the buyer of the opt
 Let's think about american options because the maximization of european options depends entireley on $S_T$. For american options, we get to decide when we want to cash out. 
 
 
-\section{Risk free asset}
+Recall our model will have one risk-free bond and a risky asset/stock
+\subsection{Risk free asset}
+\subsubsection{Interest rates}
 We assume our cash-accounts continuously compound at risk free rate $r \geq 0$.
 
 Definition makes sense, in practice, how do we get the risk free rate? We read whatever the "US treasury" rate says. Well you need this r for your caclualtions, it doesn't matter much what it is since you want to get results independent of its realized constant value. 
@@ -395,9 +399,32 @@ The solution to this ODE tells us the time value of money.
 
 \[ \frac{B(\tau)}{B(t)} = \exp\{r(\tau-t)\} \]
 
+If we are given the value of a bond at a future time we can find the \textbf{discounted} value to today (present value). And if we are given the current value we can compute the "future" or compounded value of the bond. 
+
+Depending on if we want to compound or discount, we often set either $\beta(t) = 1$ or $\beta(T) = 1$ in our replicating portfolios. 
 
 
-\subsection{Put-Call parity}
+\subsubsection{Continuous compounding of interest}
+It doesn't make sense for us to get paid our yearly interest once a year. This would mean that for 364 days our money is not changing value, for 364 days the bank borrows it for free. In fact it doesn't make sense for interest to be compounded discreteley at all, but in practice it often is (monthly or daily). In our caluclations we will compound it continuoiusly to account for the theoretical changes in the value of money over any and all fractions of time: I put my money in savings for 5.34343 hrs I should be paid accordingly... in theory.
+
+In practice, the interest rate is not constant and changes over time! people refinance their loans?
+
+You can \textbf{estimate an interest rate curve based on different bond prices, and enter those as "deterministic" quantities into the model}
+
+Alternativeley, you can model the interest rate iteself as a random variable... but this does complicate the models (examples later). 
+
+
+\subsection{Risky Asset}
+If we want to price an option whose value depends only on $S_T$ (european options for instance), we need a model for the random variable $S_T$. 
+
+If we want to price a path-dependent option, we need a model for the stochastic process $(S_t)_{t\in[0,T]}$ (continuous time) or $(S_T)_{0, t_1, 
+\dots, t_N = T}$ (discrete time). Recall that in the real world we can only deal with discrete time both to physically price and trade the assets and to sample from a computer simulation.
+
+\subsection{Arbitrage free pricing}
+We assume the financial market model is arbitrage free, which means there is "no free lunch"
+
+
+\section{Put-Call parity}
 If the equation does not hold there may be an arbitrage opportunity. 
 
 \section{One period Binomial}
