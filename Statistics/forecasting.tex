@@ -397,6 +397,37 @@ The motivation is in the bias vs. Variance tradeoff. Regular OLS regression seek
 \item Variance: Measures predictive power. 
 \end{enumerate}
 
+\subsubsection{Multiple Linear Regression}
+We optimize OLS to find our model coefficients
+\[ \hat  \beta_{OLS} = \argmin_{\bm \beta} \{ (\bm Y - X\bm \beta)^T(\bm Y - X\bm \beta) \} = H \bm Y\]
+\textbf{Challenges:}
+\begin{itemize}
+\item Multicolinearity
+\item Curse of dimensionality: $n \leq p$. Since we need the design matrix $X \in M(\mathbb{R})_{n \times p}$ to solve the system, we require it to be invertible and not underspecified (one solution).
+\item Variable selection. Similar to Multicolinearity, some variables are too correlated they provide superfluous information which messes up our model. If we only use OLS regression, we'd have to do trial an error by first postulating a model and then performing variable selection analysis on it with (APSE, Hypothesis tests, p-vals, all the good stuff) and this gets tiring. 
+\item Adding predictiors will reduce RSS (increase $R^2$)... I think this means the "longer" your design matrix ($p$ but not necesarrily for polynomial degree) the less bias (better fit) but more variance (poor predictive power for unseen sets).  
+\end{itemize}
+
+\subsection{Regularized-regression}
+\[ \hat  \beta_{regularized} = \argmin_{\bm \beta} \{ (\bm Y - X\bm \beta)^T(\bm Y - X\bm \beta) + \lambda \times PEN(\bm \beta)\} \]
+
+Our regularized coefficients are obtained by minimizing the OLS (or some other loss function) PLUS some bias which is a $\lambda$-scaled function on the NON-INTERCEPT coefficients. 
+
+Depending on ridge, lasso, elastic net we choose the PEN function 
+
+$\lambda > 0$ is choosen through \textbf{cross-valdiation} (10 fold standard) which is just kind of trial and error on several values. use cv.glmnet in R
+
+PROS/CONS or Regularized vs OLS
+
+PROS/CONS lasso and ridge
+
+
+\section{Stationary processes}
+
+
+
+
+
 
 
 
