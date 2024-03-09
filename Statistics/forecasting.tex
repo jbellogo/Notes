@@ -423,6 +423,37 @@ PROS/CONS lasso and ridge
 
 
 \section{Stationary processes}
+A discrete time series is a stochastic process. For ANY and ALL finite subset of times $\{t_1, \dots, t_n\}$ the finite dimensional distributions are the joind distributions given by the joint CDF $F(x_{t1}, \dots x_{t2})$
+
+The idea model for a time-series is having its joint distribution. This tells us all there is to know about the sequence. 
+
+There is strong and weak stationarity. Both refer to a property which implies that somethign about the finite dimensional distributions will remain unchanged under time-shift. 
+
+STRONG: a finite dimensional vector with a respective joint distribution has the same joint as the vector shifted by constant time. 
+
+STRONG stationarity implies that all statistical properties of the random vector reamin the same under time-shift. 
+
+In practice strong stationarity almost never holds, it is too limiting of an ssumption. Also it requres the joint distributuon which we simply don't have in practice in Data Science. 
+
+We mentioned that the hope of forecasting is that the first couple of moments can tell us enough about a a distribution to make our predicitons, that is MEAN, VARIANCE, and COVARIANCE (for periodicity..). This motivate the intoruction of a less limitinf definition fo stationarity where the restrictions are imposed ON THE FIRST FEW MOMENTS as oppose to the WHOLE finite dimenal distributuions. A more relaxed type of stationarity.
+
+WEAK: 
+Definition the MEAN FUNCTION of a time series $\{X_t\}$ is $\mu_X(t) = \mu_t = E(X_t)$ is a function of time which gives the mean of the random variable indexed by it on the series. 
+
+If $\{X_t \}$ is a time series with finite variance for all $t$, then the \textit{auto-covariance function} (acvf) is defined by:
+\[ \gamma(r, s)=Cov(X_r, X_s) \]
+
+The time series $\{X_t\}$ is said to be \textit{weakly stationary} if:
+\begin{itemize}
+\item finite second absolute moment forall t
+\item constant mean FORALL times
+\item scale-invariant pair-wise covariance for all pairs. ie acvf satisfies $\gamma(r,s) = \gamma(r+h, s+h)$. Visually this means the period is constant. ie it doesn't contract and strectch at parts.
+\end{itemize}
+
+
+
+
+
 
 
 
