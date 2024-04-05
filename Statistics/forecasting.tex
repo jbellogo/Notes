@@ -443,16 +443,48 @@ Definition the MEAN FUNCTION of a time series $\{X_t\}$ is $\mu_X(t) = \mu_t = E
 If $\{X_t \}$ is a time series with finite variance for all $t$, then the \textit{auto-covariance function} (acvf) is defined by:
 \[ \gamma(r, s)=Cov(X_r, X_s) \]
 
-The time series $\{X_t\}$ is said to be \textit{weakly stationary} if:
+
+The time series $\{X_t\}$ is said to be \textbf{weakly stationary} if:
 \begin{itemize}
 \item finite second absolute moment forall t
 \item constant mean FORALL times
-\item scale-invariant pair-wise covariance for all pairs. ie acvf satisfies $\gamma(r,s) = \gamma(r+h, s+h)$. Visually this means the period is constant. ie it doesn't contract and strectch at parts. Only depends on the distance between two variables and not on $t$.
+\item scale-invariant pair-wise covariance for all pairs. 
 \end{itemize}
+
+Focusing on the third condition.
+
+ie acvf satisfies $\gamma(r,s) = \gamma(r+h, s+h)$. Visually this means the period is constant. ie it doesn't contract and strectch at parts. Only depends on the distance between two variables and not on $t$.
 
 The value of $\gamma_X(h) = \gamma(h,0)$
 
 the auto-covariance at \textit{lag h}
+
+
+
+\section{Time series forecasting blue print}
+Given a time series data set.
+\begin{itemize}
+\item is is starionary? Check
+\begin{itemize}
+\item Constant mean
+\item Finite variance
+\item scale-invariant pair-wise covariance for all pairs. 
+\end{itemize}
+\item if not starionary, transform to stationary
+\item forecast
+\item add non-stationarity back
+\end{itemize}
+
+
+Removing stationarity:
+Dealing with trend:
+1. Trend estimation
+\begin{itemize}
+\item finite moving average filter. Useless for forecasting just a descriptive tool
+\item Exponential smoothing
+\item Polynomial regression
+\end{itemize}
+2. Tend elimination: Differencing 
 
 
 
