@@ -126,6 +126,120 @@ Cost of capital such that the NPV of a project is 0
 Rule: Accept a project if IRR > required rate of return. This "required rate of return" 
 
 \subsection{Profitability Index}
+\[ 
+PI = 
+\frac{\text{PV of future cashflows}}{{Initial cost}} 
+= \frac{\sum_{t=1}^{\infty}\frac{C_t}{(1+r)^t}}{-C_0}
+= \frac{C_1 + C_2 + \dots}{|C_0|}
+ \]
+ 
+notes:
+A project has $PI > 1$ exactly when $NPV > 0$. Convince yourself: Well just look at it mathematically, $ 0  < NPV = C_0 + C_1 + \dots \implies C_1 + C_2 + C_3 + \dots > -C_0$ and thus the nominator of the Profitability index calculator is bigger than the denominator, thus $PI>1$. 
+
+
+Interpretation: $PI = 1.2$ means that the future cashflows are 20\% larger than the cost of the principal investment. So "loosely speaking," the project generates a 20\% excess return over its life. 
+
+PROS:easy and correct for independent projects 
+CONS: Scale. Maybe we don't care about percentage returns and only about absolute returns. 
+
+\section{Capital Budgeting}
+What cashflows to include in analysis? \textit{net incremental cashflows}, that is, cashflows that occur exclusiveley due to acceptance of the project (not the cost of toilet paper in the office). To identify a comprehensive list of the cashflows as yourslef: 
+\begin{center}
+What is the difference betweeen the cashflows of the entire firm \textit{with} the project VS \textit{without} the project?
+\end{center}
+
+We are interested in Cash flows, not accounting income. 
+
+We exclude:
+\begin{itemize}
+\item sunk costs: costs that ocurred in the past. 
+\item depreciation
+\item goodwill: extra profit paid by other parties.
+\item unearned capital gains: appreciation of assets (taxable).
+\end{itemize}
+
+We include: 
+\begin{itemize}
+\item Opportunity costs: cashflows that would have happened if the project were not accepted. ie if Rocky Balboa doesn't fight and decides to wash cars instead, he will get a carwashing salary but at the same time give up the opportunity and money that comes from fighting. 
+\end{itemize}
+
+\subsubsection{formulas}
+Operating Cash Flows (OCF): inflows and outflows related to business activity. 
+Earnings before interest and taxes (EBIT)
+
+\[ OCF = EBIT - Taxes + Depreciation \]
+\[ EBIT =  Revenue - Cost - Depreciation \]
+\[ Taxes = EBIT \times Cotporate Tax Rate = EBIT 
+\times T_C \]
+
+The project cashflows include initial cost when purchased (material asssets), and salvage value when fixed assets are sold (inflow) (sale used trucks, machinery, patents, etc at the end.)
+
+OCF is independent of depreciation (it ends up cancelling in formula) because, intuitiveley, depreciation as an accounting concept to allocate the initial cost of the product over time, and not a cash cost. 
+
+\textbf{NOTE:} Capital cost: initial costs. Cost of capital: rate of return. 
+
+\subsection{Capital Cost Allowance}
+In Canada, depreciation is NOT tax deductible. Instead the CRA allows a Capital Cost (initial investment) Allowance which provides a "tax-shield" which reduces EBIT and thus taxes.  
+
+Every year, the undepreciated capital cost (UCC) is reduced by the CCA rate which depends on the class of the asset at hand (ie $10, 10*(1-r), 10*(1-r)^2$), for instance cars may have a CCA rate higher than warehouses. 
+And from that UCC we take a tax rate to get the actual tax shield amount: amount to be deducted from EBIT.  
+
+PVCCATS : Present Value of Capital Cost Allowance Tax shield.
+
+\subsection{Equivalent Annual Cost}
+Used when NPV misses the point. EACs spread the NPV of different projects to each year in a "financially equivalent way"
+
+
+\subsection{Inflation} 
+\[ (1+Nominal) = (1+ Real) \times (1+Inflation) \]
+The CCA tax shields must be calculated in nominal terms, since once the asset is purchased, the entire CCA table is determined REGARDLESS of future inflation. 
+
+\subsection{Risk Analysis}
+Contrary to prior examples, in real life, future cashflows are uncertain. Methods to evaluate project with uncertain cashflows: Decision trees, MC, etc.
+
+\begin{definition}
+\textbf{Contribution Margin:} Reveals how much 1 unit of product sales contributes to net income. $ (Unit revenue- \text{unit variable cost}) * (1-T_c) $
+\end{definition}
+
+Example a Doughnut sells for 1.5, costs .7 to make, its contribution margin is .8 times corporate tax on profit. 
+
+\section{Return and Risk Measures}
+The financial market is more than just risk-free borrowing and lending. We can invest on  instruments such as cash, stocks, ETFs
+
+In general: High risk expects high return. Low risk low return. 
+
+to measure return, we consider "hypothetical return of selling now" include dividends of the current period and selling price. 
+$Return =  \text{Div}_{t+1} + (P_{t+1}-P_t) = \text{Dividend yield} + \textbf{Capital gains yield}$
+
+Holding period returns are geometric means. 
+
+Risk measures are variance and stdev/volatility.
+Drawbacks of volatility as a risk measure: symmetric penalty for loses/profits and it is a risk measurement around the centre of the distribution (ie symmetric around mean). Other measures of risk: Downside Semi-Variance, VaR, 
+Conditional VaR. Risk can depend on highesr moments: skewness, kurtosis, etc. If R is normal then all higher moments can be calculated from the first 2 (ie mean and var)
+
+Stock returns are NOT normally distributed. 
+
+\section{CAPM***}
+\subsection{Portfolio of two risky assets}
+We have a randon variable equation to describe the portfolio RV: $\pi = t*A + (1-t)*B$. A portfolio is a linear combination of risky (Random variable) assets. We wish to compute portfolio statistics, which is easy. 
+
+An important question is: What is the best weight distribution for the portfolio? ie what percentage should be invested on asset A and on asset B. To answer that notice that we can do a couple of things: we can maximize return and we can minimize risk as a function of weights $t$.
+
+\begin{definition}
+The feasibility/opportunity set is the the set of portfolios that can be constructed from a given set of assets. This is enforced by the weights constraint $\bm{w}^t \bm{e} = 1 $. Visually, it will be the inside of the hyperbola. 
+\end{definition}
+
+\begin{theorem}
+The efficient set will belong to the frontier/border along the hyperbola. Any portfolio along the efficient frontier is "good enough," and the choice  between efficient portfolios will depend on an individuals "risk tolerance."
+\end{theorem}
+
+\subsection{Efficient Frontier}
+turn attention to multi-asset portfolios. Most variables are intuitive: $\bm{\mu}, R, w, e$. Now, for $\Sigma$, recall that entry $ij$ of the Variance-Covariance Matrix corresponds to $COV(R_i, R_j)$ and that diagonal elements correspond to variances. 
+
+
+
+
+  
 
 
 
