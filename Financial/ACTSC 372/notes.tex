@@ -236,6 +236,91 @@ The efficient set will belong to the frontier/border along the hyperbola. Any po
 \subsection{Efficient Frontier}
 turn attention to multi-asset portfolios. Most variables are intuitive: $\bm{\mu}, R, w, e$. Now, for $\Sigma$, recall that entry $ij$ of the Variance-Covariance Matrix corresponds to $COV(R_i, R_j)$ and that diagonal elements correspond to variances. 
 
+Portfolio return: 
+\[ \mu_P = \bm{w}^T \bm\mu \]
+
+Portfolio variance:
+\[ \sigma_P^2 = \bm{w}^T \Sigma \bm{w} \]
+
+A key fact is that diversification reduces portfolio risk. 
+\[ \sigma_P \leq \sum_{i=1}^N |w_i| \times \sigma_i \]
+
+How do we construct optimal portfolios, uniqueley identified by $\bm w^*$ for a given set of $N$ risky assets.
+
+Assumptions: 
+\begin{itemize}
+\item Single period model, ie no dividends no compounding, just evaluating returns of assets A and B one year from now. 
+\item Assets are perfectly divisible, ie $\bm w \in \mathbb{R}^N$
+\item No transaction costs and no taxes (this is a good assumption to always mention in our types of questions). 
+\item max return, min variance, or both.
+\item mean returns and covariances $\Sigma$ are known. 
+\item $\Sigma$ is positive definite. This means all  securities in the portfolio are risky ie stocks.
+\item Not all expected returns are equal.
+\end{itemize}
+
+***** 
+\begin{theorem}
+\textbf{(Two-Fund Theorem)}: The formula $w_{opt} = w_m + \tau w_z$ states that any efficient portfolio can be replicated by two portfolios where $w_m$ is the minimum variance portfolio, and $w_z$ is self financing. These two portfolios can generate the whole efficient frontier. 
+\end{theorem}
+
+An investor seeking efficient porfolios needs only invest in combinations of two portfolios that are known to be efficient. So only two investment products provide a complete investment strategy.
+
+\subsection{Inclusion of a Risk-Free Asset}
+The assumption that $\Sigma$ is positive definite means no security is risk-free. If there was a risk free-asset, $\Sigma$ would have one row of all zeros. 
+
+Now let's set up the CAL introduction. First, consider the portfolio $P = (1-w_0)*Q + w_0*r_f$, consisting of one risky asset $Q$ and one risk-free asset with weight $w_0$ and return $r_f$. Recall that the risk free asset is not a random variable  so the only quantity we have from it is its expected return ie the savings account interest. 
+We have the following equations for the mean and variance of this portfolio. 
+
+Mean:
+\[ 
+\mu_P = (1-w_0)* \mu_Q + w_0*r_f 
+\implies 
+\mu_P = \mu_Q + (r_f - \mu_Q)*w_0 \]
+
+Considering that only the risky asset $Q$ contributes to variance we have volatility:
+\[ \sigma_P = (1-w_0)*\sigma_Q 
+\implies 
+w_0 = 1- \frac{\sigma_P}{\sigma_Q}
+\]
+
+Combining these two equations by substituting $w_0$ from (2) into (1) we have the \textbf{Capital Allocation Line (CAL)}. Note that it requires a couple lines of algebra to show. 
+
+\[ \mu_P = r_f + \frac{\mu_Q - r_f}{\sigma_Q} * \sigma_P \]
+
+Now you may be thinking, how is this useful for computations since the portfolio is pretty much just an affine function of the risky asset? Well the CAL is not used for computations, but to examine its feasible solutions on $(\mu_P, \sigma_P)$ space. This is because the variables $r_f, \mu_Q,$ and $\sigma_Q$ are presumably known and thus we are left with the equation of a line. That being said, the CAL's are a amily of lines indexed by the risky asset. IMPORTANT: On $(\mu_P, \simga_P)$-space we got the efficient frontier which is a horizontal hyperbola. Inside of it lie all feasible portfolios, so for any point inside this convex set we have a unique CAL. We have not yet found an optimal portfolio until we talk about CML.
+
+The slope of the CAL is called the \textbf{sharpe ratio:}
+\[ \frac{\mu_Q - r_f}{\sigma_Q} \]  
+
+What does the sharpe ratio represent? Recall that the numerator is the difference in returns of the assets in the specific portfolio: the risky return minus the risk-free return, and so it represents the "excess return." The Sharpe ratio in turn represents the \textbf{"excess return per unit risk"}. For risky asset $Q$ the sharpe ratio it literary tells us how much better or worse its return is than a savings account for its risk. 
+
+
+\textbf{For a given risk-free asset return (intercept), the steepest CAL is referred to as the Capital Market Line (CML) and it is the one with intecept $r_f$ that is tangent to the efficient frontier}
+
+Where the capital market line is tangent to to the efficient frontier, we got ourselves the statistics of what is called the "tangent portfolio."
+
+\begin{theorem}
+\textbf{One-Fund Theorem}: There is a unique optimal risky portfolio $M$, charachterized by $w_1, w_2, \dots, w_N$ such that any efficient portfolio can be \textit{constructed} as a combination of $M$ AND the risk-free asset $r_f$ by varying $w_0$. This creates a NEW efficient frontier which forms a line called the CML. 
+\end{theorem}
+
+Note that the tangent portfolio changes with $r_f$. If $r_f$ increases, then $\sigma_M$ and $\mu_M$ increases and the slope of the CML decreases.
+
+So there are two stages and two \textit{subsequent} efficient sets to portfolio selection. This is called the \textbf{"SEPARATION PRINCIPLE"} since the determination of the optimal risky portfolio , $M$, is separated from teh preferences of the individual. 
+\begin{itemize}
+\item Determine the tangent portfolio $M$. ie determine how much of each risky stock is optimal.  
+\item Decide the optimal mix of tangent portfolio and the risk-free asset based on investor's risk-preferences.
+\end{itemize}
+
+\subsection{Capital Asset pricing Model}
+The diversification effect says that by adding securities toa portfolio we can reduce its overall risk. In general, risk cannot be reduced to zero.
+
+Two sources of risk of a security:
+\begin{itemize}
+\item Systematic risk: market risk, non-diversifiable risk. The economy/market/system itself might be at a low or go belly up. 
+\item Non-systematic, idiosyncratic, diversifiable risk. Invest in Oil and Tesla, S&P 500 and Gold.  
+\end{itemize}
+
+We can only diversify away non-systematic/idiosyncratic risk. A key consequence is that \textbf{investors should only expect to be compensated for systematic risk} ie the risk of cars, the risk of crypto. Investors \textbf{should not expect tor receive excess return for assuming non-systematic risk} since that can be diversified away. So if i'm a hedge fund manager, investors expect me to bet on all outcomes. If I have a crypto portfolio, they are rewarded for the risk of the crypto market, not for the risk of owning individual coins.... \textbf{NOTE*} feels like there's more to this.
 
 
 
