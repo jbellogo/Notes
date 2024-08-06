@@ -505,13 +505,83 @@ This is more of a qualitative idea.
 
 \subsubsection{Operating Leverage}
  OL is defined by:
- \[ OL = \frac{% change in EBIT}{% change in sales}\]
+ \[ OL = \frac{\text{\% change in EBIT}}{\text{\% change in sales}}\]
  
  It tells by how much profits increase per increase in sales. This depends on fixed costs and variable costs. 
+ 
+ It can be shown that a high proportion of fixed cost leads to a high operating leverage, and thus a high risk. This is because a high operating leverage indicates that profits are more sensitive to sales, and magnifies the effect of cyclicality. 
 
+\subsubsection{Financial leverage}
+Financial leverage: using debt to amplify returns from an investment or project. 
+ \begin{definition}
+ Debt to Equity ratio, $ DE ratio= \frac{Debt}{Equity}$
+ \end{definition}
+ 
+ Asset is a portfolio of Debt and Equity, based on the balace sheet equation. \textbf{WTF????}. Usually $\beta_{E} >> \beta_D \approx 0$. So debt rates are assumed to be fixed or change on a predetermined pattern but not based on the market performance. Meanwhile equity is essentially ownership of shares/stocks so equity must carry the market risk if we assume CAPM and so $\beta_E > 0$
+ 
+ \textbf{Formula 1}:
+ \[ 
+ \beta_E \approx \beta_{Assets} (1+\frac{D}{E})
+ \]
+ 
+ Stay tuned for \textbf{OPTIMAL DE ratio}
+ 
+ Intuitively, higher D/E ratios mean lower betas because $D >> E \implies$ less market/systematic dependency and thus the less market risk, ie smaller beta.
+ 
+ \subsection{Weighted Average Cost of Capital}
+ \textbf{Note:} CAPM and APT are computed by the equity beta and not the asset beta. 
+ 
+ We have computed rates of return for projects using CAPM and APT. An unspoken assumption in all projects seen thus far is that they consist of 100\% equity, but in reality, a lot of projects are also financed by debt, so now we include that in out calculations. 
+ 
+Most companies and projects are financed by a \textit{mix of debt and equity.} Therefore, we need a "blended discount rate" called the weighted adjusted cost of capital. 
 
+For a project: 
+\[
+r_{WACC} = \frac{E}{A}r_E + \frac{D}{A}r_D*(1-T_C)
+\]
+where:
+\begin{itemize}
+\item $r_E$: cost of equity, calculated by CAPM or APT
+\item $r_D$: cost of debt, typically equal to the interest rate on the company's debt, ie at which they borrowed money. 
+\item $T_C$: corporate tax
+\item $\frac{E}{A}$ and $\frac{D}{A}$ are calculated using the $D:E$ ratio where $A = D+E$. If I say D/E of 2 that means debt is twice as equity. 
+\end{itemize}
 
+The reason the debt is multiplied by $1-T_C$ is because interest costs are tax deductible. Consequently, the factor $r_D(1-T_C)$ represents the \textit{after-tax} cost of debt. 
 
+WACC is like a company's \textbf{overall return on assets}. However, note that different subdivisions, departments and projects of a company may have different WACCs
+
+Managers \textbf{desire a low WACC}. This is because Asset value = $OCF \times a_{\infty, r_{WAAC}} = OCF/ r_{WACC}$
+
+Appart from equity and debt, there are two additional factors that effect the cost of capital: liquidity and adverse selection. 
+
+Liquidity here means the ease and cost with which investors can trade a security. 
+
+Since investors think of their final returns as the net of all costs, including transaction costs, amagement fees, etc, stocks with high liquidity usually have a lowe WACC.
+
+In real life we have information asymetry. If i believe you know more than me, I am reluctant to trade with you, I believe that by you knowing more than I do you are likely to take advantage of me. In compensation, I will sell to you at a higher price than I would buy from you. This leads to wider bid-ask spreads and less trades, thus causing lower liquidity. Think Ethereum-backed NFT prices, creators may be tight with Vitalik and believe that he will release version 2.0 and keep the hype but investors are not so sure, so there is large bid-ask spreads. 
+
+To reduce cost of capital, companies can disclose more information, they can also try to make their stock more liquid by making it easier to trade: stock splits, list on more exchenges, and list online. 
+
+\section{Efficient Market Hypothesis (EMH)}
+\begin{definition}
+EMH states that an efficient capital market is one in which stock prices fully reflect avaliable information. It focuses on "information efficiency" rather than "transactional efficiency."
+\end{definition}
+
+If we accept the EMH, there are \textit{significant implications} for investors and firms, including. 
+\begin{itemize}
+\item Information is reflected in security prices immediately once it is known. 
+\item Knowing information after it is publically released is useless. 
+\item Firms should expect to receive the fair value for securities, they cannot profit from fooling investors about their stock prices.
+\end{itemize}
+
+Aside: I see an issue with the first item. Information cannot immediatly affect security prices, as security prices should change as a result of supply/demand, as a result of human activity, at least as far as I know. Thus, there will the smallest window in which the first investors to act as a response to the new information will be able to construct an arbitrage. ie you learn the James Bond plane crashed because you saw it as you had a bloomberg terminal at hand at hand and immediately shorted stock, selling for pre-incident prices and buying post-incident for less (price drop). Note that if you have an automated bot makes decisions based on recently published newspapers, you have to assume the EMH implications hold and even a bot that trades in a matter of seconds is too late just because it uses information that is now public. 
+
+In fact, there may be delays in the market's reaction. And also overreactions that overshoot past the efficient market response. For instance, after good news, the stock price may rise in a parabola peaking before settling to a lower, more stable high, provided the good news permanently (semi-permanently) increase the price. Same with bad news.
+
+The foundations of market efficiency are built upon investor rationality. Investor rationality assumes investors \textit{adjust their estimates from new information} in a rational manner, much like conditional probability, or monty hall. To paraphrase professor John Tsitsiklis: new information about our universe should affect our beliefs about it.
+
+Now it is true that not all investors will not have the same abacus, algorithms, or results. There will be independent deviations from rationality, but these will offset each other; \textit{stupidities will cancel each other out}. Afterall, \textbf{EMH does not require ratioinal individuals, but a rational population overall}. Any existing arbitrage opportunity will be taken in large quantity and vanish quickly. Which is exactly what you noted in your first impressions of EMH. 
 
 
 
