@@ -713,7 +713,7 @@ Assume EMH and frictionless market (no transaction costs).
 \textbf{Financial leverage}: or financial gearing, getting something out of a bunch of promises and deals not out of cash right now. Leveragining your financials, moving stuff around. 
 \end{definition}
 
-\subsubsection{M\&M No taxes}
+\subsubsection{MM No taxes}
 Frictionless environemtn where EMH holds and there are no taxes. 
 
 M \& M says capital structure is independent of the  value of a company. The first doesn't add any value by changing its capital structure. The D/E ratio is irrelevant. The total size of the pie is unaffected by how th epie is sliced. 
@@ -746,14 +746,204 @@ The variables are $(\frac{D}{E}, r_L)$ the debt to equity ratio vs the return on
 
 \begin{itemize}
 \item $r_D$: the cost of debt is CONSTANT. 
-\item $r_U = r_{WAAC} $: the cost of equity for an Unlevered firm equal to its WAAC. CONSTANT.
+\item $r_U = r_{WAAC}$: the cost of equity for an Unlevered firm equal to its WAAC. CONSTANT.
 \item $r_L$: cost of equity for a levered firm
 \end{itemize}
 
+side note, $r_U =  r_{WACC}$ is a direct consequence of plugging in $D = 0$ into the WACC formula.
 
 \textbf{Unlevered: No debt, financed 100\% by equity}. 
 
 \textbf{WAAC:} How much it costs the firm to raise capital.
+
+\subsection{MM with Taxes}
+Debt is tax deductible so conclusions change. 
+
+\textbf{Proposition I:} Firm value \textbf{increases} with financial leverage by the PV of the tax savings.
+
+\textbf{Proposition II:} Same equation of a line on $(D/E, r_L)$ space than in the case without taxes but the slope is smaller as it is multiplied by $1-T_C$
+
+\textit{debt lowers WACC and increases firm value}
+
+\section{Limits to the use of debt}
+MM with taxes says debt lowers WACC and increases firm value and yet 100\% debt $\implies$ bankrupcy. The key is that \textbf{the possibility of bankrupcy has a negative effect on the firms value}
+
+direct costs of financial distress: lawyers. indirect: sales loses, \textbf{agency costs due to conflict of interests}. 
+
+Example of \textbf{agency costs of debt}: debt and equity expected values for two different projects (probabilites on differnt outcomes). choosing the one which has higher equity but lower debt thus advantaging equity holders at the expense of bondholders. This suboptimal decision is an agency cost borne by debtholders. And it will be taken because bond holders don't have voting rights or control whatsoever in how the company is run. 
+
+bondholders are obviously aware of agency costs due to shareholders. 
+
+So, how to manage? Covenants.
+
+covenants: debt terms and conditions.
+positive covenants undertaken by company like insurring assets, min lvl of working capital, provide audited financial statements.
+negative covenants are things the company CANT do: not pay a dividend, not issue more debt above a limit, don't share assets without paying bondholders. 
+
+The point is that covenants are in the interest of the debtholders, so if they believe the covenants are enough to offset the agency costs, they may agree to lower the cost of debt, which benefits shareholders.
+
+Second category are \textbf{agency costs of equity}: those borne by shareholders due to managements behaviour. 
+
+How to manage? reduce free cashflow avaliable to management.
+
+Free cashflow hypothesis: management is Michael Scott and wastes free cashflow. So upst the debt (get assets, buy off shareholders for increased control) so  as to divert more cash to that instead and away from Michael. 
+
+Trade-off theory:
+\textbf{We have some contradictions now, increase in debt brings tax shield advantage (good for firm value) BUUUT, it increases financial distress costs (bad)}
+
+So what is the optimal $D/E$ ratio? Who knows. 
+
+Some firms have their own target ratio, some use pecking order theory, which says that when cash is needed for investment look to get it in the following priorities:
+\begin{enumerate}
+\item Internal financing (do you have the money at hand?)
+\item issue debt.
+\item issue equity.
+\end{enumerate}
+
+So profitable firms use less debt. 
+
+There is information asymmetry between management and sharehodlers. So investors try to read management through their decisions.
+Pessimistic management? shareholders don't want more debt. 
+Optimisitc? bring on the debt and tax shield advantage ... up to a point where financial distress brings firm value back down (parabola peak). This goes both ways, if management increases debt levels the market may take this as a sign that they are optimistic about the future. 
+
+"signaling theory" trying to read management. 
+
+\section{Capital budgeting for levered firms}
+Two methods:
+\begin{itemize}
+\item Adjusted PV: $NPV_{unlevered} + PV_{financing}$ (financing refers to some annualized debt)
+\item WACC: $NPV_{WACC} = C_0 + EBIT(1-T_C)/r_{WACC}$
+\end{itemize}
+
+\subsubsection{APV}
+To caclulate the first term $NPV_{unlevered}$. Use initial cost and then annuity/perpetuity of cashflows formula. Remember to include taxes if necessary.  A perpetuity (goes on forever) is $EBIT*(1-T_C)/r_U$
+
+Second term ($DT_C$ on formula sheet) is the \textbf{present value of financing}. If you borrow money now that is just $D * T_C$ 
+
+USE APV when you know the debt value in dollars. 
+
+Use WACC when you know the debt to equity ratio. this is then used to calulate the WACC. 
+
+\section{Dividend}
+A dividend is a distribution of earnings to shareholders. 
+
+Dates in order:
+\begin{itemize}
+\item Declaration date: when the board decides to pay
+\item Ex-dividend date: important. if you sell a stock on or after this date, you get the dividend.
+\item Record date: when you know you're getting paid
+\item Payment
+\end{itemize}
+
+In a perfect world, the stock price should \textbf{drop} by the dividend amount on ex-dividend date. 
+
+In a frictionless economy, under EMH, and with fixed investment policy, a firm cannot increase value by changing dividend policy.
+
+You can use the ex-dividend date to obtain your preferred cashflow patter, this is called "homemade dividend:" cashflows and dividednd policies by a  company are such that per share you get \$1 now and \$1.1 in a year. You have 100 shares but instead of [100, 110], you want to get 110, 990. The total is off but present values are fine (assuming 10\% interest). You just have to sell 10 shares ex-dividend, that way you get the \$ 100 from your 100 shares plus the 10 from the shares you sold NOW. and in a year from now you get the dividedn on your remaining shares. 
+
+Investors are indiferent to dividend policy because they can \textit{undo or redo whatever dividend policy/pattern they prefer.}
+
+Implications: Dividend policy ...
+\begin{itemize}
+\item doesnt change value
+\item doesnt change stock prices
+\item is a waste of management time
+\end{itemize}
+
+BUUUT companies do alter dividend policy. 
+
+Clientele effect: if there is demand for high paying dividends, say from an increasing number of retirees who just want to upst their monthly income , change your policies and you'll drive up the stock price/raise equity.
+
+\subsubsection{stock splits and repurchases}
+shareholders receive additional shares instead of cash. 
+Stock dividednds are expressed as percentages
+Stock splits as ratios. 
+Assuming EMH, the price per share will adjust. So why bother? well chaning the price of shares might be of interest if you want to keep them liquid. 
+
+\subsubsection{stock repurchases}
+Buy out Eduardo. If you don't sell and you buy out X amount of shares from Edu then you dillute his shares and you control more of the company. 
+
+Dividends are viewed as commitments whereas repurchases are a one time decision. 
+
+Shareholders can be whole corporations!!! In canada, corporations don't pay taxes on dividends received. So if tesla owns majority in apple, and musk owns tesla and through tesla a majority in the board at apple, he can move money from apple to tesla for free through dividends. 
+
+\subsubsection{management bonuses}
+Often a function of the stock price!
+
+\subsubsection{free cash flow hyp}
+paying dividends reduces cash thus reducing agency costs (ie yuo are not paying for Michael's parties, you are paying for your self interest as a shareholder.) 
+
+\section{Options}
+At the money, current stock price = strike price.
+
+Intrinsic value: for in-the money options it is the payout. 
+
+Time value: intrinsic value of the option minus market value
+
+Bermudian options: can be exercised only at scpeified dates between now and maturity. 
+
+Simple option strategy:
+Protective put: buy the underlying stock along with a put. This is like stock insurance. Has the same shape as a call option but shifted upwards. 
+
+\subsubsection{put-call parity}
+RHS a protective put and LHS a call and then a risk free bond which pays K at maturity.
+
+American options cannot be cheaper than european.
+
+\subsection{Options and corporate finance}
+The shareholders have effectively a call option on the firm with strike price of D. They make money if the firm does well.
+
+Debt holders have the oposite view this reflects agency problems introduced earlier.
+
+\section{Forwards}
+The forward price is simply the compunded stock price t periods into the future. $F= S e^{rt}$
+
+If dividends $F = (S-D) \times (1+r)^t$ where $D$ is \textbf{the PV of the dividend payments}.
+
+if it says semi-annual, use 0.5 = t.
+
+If we add additional carrying costs to a forward, like the cost of me keeping the goods for 1 year until you buy them (storage) and call it $q$, we got:
+\[ F = S e^{r+q}t\]
+
+Additional complications:
+-  counterparty risks. can you trust their word to stand the test of time?
+-uncertian dividends. dividends are not guaranteed. 
+- uncertain carryin costs. need to forecast.
+- uncertain interest rates
+- conveneience yield: sometimes it is convenient to hold... like if you were stocked up on toilet paper or masks during covid.
+
+\section{Utility Theory}
+The expected value principle states that you should choose the investment with the highest expected value. but sometimes this is not good for choosing, so whatever you want to maximize and whichever way in which you want to do it can be customized into a utility function wich measures how much happiness you get out of something. 
+
+Examples where expected value principle falls appart:
+Consider insurance. Insurance providers sell insurance that has a positive expected value because they are running a business. So insurance sellers are buying a negative expected value product... why? cause it relaxes them
+
+St. petersburg paradox.
+infinite expected value. but if we have a concave function that models the law of diminishing returns, we have a solution and we can price the game. 
+
+Utility theory:
+instead of emasuring the monetary value of a gample, measure the level of atisfaction. \textbf{what matters to a decision maker is the utility of consuming money, not the monetary amount itself.}
+
+Properties of utility function:
+- increasing. the more the better. 
+- decreasing marginal utility of wealth. concave.  if twice differentiable then u''<0
+- instead of maximizing E[X], maximize utility E[u(X)]
+- u(0)=0 no mooney no utility
+
+loteries are random variables .. they have output space (payouts) and distributions. 
+
+
+Axioms of cardinal utility: 
+completness given two lotteries exactly one of strictly greater than or indiferent (3 outcomes is true.)
+transitivity
+
+continuity. 
+ utility unique up to an afficne transformation.
+Theorem: 
+
+
+
+
 
 
 
