@@ -128,15 +128,39 @@ Let's generalize:
 A \textbf{measure} $\mu$ on an algebra $\mathcal{A} $ is a set function $\mu: \mathcal{A} \rightarrow [0,\infty]$ with the extension of finitely additive measures to include countably infinite events, ie. If $\forall A_1, A_2, \dots \in \mathcal{A}$ or $\forall A_1, A_2, \dots A_n \in \mathcal{A}$ such that $\bigcup A_i \in \mathcal{A}$ and $A_i \cap A_j = \emptyset$ if $i \neq j$, then the measure is additive: $\mu(\bigcup A_i) = \sum \mu(A_i)$
 \end{definition}
 
-What is the fuss about measures on sigma algebras over measures on algebras? well in the regular algebras the union of any finitely many sets is still in the algebra BUT if there are infinitely many sets in an algebra there is no guarantee that the union of infinitely many things is still in the algebra. We do have this guarantee in the case of a sigma algebra. The union will be in the algebra and so we can have an "additive" measure. A $\sigma-$algebra is a more restrictive thing. 
+What is the fuss about measures on sigma algebras over measures on algebras? well in the regular algebras the union of any finitely many sets is still in the algebra BUT if there are infinitely many sets in an algebra there is no guarantee that the union of infinitely many things is still in the algebra. We do have this guarantee in the case of a sigma algebra. The union will be in the algebra and so we can have an "additive" measure. A $\sigma-$algebra is a more restrictive thing.  \\
 
-If a measure has range $[0,1]$, then it is called a \textbf{probability measure.}
+If a measure has range $[0,1]$, then it is called a \textbf{probability measure.} \\ 
 
-So if $\mu(\Omega) = 1$ and $\mu$ is a measure, then $\mu$ is a probability measure. A measure with "total mass one"
-
-
+So if $\mu(\Omega) = 1$ and $\mu$ is a measure, then $\mu$ is a probability measure; A measure with "total mass one." \\
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sloppy notes begin 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{lecture notes}
+A measure on a measurable space $(\Omega, \mathcal{F})$ is a function $\mu : \mathcal{F} \rightarrow \mathbb{R_{\geq 0}}$ such that: 
+\begin{itemize}
+\item $\mu(\emptyset) = 0$
+\item $\mu(\bigcup_{i\in \mathbb{N}} A_i = \sum_{i \in \mathbb{N}})$ given that the union is disjoint, i.e, $A_i \cap A_j = \emptyset \forall i \neq j$. The same follows for intersections.
+\end{itemize}
+
+A measure on $(\Omega, \mathcal{F})$ is $\sigma-$finite if ..
+
+A probability space is a triple $(\Omega, \mathcal{F}, \mu)$ where the $\sigma-$algebra is a $\sigma-$ \textbf{field} (ie $\emptyset \in \mathcal{F}$?) and the measure $\mu$ is a probability measure ie $\mu(\Omega) = 1$ \\
+
+\subsubsection{product sigma fields}
+\textbf{The product} $\sigma$\textbf{-field}: Take two emasurable spaces, $(\Omega_1, \mathcal{F}_1)$ and $(\Omega_2, \mathcal{F}_2)$, the product sigma field $\mathcal{F}_1 \otimes \mathcal{F}_2$ on $\Omega_1 \otimes \Omega_2$ is defined by the sigma field (It's a set. A special set. Hence the $\sigma(\{\})$)
+
+\[ 
+\mathcal{F}_1 \otimes \mathcal{F}_2 := \sigma(\{F_1 \times F_2 : F_1 \in \mathcal{F}_1, F_2 \in \mathcal{F}_2 \})
+\]
+
+It is the smallest sigma field that contains all "rectangles" $F_1 \times F_2$.  
+
+What does this formalize? combining experiments. Like tossing a coin twice, or tossing a coin and then throwing a die. 
+
+\subsubsection{Random elements}
 
 
 
