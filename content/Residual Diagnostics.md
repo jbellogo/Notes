@@ -1,0 +1,1 @@
+The idea behind residual diagnostics is to see if the random component of your model is truly random and does not include deterministic patterns you should be using in the model.
