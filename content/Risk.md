@@ -1,338 +1,19 @@
-### Financial Markets and NPV
 
-Financial markets exist so companies and individuals can adjust consumption across time periods. The purpose is also to facilitate borrowing and lending.
+# Risk Analysis
 
-Investors can invest directly into fiems or via third parties called financial intermediaries which grant them flexibility. 
+In real life, future cashflows are uncertain. Methods to evaluate project with uncertain cashflows: [[Binomial Models]], [[Monte Carlo Simulations]], etc.
 
-
-financial intermediation can take three forms: 
-
-\begin{enumerate}
-
-\item Size intermediation. Eg. banks combine investments of many small investors into large loans for a few borrowers. 
-
-\item Term intermediation. take from short term lenders (savings account) and re-lend to long term borrowers (mortgages).
-
-\item Risk Intermediation. Intermediaries can assume the excess risk and protect borrower (hedge-funds investing into crypto)
-
-\end{enumerate}
-
-  
-
-\begin{definition}
-
-Project. Sequence of cashflows spread over time. 
-
-\end{definition}
-
-  
-
-To evaluate a project we can use several rules. 
-
-# NPV
-
-
-\textbf{NPV rule:} project is good if NPV > 0. This implies the project is better than risk-free borrowing and lending in the market. 
-
-*  Takes TVM into consideration, discounts all cashflows. 
-
-* Easy to evaluate NPV for combinations of projects. 
-
-* Can be applied to any weird pattern of cashflows. 
-
-
-
-  
-
-Cons: 
-
-\begin{itemize}
-
-\item Cashflows must be forecasted. 
-
-\item What should the discount rate be?
-
-\item Doesn't take into consideration size of project. 
-
-\item Doesn't take into consideration required projects, or projects with a differnt time horizon, like a choice between two required insurance plans. 
-
-\end{itemize}
-
-  
-
-
-
-## Capital Budgeting} is the decision-making process for accepting or rejecting new projects/investments.
-
-\end{definition}
-
-  
-
-\begin{theorem}
-
-\[ \text{NPV} > 0 \iff \text{increase in company value} \iff \text{increase in shareholder value}\]
-
-\end{theorem}
-
-  
-
-\subsection{Payback Period Rule}
-
-Measures how long it takes to "payback" the initial investment of a project.
-
-  
-
-Pros:
-
-\begin{itemize}
-
-\item easy
-
-\item gives you a measure of liquidity. 
-
-\end{itemize}
-
-  
-
-Cons:
-
-\begin{itemize}
-
-\item Ignores TVM
-
-\item Ignores all cashflows after the payback period
-
-\item What is the comparison rule? is a payback period of 4 years good? ambiguity.
-
-\end{itemize}
-
-  
-
-so in terms of comparing projects, this only does one thing right: give a measure of liquidity. 
-
-\subsection{Discounted payback period rule}
-
-Number of periods in the future when the cummulative discounted cash flows total the initial investment. 
-
-Pros:
-
-\begin{itemize}
-
-\item gives a measure of liquidity. 
-
-\item Doesn't ignore TVM
-
-\end{itemize}
-
-  
-
-Cons:
-
-\begin{itemize}
-
-\item Ignores all cashflows after the payback period
-
-\item Ambiguity of comparison rule
-
-\end{itemize}
-
-  
-
-\subsection{Internal Rate of Return}
-
-\begin{definition}
-
-\textbf{Cost of capital:} minimum RATE OF RETURN ("cost") needed to justify the "capital" needed to undertake a project.
-
-\end{definition}
-
-  
-
-\begin{definition}
-
-Cost of capital such that the NPV of a project is 0
-
-\end{definition}
-
-  
-
-Rule: Accept a project if IRR > required rate of return. This "required rate of return" 
-
-  
-
-\subsection{Profitability Index}
-
-\[ 
-
-PI = 
-
-\frac{\text{PV of future cashflows}}{{Initial cost}} 
-
-= \frac{\sum_{t=1}^{\infty}\frac{C_t}{(1+r)^t}}{-C_0}
-
-= \frac{C_1 + C_2 + \dots}{|C_0|}
-
- \]
-
-notes:
-
-A project has $PI > 1$ exactly when $NPV > 0$. Convince yourself: Well just look at it mathematically, $ 0  < NPV = C_0 + C_1 + \dots \implies C_1 + C_2 + C_3 + \dots > -C_0$ and thus the nominator of the Profitability index calculator is bigger than the denominator, thus $PI>1$. 
-
-  
-
-  
-
-Interpretation: $PI = 1.2$ means that the future cashflows are 20\% larger than the cost of the principal investment. So "loosely speaking," the project generates a 20\% excess return over its life. 
-
-  
-
-PROS:easy and correct for independent projects 
-
-CONS: Scale. Maybe we don't care about percentage returns and only about absolute returns. 
-
-  
-
-\section{Capital Budgeting}
-
-What cashflows to include in analysis? \textit{net incremental cashflows}, that is, cashflows that occur exclusiveley due to acceptance of the project (not the cost of toilet paper in the office). To identify a comprehensive list of the cashflows as yourslef: 
-
-\begin{center}
-
-What is the difference betweeen the cashflows of the entire firm \textit{with} the project VS \textit{without} the project?
-
-\end{center}
-
-  
-
-We are interested in Cash flows, not accounting income. 
-
-  
-
-We exclude:
-
-\begin{itemize}
-
-\item sunk costs: costs that ocurred in the past. 
-
-\item depreciation
-
-\item goodwill: extra profit paid by other parties.
-
-\item unearned capital gains: appreciation of assets (taxable).
-
-\end{itemize}
-
-  
-
-We include: 
-
-\begin{itemize}
-
-\item Opportunity costs: cashflows that would have happened if the project were not accepted. ie if Rocky Balboa doesn't fight and decides to wash cars instead, he will get a carwashing salary but at the same time give up the opportunity and money that comes from fighting. 
-
-\end{itemize}
-
-  
-
-\subsubsection{formulas}
-
-Operating Cash Flows (OCF): inflows and outflows related to business activity. 
-
-Earnings before interest and taxes (EBIT)
-
-  
-
-\[ OCF = EBIT - Taxes + Depreciation \]
-
-\[ EBIT =  Revenue - Cost - Depreciation \]
-
-\[ Taxes = EBIT \times Cotporate Tax Rate = EBIT 
-
-\times T_C \]
-
-  
-
-The project cashflows include initial cost when purchased (material asssets), and salvage value when fixed assets are sold (inflow) (sale used trucks, machinery, patents, etc at the end.)
-
-  
-
-OCF is independent of depreciation (it ends up cancelling in formula) because, intuitiveley, depreciation as an accounting concept to allocate the initial cost of the product over time, and not a cash cost. 
-
-  
-
-\textbf{NOTE:} Capital cost: initial costs. Cost of capital: rate of return. 
-
-  
-
-\subsection{Capital Cost Allowance}
-
-In Canada, depreciation is NOT tax deductible. Instead the CRA allows a Capital Cost (initial investment) Allowance which provides a "tax-shield" which reduces EBIT and thus taxes.  
-
-  
-
-Every year, the undepreciated capital cost (UCC) is reduced by the CCA rate which depends on the class of the asset at hand (ie $10, 10*(1-r), 10*(1-r)^2$), for instance cars may have a CCA rate higher than warehouses. 
-
-And from that UCC we take a tax rate to get the actual tax shield amount: amount to be deducted from EBIT.  
-
-  
-
-PVCCATS : Present Value of Capital Cost Allowance Tax shield.
-
-  
-
-\subsection{Equivalent Annual Cost}
-
-Used when NPV misses the point. EACs spread the NPV of different projects to each year in a "financially equivalent way"
-
-  
-
-  
-
-\subsection{Inflation} 
-
-\[ (1+Nominal) = (1+ Real) \times (1+Inflation) \]
-
-The CCA tax shields must be calculated in nominal terms, since once the asset is purchased, the entire CCA table is determined REGARDLESS of future inflation. 
-
-  
-
-\subsection{Risk Analysis}
-
-Contrary to prior examples, in real life, future cashflows are uncertain. Methods to evaluate project with uncertain cashflows: Decision trees, MC, etc.
-
-  
-
-\begin{definition}
-
-\textbf{Contribution Margin:} Reveals how much 1 unit of product sales contributes to net income. $ (Unit revenue- \text{unit variable cost}) * (1-T_c) $
-
-\end{definition}
-
-  
-
-Example a Doughnut sells for 1.5, costs .7 to make, its contribution margin is .8 times corporate tax on profit. 
-
-  
-
-\section{Return and Risk Measures}
+## Return and Risk Measures
 
 The financial market is more than just risk-free borrowing and lending. We can invest on  instruments such as cash, stocks, ETFs
 
-  
-
 In general: High risk expects high return. Low risk low return. 
-
-  
 
 to measure return, we consider "hypothetical return of selling now" include dividends of the current period and selling price. 
 
 $Return =  \text{Div}_{t+1} + (P_{t+1}-P_t) = \text{Dividend yield} + \textbf{Capital gains yield}$
-
   
-
 Holding period returns are geometric means. 
-
-  
 
 Risk measures are variance and stdev/volatility.
 
@@ -340,187 +21,90 @@ Drawbacks of volatility as a risk measure: symmetric penalty for loses/profits a
 
 Conditional VaR. Risk can depend on highesr moments: skewness, kurtosis, etc. If R is normal then all higher moments can be calculated from the first 2 (ie mean and var)
 
-  
-
 Stock returns are NOT normally distributed. 
 
   
+# Capital Asset Pricing Model (CAPM)
 
-\section{Capital Asset Pricing Model (CAPM)***}
-
-\subsection{Portfolio of two risky assets}
+### Portfolio of two risky assets
 
 We have a randon variable equation to describe the portfolio RV: $\pi = t*A + (1-t)*B$. A portfolio is a linear combination of risky (Random variable) assets. We wish to compute portfolio statistics, which is easy. 
 
-  
-
 An important question is: What is the best weight distribution for the portfolio? ie what percentage should be invested on asset A and on asset B. To answer that notice that we can do a couple of things: we can maximize return and we can minimize risk as a function of weights $t$.
-
   
-
-\begin{definition}
-
 The feasibility/opportunity set is the the set of portfolios that can be constructed from a given set of assets. This is enforced by the weights constraint $\bm{w}^t \bm{e} = 1 $. Visually, it will be the inside of the hyperbola. 
-
-\end{definition}
-
-  
-
-\begin{theorem}
 
 The efficient set will belong to the frontier/border along the hyperbola. Any portfolio along the efficient frontier is "good enough," and the choice  between efficient portfolios will depend on an individuals "risk tolerance."
 
-\end{theorem}
-
-  
-
-\subsection{Efficient Frontier}
-
 turn attention to multi-asset portfolios. Most variables are intuitive: $\bm{\mu}, R, w, e$. Now, for $\Sigma$, recall that entry $ij$ of the Variance-Covariance Matrix corresponds to $COV(R_i, R_j)$ and that diagonal elements correspond to variances. 
-
-  
 
 Portfolio return: 
 
-\[ \mu_P = \bm{w}^T \bm\mu \]
+$\mu_P = w^T \mu$
 
   
-
 Portfolio variance:
 
-\[ \sigma_P^2 = \bm{w}^T \Sigma \bm{w} \]
+$\sigma_P^2 = w^T \Sigma w$
 
-  
+  A key fact is that **diversification reduces portfolio risk**. 
 
-A key fact is that diversification reduces portfolio risk. 
+$\sigma_P \leq \sum_{i=1}^N |w_i| \times \sigma_i$
 
-\[ \sigma_P \leq \sum_{i=1}^N |w_i| \times \sigma_i \]
-
-  
-
-How do we construct optimal portfolios, uniqueley identified by $\bm w^*$ for a given set of $N$ risky assets.
-
-  
+How do we construct optimal portfolios, uniquely identified by $w^*$ for a given set of $N$ risky assets.
 
 Assumptions: 
 
-\begin{itemize}
-
-\item Single period model, ie no dividends no compounding, just evaluating returns of assets A and B one year from now. 
-
-\item Assets are perfectly divisible, ie $\bm w \in \mathbb{R}^N$
-
-\item No transaction costs and no taxes (this is a good assumption to always mention in our types of questions). 
-
-\item max return, min variance, or both.
-
-\item mean returns and covariances $\Sigma$ are known. 
-
-\item $\Sigma$ is positive definite. This means all  securities in the portfolio are risky ie stocks.
-
-\item Not all expected returns are equal.
-
-\end{itemize}
-
-  
+* Single period model, ie no dividends no compounding, just evaluating returns of assets A and B one year from now. 
+* Assets are perfectly divisible, ie $w \in \mathbb{R}^N$
+* No transaction costs and no taxes (this is a good assumption to always mention in our types of questions). 
+* max return, min variance, or both.
+* mean returns and covariances $\Sigma$ are known. 
+* $\Sigma$ is positive definite. This means all  securities in the portfolio are risky ie stocks.
+* Not all expected returns are equal.
 
 ***** 
 
-\begin{theorem}
-
-\textbf{(Two-Fund Theorem)}: The formula $w_{opt} = w_m + \tau w_z$ states that any efficient portfolio can be replicated by two portfolios where $w_m$ is the minimum variance portfolio, and $w_z$ is self financing. These two portfolios can generate the whole efficient frontier. 
-
-\end{theorem}
-
-  
+## Two-Fund Theorem
+The formula $w_{opt} = w_m + \tau w_z$ states that any efficient portfolio can be replicated by two portfolios where $w_m$ is the minimum variance portfolio, and $w_z$ is self financing. These two portfolios can generate the whole efficient frontier. 
 
 An investor seeking efficient porfolios needs only invest in combinations of two portfolios that are known to be efficient. So only two investment products provide a complete investment strategy.
 
-  
-
-\subsection{Inclusion of a Risk-Free Asset}
+## Inclusion of a Risk-Free Asset
 
 The assumption that $\Sigma$ is positive definite means no security is risk-free. If there was a risk free-asset, $\Sigma$ would have one row of all zeros. 
-
-  
 
 Now let's set up the CAL introduction. First, consider the portfolio $P = (1-w_0)*Q + w_0*r_f$, consisting of one risky asset $Q$ and one risk-free asset with weight $w_0$ and return $r_f$. Recall that the risk free asset is not a random variable  so the only quantity we have from it is its expected return ie the savings account interest. 
 
 We have the following equations for the mean and variance of this portfolio. 
 
-  
-
 Mean:
 
-\[ 
-
-\mu_P = (1-w_0)* \mu_Q + w_0*r_f 
-
-\implies 
-
-\mu_P = \mu_Q + (r_f - \mu_Q)*w_0 \]
-
-  
+$\mu_P = (1-w_0)* \mu_Q + w_0*r_f = \mu_Q + (r_f - \mu_Q)*w_0$
 
 Considering that only the risky asset $Q$ contributes to variance we have volatility:
 
-\[ \sigma_P = (1-w_0)*\sigma_Q 
+$\sigma_P = (1-w_0)*\sigma_Q \implies w_0 = 1- \frac{\sigma_P}{\sigma_Q}$
 
-\implies 
+Combining these two equations by substituting $w_0$ from (2) into (1) we have the Capital Allocation Line (CAL). Note that it requires a couple lines of algebra to show. 
 
-w_0 = 1- \frac{\sigma_P}{\sigma_Q}
-
-\]
+$\mu_P = r_f + \frac{\mu_Q - r_f}{\sigma_Q} * \sigma_P$
 
   
+Now you may be thinking, how is this useful for computations since the portfolio is pretty much just an affine function of the risky asset? Well the CAL is not used for computations, but to examine its feasible solutions on $( \mu_P, \sigma_P)$ space. This is because the variables $r_f, \mu_Q,$ and $\sigma_Q$ are presumably known and thus we are left with the equation of a line. That being said, the CAL's are a family of lines indexed by the risky asset. IMPORTANT: On $(\mu_P,  \sigma_P)$ -space we got the efficient frontier which is a horizontal hyperbola. Inside of it lie all feasible portfolios, so for any point inside this convex set we have a unique CAL. We have not yet found an optimal portfolio until we talk about CML.
 
-Combining these two equations by substituting $w_0$ from (2) into (1) we have the \textbf{Capital Allocation Line (CAL)}. Note that it requires a couple lines of algebra to show. 
+    
+The slope of the CAL is called the **sharpe ratio**, equal to  $\frac{ \mu_Q - r_f}{ \sigma_Q }$.
 
-  
+What does the sharpe ratio represent? Recall that the numerator is the difference in returns of the assets in the specific portfolio: the risky return minus the risk-free return, and so it represents the "excess return." The Sharpe ratio in turn represents the **"excess return per unit risk".** For risky asset $Q$ the sharpe ratio it literary tells us how much better or worse its return is than a savings account for its risk. 
 
-\[ \mu_P = r_f + \frac{\mu_Q - r_f}{\sigma_Q} * \sigma_P \]
-
-  
-
-  
-
-Now you may be thinking, how is this useful for computations since the portfolio is pretty much just an affine function of the risky asset? Well the CAL is not used for computations, but to examine its feasible solutions on $( \mu_P, \sigma_P)$ space. This is because the variables $r_f, \mu_Q,$ and $\sigma_Q$ are presumably known and thus we are left with the equation of a line. That being said, the CAL's are a amily of lines indexed by the risky asset. IMPORTANT: On $(\mu_P,  \sigma_P)$ -space we got the efficient frontier which is a horizontal hyperbola. Inside of it lie all feasible portfolios, so for any point inside this convex set we have a unique CAL. We have not yet found an optimal portfolio until we talk about CML.
-
-  
-
-  
-
-The slope of the CAL is called the \textbf{sharpe ratio:}
-
-\[ \frac{ \mu_Q - r_f}{ \sigma_Q } \]  
-
-  
-
-What does the sharpe ratio represent? Recall that the numerator is the difference in returns of the assets in the specific portfolio: the risky return minus the risk-free return, and so it represents the "excess return." The Sharpe ratio in turn represents the \textbf{"excess return per unit risk"}. For risky asset $Q$ the sharpe ratio it literary tells us how much better or worse its return is than a savings account for its risk. 
-
-  
-
-  
-
-\textbf{For a given risk-free asset return (intercept), the steepest CAL is referred to as the Capital Market Line (CML) and it is the one with intecept $r_f$ that is tangent to the efficient frontier}
-
-  
+For a given risk-free asset return (intercept), the steepest CAL is referred to as the Capital Market Line (CML) and it is the one with intecept $r_f$ that is tangent to the efficient frontier
 
 Where the capital market line is tangent to to the efficient frontier, we got ourselves the statistics of what is called the "tangent portfolio."
 
-  
-
-\begin{theorem}
-
-\textbf{One-Fund Theorem}: There is a unique optimal risky portfolio $M$, charachterized by $w_1, w_2, \dots, w_N$ such that any efficient portfolio can be \textit{constructed} as a combination of $M$ AND the risk-free asset $r_f$ by varying $w_0$. This creates a NEW efficient frontier which forms a line called the CML. 
-
-\end{theorem}
-
-  
+One-Fund Theorem: There is a unique optimal risky portfolio $M$, charachterized by $w_1, w_2, \dots, w_N$ such that any efficient portfolio can be constructed as a combination of $M$ AND the risk-free asset $r_f$ by varying $w_0$. This creates a NEW efficient frontier which forms a line called the CML. 
 
 Note that the tangent portfolio changes with $r_f$. If $r_f$ increases, then $\sigma_M$ and $\mu_M$ increases and the slope of the CML decreases.
-
-  
 
 So there are two stages and two \textit{subsequent} efficient sets to portfolio selection. This is called the \textbf{"SEPARATION PRINCIPLE"} since the determination of the optimal risky portfolio , $M$, is separated from teh preferences of the individual. 
 
@@ -550,12 +134,7 @@ Two sources of risk of a security:
 
 \end{itemize}
 
-  
-
-  
-
-  
-
+    
 We can only diversify away non-systematic/idiosyncratic risk. A key consequence is that \textbf{investors should only expect to be compensated for systematic risk} ie the risk of cars, the risk of crypto. Investors \textbf{should not expect tor receive excess return for assuming non-systematic risk} since that can be diversified away. So if i'm a hedge fund manager, investors expect me to bet on all outcomes. If I have a crypto portfolio, they are rewarded for the risk of the crypto market, not for the risk of owning individual coins.... \textbf{NOTE*} feels like there's more to this.
 
   
@@ -568,19 +147,10 @@ The systematic risk of a security is the market risk of that security, ie how it
 
   
 
-So, to quantify the systematic risk of security A, we need the know its correlation with the market portfolio. 
+So, to quantify the systematic risk of security A, we need the know its correlation with the [[market portfolio]]. 
 
-  
 
-\begin{definition}
-
-\textbf{Market portfolio @TODO DEFINE !!!!!???/}
-
-\end{definition}
-
-  
-
-Given a security $A$ and a market porfolio $M$, we define the securitiy's beta, $\beta_A$ by:
+Given a security $A$ and a [[market portfolio]] $M$, we define the securitiy's beta, $\beta_A$ by:
 
 \[ \beta_A = \frac{Cov[R_A, R_M]}{Var[R_M]}\]
 
@@ -634,7 +204,7 @@ Note that CAPM tell us the expected return of an asset independent of its volati
 
   
 
-\subsection{Security Market Line (SML)}
+## {Security Market Line (SML)}
 
 The CAPM generates a line in the $(\beta, \mu)-$plane called the Security Market Line $(SML).$ The CAPM is uniquely charachterized by the market and the risk-free rate (intercept $r_f$, slope $\mu_M -r_f$). In theory, \textbf{all securities lie on the SML line}. By plotting actual securities and comparing them to their expected location on the SML, we can determine if a security is correctly priced. 
 
@@ -683,8 +253,7 @@ to a estimator version where we regress on observed returns of both a market pro
 \textbf{Note} that in this equation, we observe $R_{A_i}$ and $R_{M_i}$. Our residuals are $\epsilon_{A_i}$, and we are regression to find parameters $\alpha_A$ and $\beta_A$. In theory, $\alpha=0$ since all securities should lie on the SML, but this is not always the case so we call it \textbf{Jensen's alpha}. If $\alpha_A > 0$ then our security has excess risk adjusted returns above that predicted by CAPM. This is why investors are always "seeking alpha."
 
   
-
-\section{Arbitrage Pricing Theory (APT)}
+# Arbitrage Pricing Theory (APT)
 
 It's all about expected returns. 
 
@@ -794,9 +363,7 @@ Common assumptions:
 
   
 
-  
-
-\textbf{CAPM vs APT}
+# CAPM vs APT
 
 CAPM deals with expected returns, APT with actual returns, it looks at the unexpected returns that deviate from the predicted. 
 
@@ -840,7 +407,6 @@ Assume an universe of $N$ assets. Then the expected return on asset $i$ satisfie
 
 \]
 
-  
 
 the values $\gamma_i, i \in [1,\dots, k]$" are the same for all $N$ assets. These are called the "factor risk premiums." 
 
@@ -850,37 +416,25 @@ NOTE: $\beta_{i,1}$ measures how much factor \#1 affects asset $i$ while $\gamma
 
 Turns out that $\epsilon_A$ is a random variable with zero mean and some non-zero variance. 
 
-  
-
 Finally if we use the law of large numbers (expected value of average is expected value of individuals as sum goes to infty), we get that in large portfolios, the idiosyncratic risk is all diversified away so $\epsilon_A$
 
   
 
-  
-
-\section{Risk, Return, and Capital Budgeting}
+# Risk, Return, and Capital Budgeting
 
 The discount rate for a project is driven primarily by the \textbf{project beta} and not by the company's beta. So the interest of making a samsung phone will depend on the sensitivity of phones to the market and not so much on the sesnsitivity of samsung to the market... thinking of forecasting concepts, samsung and samsung phones are linearly dependent. Samsung phones has the most information, don't include unecessary info or it will emss up the regression... huh?
 
   
 
-\newpage
-
-  
-
 \textbf{How do we compute the beta of a project?} depends on the project obviously.
 
-If the project "looks like" an extension of the company, use comapny's beta. If it looks very different, use the industry beta.
-
-  
-
-  
+If the project "looks like" an extension of the company, use comapny's beta. If it looks very different, use the industry beta.  
 
 If tim hortons has a project consisting of opening a new location... well that project pretty much is the embodiment of the company so use the company beta. But if Tim Hortons is raising money for cancer, then use the cancer donations "industry" beta to get a better idea of your rate of return (ie we can expect a 10\% return in donations (return) based on publicity investment because the donations beta is 0.1 (constant always) and the current F is really low because the economy is bad rn so people are not donating as much as they normally do (actual - expected donation returns).
 
   
 
-\subsection{Determinants of Beta}
+### {Determinants of Beta}
 
 Different companies and projects have different betas due to different factors such as: 
 
@@ -894,7 +448,7 @@ Different companies and projects have different betas due to different factors s
 
   
 
-\subsubsection{cyclicality of revenues}
+# Cyclicality of revenues}
 
 \textbf{cyclical stocks have high betas}
 
@@ -1012,7 +566,7 @@ To reduce cost of capital, companies can disclose more information, they can als
 
   
 
-\section{Efficient Market Hypothesis (EMH)}
+# Efficient Market Hypothesis (EMH)}
 
 \begin{definition}
 
@@ -1052,7 +606,7 @@ Now it is true that not all investors will not have the same abacus, algorithms,
 
   
 
-\subsection{Types of Market Efficiency}
+## Types of Market Efficiency
 
 \begin{itemize}
 
@@ -1066,7 +620,7 @@ Now it is true that not all investors will not have the same abacus, algorithms,
 
   
 
-\subsubsection{Weak form Efficiency}
+### {Weak form Efficiency
 
 Security prices reflect all information contained in past price and volume data. 
 
@@ -1086,7 +640,7 @@ If technical analysis works $\implies$ the market is $ < $ weakly efficient.
 
   
 
-\subsubsection{Semi-strong form efficiency}
+### {Semi-strong form efficiency}
 
 Security prices reflect all publicly available information. Publicly available information includes historical price, volume, also company financial statements and annual reports, public info about competitors, interest rates, GDP data, and weather forecasts. 
 
@@ -1099,14 +653,13 @@ Implies \textbf{fundamental} analysis is useless.
 If fundamental analysis works $\implies$ the market is $ < $ semi-strongly efficient. 
 
   
-
-\subsubsection{Strong Form Efficiency}
+### Strong Form Efficiency
 
 Security prices reflect all information -public and private. If news becomes known to someone -ANYONE, the market instantly reacts to it rationally. Insider trading cannot profit. This is the "best" market... why? if margins are fair they are tighter then how do we make money through financial markets. EXACTLY! if the markets are strong form efficient, why trade stocks at all? the only way to make money is by selling products. In reality almost no one believes strong form EMH as it is difficult to believe that insider trading cannot profit. It's like saying that if the two fighters in a boxing match agree that the dog will win beforehand and they both place a bet on him, they won't profit.Insider trading should intuitiveley work. Or simply if you know the company's financial are awful because you're the chief accountant and you get fired, then you will go ahead and short some stock before it goes public. 
 
   
 
-\subsubsection{Misconceptions of EMH}
+### Misconceptions of EMH
 
 \textbf{"It is not possible to make money in the market"}. EMH does says is that prices reflect information quickly and accurately, so thre is no way to consistenly "outsmarting" the market. But you do make money, stocks have an expected return with associated risk.
 
@@ -1117,8 +670,6 @@ Security prices reflect all information -public and private. If news becomes kno
   
 
 \textbf{"Prices are random for no reason"}. Prices reflect informaiton and are driven by new and random information - so there are reasons, they just arrive randomly. 
-
-  
 
   
 
@@ -1142,7 +693,6 @@ Three types of market efficiencies
 
 We will assume the EMH.  
 
-  
 
 \section{Long-term financing (Debt and Equity)}
 
@@ -1158,13 +708,13 @@ To raise cash and pay for projects, companies have two main tools:
 
   
 
-\subsection{Equity}
+### Equity
 
 Comapnies issue shares through IPOs and then subsecquent public offerings. The amount of shares are refulated by the Articles of Incorporation so as to protect investors from management dilluting their shares. Shares of a stock are a companies fundamental ownership units. 
 
   
 
-\subsubsection{Common Shares}
+### Common Shares
 
 To assert voting control, they are broadly divided into voting rights.
 
@@ -1180,7 +730,7 @@ To assert voting control, they are broadly divided into voting rights.
 
   
 
-\subsubsection{Preferred Shares}
+### Preferred Shares
 
 They are like a "hybrid secutiry" because they behave like debt and equity. 
 
@@ -1230,7 +780,6 @@ Additional preferred shares features:
 
 \end{itemize}
 
-  
 
 \subsection{Shareholder rights}
 
@@ -1252,7 +801,7 @@ Shareholders vote to appoint the board of directors, the board then hires and su
 
   
 
-\subsection{Debt}
+# Debt
 
 Debt holders are not owners, they have no control over the company. They rely on the loan contract to protect their interest. 
 
@@ -1280,7 +829,7 @@ In the event of bankrupcy, investors are paid in this order:
 
   
 
-\section{Capital structure (M \& M Propositions)}
+# Capital structure (M \& M Propositions)
 
 The value of a firm equals the value of its assets so it is equal to what it took to get them  ie its debt and equity (energy and balances are not created or destroyed, just transformed). 
 
@@ -1312,7 +861,6 @@ Assume EMH and frictionless market (no transaction costs).
 
 Frictionless environemtn where EMH holds and there are no taxes. 
 
-  
 
 M \& M says capital structure is independent of the  value of a company. The first doesn't add any value by changing its capital structure. The D/E ratio is irrelevant. The total size of the pie is unaffected by how th epie is sliced. 
 
@@ -1320,7 +868,6 @@ M \& M says capital structure is independent of the  value of a company. The fir
 
 Becoming levered means getting debt. 
 
-  
 
 \textbf{Proposition I: .}
 
@@ -1339,8 +886,6 @@ Implications:
 \end{itemize}
 
 Remember that in perpetuity PV =  $C/r$. The cashflows of a firm are their EBIT (pre interest and tax means we include both share and debt holders) and WACC is a firms cost of capital... apple can raise money with its eyes closed but your business probably can't. So, we have $PV = EBIT/WACC$
-
-  
 
   
 
@@ -1370,7 +915,6 @@ The variables are $(\frac{D}{E}, r_L)$ the debt to equity ratio vs the return on
 
   
 
-\begin{itemize}
 
 \item $r_D$: the cost of debt is CONSTANT. 
 
@@ -1378,7 +922,6 @@ The variables are $(\frac{D}{E}, r_L)$ the debt to equity ratio vs the return on
 
 \item $r_L$: cost of equity for a levered firm
 
-\end{itemize}
 
   
 
@@ -1408,11 +951,11 @@ Debt is tax deductible so conclusions change.
 
   
 
-\textit{debt lowers WACC and increases firm value}
+*debt lowers WACC and increases firm value*
 
   
 
-\section{Limits to the use of debt}
+## Limits to the use of debt
 
 MM with taxes says debt lowers WACC and increases firm value and yet 100\% debt $\implies$ bankrupcy. The key is that \textbf{the possibility of bankrupcy has a negative effect on the firms value}
 
@@ -1434,7 +977,7 @@ So, how to manage? Covenants.
 
   
 
-covenants: debt terms and conditions.
+**Covenants**: debt terms and conditions.
 
 positive covenants undertaken by company like insurring assets, min lvl of working capital, provide audited financial statements.
 
@@ -1466,39 +1009,27 @@ Trade-off theory:
 
 So what is the optimal $D/E$ ratio? Who knows. 
 
-  
 
 Some firms have their own target ratio, some use pecking order theory, which says that when cash is needed for investment look to get it in the following priorities:
 
-\begin{enumerate}
+* Internal financing (do you have the money at hand?)
+* issue debt.
+* issue equity.
 
-\item Internal financing (do you have the money at hand?)
-
-\item issue debt.
-
-\item issue equity.
-
-\end{enumerate}
-
-  
 
 So profitable firms use less debt. 
-
-  
 
 There is information asymmetry between management and sharehodlers. So investors try to read management through their decisions.
 
 Pessimistic management? shareholders don't want more debt. 
 
 Optimisitc? bring on the debt and tax shield advantage ... up to a point where financial distress brings firm value back down (parabola peak). This goes both ways, if management increases debt levels the market may take this as a sign that they are optimistic about the future. 
-
   
 
 "signaling theory" trying to read management. 
 
-  
 
-\section{Capital budgeting for levered firms}
+### Capital budgeting for levered firms
 
 Two methods:
 
@@ -1512,7 +1043,7 @@ Two methods:
 
   
 
-\subsubsection{APV}
+### APV
 
 To caclulate the first term $NPV_{unlevered}$. Use initial cost and then annuity/perpetuity of cashflows formula. Remember to include taxes if necessary.  A perpetuity (goes on forever) is $EBIT*(1-T_C)/r_U$
 
@@ -1520,7 +1051,7 @@ To caclulate the first term $NPV_{unlevered}$. Use initial cost and then annuity
 
 Second term ($DT_C$ on formula sheet) is the \textbf{present value of financing}. If you borrow money now that is just $D * T_C$ 
 
-  
+
 
 USE APV when you know the debt value in dollars. 
 
@@ -1529,8 +1060,7 @@ USE APV when you know the debt value in dollars.
 Use WACC when you know the debt to equity ratio. this is then used to calulate the WACC. 
 
   
-
-\section{Dividend}
+# Dividends
 
 A dividend is a distribution of earnings to shareholders. 
 
@@ -1538,17 +1068,12 @@ A dividend is a distribution of earnings to shareholders.
 
 Dates in order:
 
-\begin{itemize}
+* Declaration date: when the board decides to pay
+* Ex-dividend date: important. if you sell a stock on or after this date, you get the dividend.
+* Record date: when you know you're getting paid
+* Payment
 
-\item Declaration date: when the board decides to pay
 
-\item Ex-dividend date: important. if you sell a stock on or after this date, you get the dividend.
-
-\item Record date: when you know you're getting paid
-
-\item Payment
-
-\end{itemize}
 
   
 
@@ -1562,7 +1087,6 @@ In a frictionless economy, under EMH, and with fixed investment policy, a firm c
 
 You can use the ex-dividend date to obtain your preferred cashflow patter, this is called "homemade dividend:" cashflows and dividednd policies by a  company are such that per share you get \$1 now and \$1.1 in a year. You have 100 shares but instead of [100, 110], you want to get 110, 990. The total is off but present values are fine (assuming 10\% interest). You just have to sell 10 shares ex-dividend, that way you get the \$ 100 from your 100 shares plus the 10 from the shares you sold NOW. and in a year from now you get the dividedn on your remaining shares. 
 
-  
 
 Investors are indiferent to dividend policy because they can \textit{undo or redo whatever dividend policy/pattern they prefer.}
 
@@ -1570,27 +1094,19 @@ Investors are indiferent to dividend policy because they can \textit{undo or red
 
 Implications: Dividend policy ...
 
-\begin{itemize}
+* doesnt change value
+* doesnt change stock prices
+* is a waste of management time
 
-\item doesnt change value
 
-\item doesnt change stock prices
-
-\item is a waste of management time
-
-\end{itemize}
 
   
-
 BUUUT companies do alter dividend policy. 
 
-  
 
 Clientele effect: if there is demand for high paying dividends, say from an increasing number of retirees who just want to upst their monthly income , change your policies and you'll drive up the stock price/raise equity.
 
-  
-
-\subsubsection{stock splits and repurchases}
+### Stock splits and repurchases
 
 shareholders receive additional shares instead of cash. 
 
@@ -1620,7 +1136,6 @@ Shareholders can be whole corporations!!! In canada, corporations don't pay taxe
 
 Often a function of the stock price!
 
-  
 
 \subsubsection{free cash flow hyp}
 
@@ -1628,7 +1143,7 @@ paying dividends reduces cash thus reducing agency costs (ie yuo are not paying 
 
   
 
-\section{Options}
+# Options
 
 At the money, current stock price = strike price.
 
@@ -1652,7 +1167,7 @@ Protective put: buy the underlying stock along with a put. This is like stock in
 
   
 
-\subsubsection{put-call parity}
+# Put-call parity
 
 RHS a protective put and LHS a call and then a risk free bond which pays K at maturity.
 
@@ -1662,7 +1177,7 @@ American options cannot be cheaper than european.
 
   
 
-\subsection{Options and corporate finance}
+# Options and corporate finance
 
 The shareholders have effectively a call option on the firm with strike price of D. They make money if the firm does well.
 
@@ -1672,7 +1187,7 @@ Debt holders have the oposite view this reflects agency problems introduced earl
 
   
 
-\section{Forwards}
+# Forwards
 
 The forward price is simply the compunded stock price t periods into the future. $F= S e^{rt}$
 
@@ -1706,25 +1221,22 @@ Additional complications:
 
   
 
-\section{Utility Theory}
+# Utility Theory
 
 The expected value principle states that you should choose the investment with the highest expected value. but sometimes this is not good for choosing, so whatever you want to maximize and whichever way in which you want to do it can be customized into a utility function wich measures how much happiness you get out of something. 
 
-  
 
 Examples where expected value principle falls appart:
 
 Consider insurance. Insurance providers sell insurance that has a positive expected value because they are running a business. So insurance sellers are buying a negative expected value product... why? cause it relaxes them
 
   
-
 St. petersburg paradox.
 
 infinite expected value. but if we have a concave function that models the law of diminishing returns, we have a solution and we can price the game. 
 
   
 
-Utility theory:
 
 instead of emasuring the monetary value of a gample, measure the level of atisfaction. \textbf{what matters to a decision maker is the utility of consuming money, not the monetary amount itself.}
 
@@ -1739,59 +1251,15 @@ Properties of utility function:
 - instead of maximizing E[X], maximize utility E[u(X)]
 
 - u(0)=0 no mooney no utility
-
   
 
 loteries are random variables .. they have output space (payouts) and distributions. 
 
-  
 
-  
 
 Axioms of cardinal utility: 
-
 completness given two lotteries exactly one of strictly greater than or indiferent (3 outcomes is true.)
-
 transitivity
-
-  
-
 continuity. 
-
  utility unique up to an afficne transformation.
 
-Theorem: 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-\end{document}

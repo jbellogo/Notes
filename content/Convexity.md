@@ -1,0 +1,1 @@
+In geometry, a set of points is **convex** if it contains every [line segment](https://en.wikipedia.org/wiki/Line_segment "Line segment") between two points in the set.
