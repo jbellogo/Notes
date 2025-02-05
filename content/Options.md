@@ -1,24 +1,34 @@
   
-An **option** is a financial derivative/contract stipulated today ($t=0$) that gives the buyer the right to buy or sell the underlying asset within a specified period up to maturity $t=T$ and at a specified strikeprice independent of the asset value $S_t$. Just like with any bet, you can bet on both all outcomes in [[Call Options]] or [[Put Options]].
+An **option** is a financial derivative/contract stipulated today ($t=0$) that gives the buyer the right to buy or sell an underlying security, often a stock, within a specified period up to maturity $t=T$ and at a specified *strike price*, $K$, independent of the asset value at that time $S_T$. 
 
-# Stock
-A share in ownership of a company's equity. 
+In math terms, it's a bet contract, where you bet on where a scalar function of the stock over the time horizon $f : S_{[0,T]} \rightarrow \mathbb{R}$ lies in relation to the strike price. A [[#Call]] options bets on $f(S_t)>K$  and a [[#Put]]  on the opposite  $f(S_t)>K$.
 
-# Security / Underlying
-A tradable financial asset. A house, stock, etc. 
+# Definitions
+* Security / Underlying: A tradable financial asset. A house, stock, etc. 
+* Derivative: A "secondary" security. A contract that derives its value and risk from  particular security. An option is a derivative of a stock because it is a "bet" on the stock, it has "derived" value from the stock.
+* Strike-price K specified in the option contract $t=0$. 
 
-# Derivative
-A "secondary" security. A contract that derives its value and risk from  particular security. An option is a derivative of a stock because it is a "bet" on the stock, it has "derived" value from the stock.
+**Question:** If you are the issuer (short position) of an option how do you set a a strike price on the contract for short/put?
 
-\textbf{Market risk} risk of loss due to uncertainty in the financial markets. A big question is how can market risk be modelled, measured and analyzed? How can risk be reduced?
+# Leverage Effect
+Trading options is considered risky, we see how the payouts are all or nothing. trading options is considered  riskier than trading the stock. 
 
-## Long position
+This si teh leverage effect: The relative loss in the option can be much more than the relative loss in teh asset. Becuae of the all or nothing payout in options, you loose 100\% of what you paid to get into the bet $C_0 = V_0$.
+
+
+# Bet Directions 
+
+##  Position
+
+#### long 
 held by the holder (=buyer) of an option
 
-\item Lending (depositing) money to the bank BUYING a bond form the bank (Long)
+You believe the stock will appreciate in value, optimistic about it, so you want to own it to sell later, or have the right to buy at a later date for a strike price you believe will be under the price at that time.
+
+Lending (depositing) money to the bank BUYING a bond form the bank (Long)
 
 
-## short position
+#### short position
 held by the writer (=seller) of an option. There is usually an upfront capital you have to put down for the shorting of a stock, you don't just sign you'll give it back in the future and take the money out of thin air. 
 
 In theory, the short and long position profits will always mirror each other since they are the only ones involved in the bet, one has to loose what the other one wins. There are hidden fees in practice.
@@ -26,10 +36,11 @@ In theory, the short and long position profits will always mirror each other sin
 We use the following language when talking about an option: 
 
 \item Borrowing is SELLING a bond to the bank. I sell them the contract, for cash today, that says I will pay them with interest at a future date.
-# Call
+
+## Call
 right to buy at strike price (profit from stock increase over strike-price)
 
-# Put
+## Put
 right to sell at strike price (profit from stock decrease under strike-price)
 
 Scenario 
@@ -39,27 +50,64 @@ Say you believe the stock is going to go down but you don't have the stomach to 
 Unlike with [[Stocks#Shorting|shorting]] , you don't borrow and sell the stock in advanced. 
 
 
-# Types
-* [[European Options]]
-* [[American Options]]
-* [[Asian Options]]
+
+# Types of functions
+
+## European 
+
+Right to exercise the contract option at maturity T, for strike price. 
+Path independent option. It doesn't matter how volatile the underlying is in the time before maturity. 
 
 
-# Strike-price K
-specified in the option contract $t=0$. 
-**Question:** If you are the issuer (short position) of an option how do you set a a strike price on the contract for short/put?
+### European Call Option Example
+
+If I am confident the stock price will increase over one year from current price $S_0$ above the threshold $K$. I can enter the following bet: 
+
+*  At time $t=0$ (today) I pay the \textbf{price of the option} $C_0 \geq 0$ to enter the bet. 
+
+*  At maturity $t=T$, I have the **right but not the obligation** to buy the stock for $K$.
+
+	* If  $S_T > K$, I would choose to exercise this option, that way I can buy the option for less that what it is worth at the time ($K$) and then sell it for $S_t$. Payout is $S_T-K$, profit is $S_T- K - C_0$.
+	* If $S_T < K$, then it doesn't make sense for me to exercise the option. So my payout is $0$ and profit is $-C_0$ i.e. $100\%$ of my principal, [[#Leverage Effect| a big loss]].
+
+The payout is:
+
+$$C_T = \max{ \{ S_T - K, 0 \}}$$
+
+This is in turn a [[Random Variable| random variable]], which is a function of $S_t$. 
+
+
+## American
+Any-time between now and maturity pay.
+Path dependent option.
+
+## Asian
+Average stock price of the evolution up-until maturity. 
+  
+
+# Option pricing 
+
+Now the central questions is:  What is a fair price for $C_0$ i.e. the price of the contract?
+
+We may also be interested in the evolution of the price of the derivative overtime, the fair price for $C_t , t \in [0, T)$. Maybe we want to sell it? or just calculate payouts. 
+  
+
+Under the [[Black-Scholes]] model there is a closed form $C_0$ and $C_t$. 
+
+  
+
+Consider an [[European| european option]] . We make money if we are right about our prediction ($S_T > K$ for the call, $S_T < K$ for the put) exactly at time $T$.
+
+  
+
+Predicting points is much harder and unreliable than predicting trends, especially if the stock price is relatively volatile (really big up and downs to relative to stock price). Say we have a call option and the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endangered tiger which causes the $S_T$ to plummet bellow $K$.
+
+
+To protect against such things we may look to bet on path-dependant options like the Asian or American Option. This way we bet on trends and not on points.  \textbf{We expect these to be less risky?}
 
 
 
-# Leverage Effect
-Trading options is considered risky, we see how the payouts are all or nothing. trading options is considered  riskier than trading the stock. 
-
-This si teh leverage effect: The relative loss in the option can be much more than the relative loss in teh asset. Becuae of the all or nothing payout in options, you loose 100\% of what you paid to get into the bet $C_0 = V_0$.
-
-
-
-    
-# Portfolios 
+## Portfolios 
 Our market and portfolios will often have:
 
 * One risk-free asset (bond/a bank account earning interest deterministically, or a loan compounding interest in which case we look at its PV )
@@ -67,12 +115,10 @@ Our market and portfolios will often have:
 * One or more derivatives on the risky asset. ie calls,puts, and such. 
 
 We use the risk-free asset to borrow or lend money to finance our trading strategy since we will be looking at money over-time and its intrinsic value changes. 
-
   
 We assume our cash account *continuously* compounds at constant risk free rate $r \geq 0$. 
 
 We will use a *replicating portfolio* strategy to price derivative. 
-
 
 
 Denote by $V_t = V(S_t,t )$ the value of the option at time $t$. It depends on the value of the underlying asset $S_t$ and sometimes, like in the Asian option case, it depends on the entire evolution up to time $t$. For each time $t > 0$, $S_T$ is a random variable ... and I think $S_t$ and $S_j$ don't have the same distribution, that's what makes them exciting, we don't have the joint but we can infer things
@@ -85,7 +131,7 @@ Let's think about american options because the maximization of european options 
 
 
 
-## Risk free-asset
+### Risk free-asset
 
 [[Interest]]
 
@@ -128,27 +174,7 @@ This relates the randomized/stochastic performance of the bond ($d$ and $u$) to 
 
 Assume we have $1 \leq 1+r < d < u$ instead. Then we can construct an arbitrage strategy by noting that the stock will always outperform the bond independently of weather it goes down or up. This means we can borrow money from the bank and buy stock which is guaranteed to grow more than our debt to the bank... hence arbitrage. There is no options here, we are just buying entire shares. This is in fact a self-financing situation $\pi_0 = 0$ since we don't have to put down a dime in theory. 
   
-  
 
-
-# Option pricing 
-Now the central questions is:  What is a fair price for $C_0$ i.e. the price of the contract?
-
-We may also be interested in the evolution of the price of the derivative overtime, the fair price for $C_t , t \in [0, T)$. Maybe we want to sell it? or just calculate payouts. 
-  
-
-Under the [[Black-Scholes]] model there is a closed form $C_0$ and $C_t$. 
-
-  
-
-Consider an \textbf{European Option}. We make money if we are right about our prediction ($S_T > K$ for the call, $S_T < K$ for the put) exactly at time $T$.
-
-  
-
-Predicting points is much harder and unreliable than predicting trends, especially if the stock price is relatively volatile (really big up and downs to relative to stock price). Say we have a call option and the stock price of BMW is increasing consistently for one year but then at maturity the owner of company decides to go hunt an endangered tiger which causes the $S_T$ to plummet bellow $K$.
-
-
-To protect against such things we may look to bet on path-dependant options like the Asian or American Option. This way we bet on trends and not on points.  \textbf{We expect these to be less risky?}
 
 ## Binomial Lattice 
 
@@ -175,7 +201,7 @@ If $\pi_T = V_T$ but $\pi_0 > V_0$ or $\pi_0 < V_0$ we can construct an arbitrag
 ## Discounted expected payout 
 Another approach is by computing the discounted expected payout under a special probability measure $\mathbb{Q}$ which we call \textbf{risk neutral} or \textbf{arbitrage free pricing measure}.  
 
-The idea with the latter is to find a [[Measure Theore| probability measure]] $\mathbb{Q}$ such that:
+The idea with the latter is to find a [[Measure Theory| probability measure]] $\mathbb{Q}$ such that:
 
 $$\mathbb{E}^{\mathbb{Q}}(S_t) = e^{rT}S_0 $$
 

@@ -3,6 +3,9 @@
 
 In real life, future cashflows are uncertain. Methods to evaluate project with uncertain cashflows: [[Binomial Models]], [[Monte Carlo Simulations]], etc.
 
+
+\textbf{Market risk} risk of loss due to uncertainty in the financial markets. A big question is how can market risk be modelled, measured and analyzed? How can risk be reduced?
+
 ## Return and Risk Measures
 
 The financial market is more than just risk-free borrowing and lending. We can invest on  instruments such as cash, stocks, ETFs

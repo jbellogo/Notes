@@ -1,7 +1,8 @@
 
+A share in ownership of a company's equity. 
+
 
 Can represent their prices as a [[stochastic process]] indexed by time $S_t$.
-
 
 # Normal distribution
 
