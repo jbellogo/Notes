@@ -85,7 +85,7 @@ Path dependent option.
 Average stock price of the evolution up-until maturity. 
   
 
-# Option pricing 
+# ricing 
 
 Now the central questions is:  What is a fair price for $C_0$ i.e. the price of the contract?
 
