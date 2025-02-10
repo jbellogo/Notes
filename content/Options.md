@@ -51,7 +51,7 @@ Unlike with [[Stocks#Shorting|shorting]] , you don't borrow and sell the stock i
 
 
 
-# Types of functions
+# Payout  functions
 
 ## European 
 
@@ -85,7 +85,7 @@ Path dependent option.
 Average stock price of the evolution up-until maturity. 
   
 
-# ricing 
+# Pricing 
 
 Now the central questions is:  What is a fair price for $C_0$ i.e. the price of the contract?
 
@@ -93,8 +93,6 @@ We may also be interested in the evolution of the price of the derivative overti
   
 
 Under the [[Black-Scholes]] model there is a closed form $C_0$ and $C_t$. 
-
-  
 
 Consider an [[European| european option]] . We make money if we are right about our prediction ($S_T > K$ for the call, $S_T < K$ for the put) exactly at time $T$.
 
@@ -140,7 +138,7 @@ We assume our cash-accounts continuously compound at risk free rate $r \geq 0$.
 Definition makes sense, in practice, how do we get the risk free rate? We read whatever the "US treasury" rate says. Well you need this r for your caclualtions, it doesn't matter much what it is since you want to get results independent of its realized constant value. 
 
   
-## Risky Asset
+###  Risky Asset
 
 If we want to price an option whose value depends only on $S_T$ (european options for instance), we need a model for the random variable $S_T$. 
 
@@ -166,8 +164,6 @@ The assumption: In an arbitrage free-market,
 
 $$ 0 < d< 1+r< u $$
 
-
-
 This relates the randomized/stochastic performance of the bond ($d$ and $u$) to that of a good ol' predictable risk free bond (savings account) with risk free rate $1+r$. 
 
 *You can prove this using a portfolio to construct an arbitrage*
@@ -182,10 +178,7 @@ Assume we have $1 \leq 1+r < d < u$ instead. Then we can construct an arbitrage 
 
 ## Replicating Portfolio
 
-We can value options by finding a replicating portfolio. Using the following proposition:
-
-  
-\begin{theorem}
+We can value options by finding a replicating portfolio. Using the following proposition
 
 Suppose a market is arbitrage free. Suppose we have a portfolio of the stock and bond which satisfies $\pi_T = V_T$ at maturity time $T$ almost surely. i.e. the portfolio is replicating the random option payout at time $T$, then
 
