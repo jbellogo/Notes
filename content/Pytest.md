@@ -37,6 +37,6 @@ pytest tests/preflop_betting_tests.py -s
 
 Running only one specific test function with the use of "::"
 
-```
+```shell
 pytest tests/preflop_betting_tests.py::my_specific_test_func
 ```

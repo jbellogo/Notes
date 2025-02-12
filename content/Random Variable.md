@@ -1,20 +1,20 @@
 A function from sample space to real line. 
 
 
-A discrete RV is characterized by its probability \textbf{mass} function. A \textbf{pmf} $f_X$ is such that:
+# Discrete
+A discrete [[Random Variable]] is characterized by its **probability mass function**. 
 
-\[f_X : \Omega \rightarrow \mathbb{R_{\geq 0}} \]
+A **pmf**, $f_X$ is such that:
 
-\[\sum_{x \in \Omega} f_X(x)=1 \]
-
+$$f_X : \Omega \rightarrow \mathbb{R_{\geq 0}} $$
+$$ \sum_{x \in \Omega} f_X(x)=1 $$
   
 
-  
+# Continuous
+A continuous RV is characterized by its **probability distribution function**. A pdf $f_Y$ is such that:
 
-A continuous RV is characterized by its probability \textbf{distribution} function. A \textbf{pdf} $f_Y$ is such that:
+$$ f_Y : \Omega=\mathbb{R} \rightarrow \mathbb{R_{\geq 0}} $$
 
-\[f_Y : \Omega=\mathbb{R} \rightarrow \mathbb{R_{\geq 0}} \]
-
-\[\int_{\Omega} f_Y(y) dy =1 \]
+$$ \int_{\Omega} f_Y(y) dy =1  $$
 
 The sample space for cts rv's is often the reals. 
