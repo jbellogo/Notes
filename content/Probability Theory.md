@@ -3,7 +3,7 @@ We want to formalize the assignment of probabilities to events in a sample space
 
 Roadmap:
 1. Introduce $\sigma-$*algebras* as the structure used to formalize events in a sample space; events to which we can assign a "probability."
-2. Define probability measures to assign probabilites to those events 
+2. Define [[Probability Theory#Probability Measures|probability measures]] to assign probabilities to those events 
 ## Sigma Fields 
 
 ### Definition
@@ -63,46 +63,22 @@ In the context of probability theory, $\Omega$ is called the [[sample space]], $
 
 ### Examples
 
-1. If our experiment is “flipping a coin and recording the whether it came up heads or tails” then the sample space might be 
+3. If our experiment is “flipping a coin and recording the whether it came up heads or tails” then the sample space might be 
 $$Ω = \{H, T\}$$
 
-2. If our experiment is “flipping a coin 100 times and recording the whether it came up heads or tails” each time then the sample space might be:
-$$\Omega = \{H, T\}^{100}$$.
-3. If we are ultimately interested in the outcome of a single coin flip, we could use the
-sample space Ω = {H, T} where the outcome we care about is the only thing one could
-deduce from the sample space, or we could use the sample space Ω = {H, T}
-100 where the
-outcome we care about can be deduced from the first of the 100 flips via the projection
-function π1 : {H, T}
-100
-→ {H, T} that maps a tuple of length 100 to its first component:
-π1(ω) = ω1, effectively throwing away other irrelevant information.
-4. Similarly, if we are interested in the result of flipping a coin 100 times and then counting
-the number of H, we could either choose our sample space to record the outcome of
-every flip, Ω = {H, T}
-100, and then reason about the quantity we care about via X :
-Ω → {0, 1, . . . , 100} given by X(ω) = P100
-i=1 1ωi=H, or we could choose our sample space
-to be Ω = {0, . . . , 100} to directly record the count.
-5. If our experiment is “rolling a 6-sided die and recording the number on the top face”
-then the sample space might be Ω = {1, 2, 3, 4, 5, 6}.
-6. If our experiment is “rolling a 6-sided die and recording the number on the top face
-as well as the air temperature, the number of people in the room and the color of the
-person on our right’s shirt” then the sample space might be Ω = {1, 2, 3, 4, 5, 6} ×
-R × N × {red, blue, green...}. We can determine the value of the roll of the dice by
-“forgetting” the extra irrelevant information captured by the sample space. Again, in
-this case, that would correspond to a projection onto the corresponding component of
-the tuple recorded.
-7. If our goal was to measure the pressure in the room then our sample space could be
-Ω = R corresponding to a single barometer reading.
-8. If our goal was to measure the pressure in the room then we could measure exactly
-the positions and momenta of all air molecules in the room, and how many happen to
-bump into our barometer and how hard, and from that also deduce what pressure the
-barometer would have read. In that case, our sample space might be S
-n∈N(R3 × R3)n
-(for each n ∈ N there might be exactly n air molecules, and each of those molecules
-have a position and momentum).1
+4. If our experiment is “flipping a coin 100 times and recording the whether it came up heads or tails” each time then the sample space might be:
+$$\Omega = \{H, T\}^{100}$$
 
+5. If we are ultimately interested in the outcome of a single coin flip, we could use the sample space $Ω = \{H, T\}$ where the outcome we care about is the only thing one could deduce from the sample space, or we could use the sample space $\Omega = \{H, T\}^{100}$ where the outcome we care about can be deduced from the first of the 100 flips via the projection function $π_1 : \{H, T\}^{100} \rightarrow \{H, T\}$ that maps a tuple of length 100 to its first component: $π_1(ω) = ω_1$, effectively throwing away other irrelevant information. Similar projection functions can be used when discussing [[Stochastic Processes#Discrete|discrete stochastic processes]].
+<br>
+6. Similarly, if we are interested in the result of flipping a coin 100 times and then counting the number of H, we could either choose our sample space to record the outcome of every flip, $\Omega = \{H, T\}^{100}$, and then reason about the quantity we care about via a [[Random Variable|random variable]] $X : \Omega \rightarrow \{0, 1, . . . , 100\}$ given by $X(\omega) = \sum_{i=1}^{100} \mathbb{1}_{ω_i=H}$, or, perhaps *more efficiently*, we could choose our sample space to be $\Omega = \{0, . . . , 100\}$ to directly record the count.
+<br>
+7. If our experiment is “rolling a 6-sided die and recording the number on the top face as well as the air temperature, the number of people in the room and the colour of the person on our right’s shirt” then the sample space might be:
+$$Ω = \{ \{1, 2, 3, 4, 5, 6\} × \mathbb{R} × \mathbb{N} × \{red, blue, green, \dots\} \}$$
+
+So, it seems like a sample space $\Omega_1$ is “at least as general” as another sample space $\Omega_2$
+describing the same experiment if there is a suitable surjective function from $\Omega_1 → \Omega_2$.
+Examples of such functions we’ve seen so far include projections onto components of a tuple, and aggregation of the values of components of a tuple.
 
 # Probability Measures
 Recall a [[Probability Theory#Measurable Space| measurable space]] consists of $(\Omega, \mathcal{F})$ 
@@ -123,7 +99,6 @@ A \textbf{measure} $\mu$ on an algebra $\mathcal{A} $ is a set function $\mu: \m
 What is the fuss about measures on sigma algebras over measures on algebras? well in the regular algebras the union of any finitely many sets is still in the algebra BUT if there are infinitely many sets in an algebra there is no guarantee that the union of infinitely many things is still in the algebra. We do have this guarantee in the case of a sigma algebra. The union will be in the algebra and so we can have an "additive" measure. A $\sigma-$algebra is a more restrictive thing.  
   
   
-
 So if $\mu(\Omega) = 1$ and $\mu$ is a measure, then $\mu$ is a probability measure; A measure with "total mass one."
 
   

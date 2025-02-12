@@ -1,5 +1,4 @@
 
-
 # Risk-free rate
 Risk free interest rate $r$ is the rate an investor can expect to earn on an investment that carries 0 risk. 
 
@@ -32,8 +31,7 @@ It doesn't make sense for us to get paid our yearly interest once a year. This w
 In practice, the interest rate is not constant and changes over time! people refinance their loans?
 
   
-
-You can \textbf{estimate an interest rate curve based on different bond prices, and enter those as "deterministic" quantities into the model}
+You can estimate an interest rate curve based on different bond prices, and enter those as "deterministic" quantities into the model
 
   
 

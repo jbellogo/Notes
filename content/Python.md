@@ -1,6 +1,8 @@
 # Classes
 
-## \_\_rep\_\_
+## Methods
+
+### \_\_rep\_\_
 
 when you print a list of objects, Python uses the __repr__ method rather than __str__ for the elements. To get your desired output, you need to either:
 

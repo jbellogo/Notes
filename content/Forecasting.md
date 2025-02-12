@@ -1,5 +1,5 @@
 
-#### Forecasting means prediction!!! 
+**Forecasting means prediction!!!** 
 
 >"Predicting a single number tells you nothing because we are dealing with probabilities and randomness, so always produce a confidence interval, even in conversation" 
  >-- Reza the Goat
