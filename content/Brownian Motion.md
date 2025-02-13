@@ -1,9 +1,15 @@
 
 
 # Simple Random Walk
+
 The discrete preliminary of a brownian motion 
 
 THE fundamental discrete time stochastic process.
+
+
+
+A R.V which is a \textbf{series} of \textbf{iid noise OR White noise} distributed R.V.s $S_t = \sum_{i=1}^t X_i$. Usually starting at zero. 
+
 
   
 Denote our "steps of the walk" as $Y_i$ i.i.d random variables with: 

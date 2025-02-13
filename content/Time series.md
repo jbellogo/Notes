@@ -28,195 +28,58 @@ All finite dimensional distributions of $X_1, X_2, \dots X_n$ are those of all n
 Fortunately, in most application we can get by with knowing $E[X_t], E[X_t^2], E[X_tX_j]$. Which is equivalent to knowing $E[X_t], Var(X_t), Cov(X_t, X_j)$ for **ALL** indices.
 
   
-
-
 # models 
 A time series model for the observed data $\{x_t\}$ is a specification of the joint distributions or more often in practice, the means and covariances of a sequence of random variables $\{X_t\}$ of which $\{x_t\}$ is a realization. 
 
 
-# Zero-mean time series models
-
-\subsubsection{i.i.d Noise}
-
-\begin{definition}
-
-\textbf{iid Noise} a sequence $\{X_i : i = 1,2\dots n\}$ with: 
-
-\begin{itemize}
-
-\item  independence property is satisfied: joint = product of marginals.
-
-\item  $E[X_i] = 0 \forall i$
-
   
-
-\end{itemize} 
-
-\end{definition}
-
-  
-
-As is the case with a discrete time stochastic process with independent components, the memory-less property is satisfied.  
-
-\begin{proof}
-
-\[ P(X_{n+h} \leq x | X_1 \leq x_1, \dots, X_1 \leq x_n ) = \frac{P(X_{n+h} \leq x)  F(x_1, \dots x_n)}{F(x_1, \dots x_n)}\]
-
-\end{proof}
-
-Note that in the nominator above, the probability of the intersection of events is equal to the individual probabilities multiplied by independence. 
-
-  
-
-Also note how we can have the individual $X_i$ be continuously distributed but discrete stochastic process (indexed by the naturals)
-
-  
-
-## White Noise 
-
-Sequence of uncorrelated random variables $\{X_1, X_2, \dots \}$ with zero mean and finite variance. Denoted $X_i \sim WN(0, \sigma)$
-
-\begin{itemize}
-
-\item $E(X_i)=0$ 
-
-\item $Var$
-
-\item $Cov(X_i, X_j) = 0$ for uncorrelated 
-
-\end{itemize}
-
-  
-
-  
-
-## Random Walk
-
-\begin{definition}
-
-A R.V which is a \textbf{series} of \textbf{iid noise OR White noise} distributed R.V.s $S_t = \sum_{i=1}^t X_i$. Usually starting at zero. 
-
-\end{definition}
-
-  
-
-What is the relationship between \textit{white noise} and \textit{iid noise}?
-
-Independence is a stronger condition than non-correlation. For independence we need to know joint distributions but for non-correlation we don't. So we'd rather work with white noise. 
-
-  
-
 # Classical decomposition
 
-In regression we are always modelling $Y|X$ and not just $Y$ since we are actually using the explanatory variable to fit $Y$.
+The general framework is to remove the trend, seasonality, and non-constant variance patterns in the data so that hopefully we are left with a stationary process. Then model the detrendized and deseasonalized time series data. 
 
   
 
-The general framework is to remove the \textbf{trend}, \textbf{seasonality}, and \textbf{non-constant variance} patterns in the data  so that \textit{hopefully} we are left with a stationary process. Then model the detrendized and deseasonalized data. 
-
-  
-
-## Additive classical decomposition}
+## Additive classical decomposition
 
 Fitting models with trend and seasonality:
 
-\[ X_t = m_t +S_t +Y_t \]
+$$ X_t = m_t +S_t +Y_t $$
 
-  
+Where $X_t$ is broken down into deterministic and stochastic processes 
 
-where,
-
-\begin{itemize}
-
-\item $X_t$ is value of the process at time $t$
-
-\item $S_t$ models the periodic deterministic component of $X_t$ at time $t$
-
-\item $m_t$ is the TREND deterministic component. Doesn't have to be linear.
-
-\item $Y_t$ is the stochastic component, white noise 
-
-\end{itemize}
-
-  
-
-  
+The deterministic components are: 
+* $S_t$ models the periodic deterministic component of $X_t$ at time $t$
+* $m_t$ is the TREND deterministic component. Doesn't have to be linear.
+The stochastic component is 
+* $Y_t$  white noise 
+The goal is to model all the predictable qualities of the process with the deterministic models. If this is the case, the remaing source of randomness, $Y_t$ shuold be white noise, as we cannot further explain/reduce this source of randomness.
 
 Note that the expected value of the process depends on time: $E[X_t] = E[S_t] + E[m_t]$. Particularly if the expectation for the trend component is non-zero as the expectation of periodic functions is often constant.
 
   
-
 We don't need Fourier series to model periodic patterns (in discrete stochastic processes), we can figure out the period $d$ and then use $d-1$ indicator variables whose coefficients give the period height at each point of time. Let's assume the period for some time series is 12 corresponding to 12 months, we use $d-1=11$ indicator variables $X_1, X_2, \dots, X_11$ to represent:
 
-\begin{equation}
-
+$$
 x_1 = 
-
-\{
-
     \begin{cases}
-
         1, & \text{if month is February}\\
-
         0, & \text{else}
 
     \end{cases}
+$$
 
-\end{equation}
-
-The reason we don't need as many \textbf{indicator variables} as the period is that we can measure the first point (January) with just trend $X_1 = m_t+Y_t$ and then have the remaining $d-1$ coefficients $\beta_j$ tell us the deviation of point $X_{i+1}$ relative to $X_1$ it is the baseline. 
-
-  
+The reason we don't need as many indicator variables as the period is that we can measure the first point (January) with just trend $X_1 = m_t+Y_t$ and then have the remaining $d-1$ coefficients $\beta_j$ tell us the deviation of point $X_{i+1}$ relative to $X_1$ it is the baseline. 
 
 
 We use regression for $m_t$ and $S_t$, nothing new so far. The trend $m_t$ need not follow a linear regression model, we can model it to be any regular function ie. $m_t = \beta_0 + \exp{\beta_1t}$.
 
   
-
 If we have monthly data, the period need not be $12$, it might be biweekly if we are measuring something that is correlated to paydays. 
 
   
-
-
-\textbf{Conditional Expectation Theorem}: If $X,Y$ are two random variables with $E(Y)=\mu, Var(Y) < \infty$, then the function $f$ which minimizes $MSE(f)$ for $X,Y$ is given by the conditional expectation:
-
-\[f(X) = E_{Y|X}(Y|X) \]
-
-\end{theorem}
-
-  
-
-\begin{proof}
-
 ************************************
 
-\begin{itemize}
 
-\item let $f(X) = c$ and show that the constant $c$ that minimizes the risk is the mean of $Y$.
-
-\item Assume $c(x)$ minimizes 
-
-\end{itemize}
-
-\end{proof}
-
-  
-
-Notes:
-
-\begin{itemize}
-
-\item $E(Y|X=x)$ is a number depending on x. So it's a function of x
-
-\item $E(Y|X)$ is a random variable
-
-\end{itemize}
-
-  
-
-\subsubsection{Absolute Error Loss}
-
-Minimized by the median
 
   
 
@@ -514,14 +377,11 @@ The value of $\gamma_X(h) = \gamma(h,0)$
 
 the auto-covariance at lag h
 
-  
-  
+
 
 # Time series forecasting blue print
 
 Given a time series data set.
-
-
 
 * is is starionary? Check. if not starionary, transform to stationary. Do your forecast, and transform your prediction back to to non-stationarity for interpretability.
 * Constant mean

@@ -55,4 +55,16 @@ The risk of this loss function also has a special name: \textbf{MSE}
 
   
 
-\begin{theorem}
+# MSE
+
+###  Conditional Expectation Theorem
+If $X,Y$ are two [[Random Variable]] with $E(Y)=\mu, Var(Y) < \infty$, then the function $f$ which minimizes $MSE(f)$ for $X,Y$ is given by the conditional expectation:
+
+$$ f(X) = E_{Y|X}(Y|X) $$
+
+
+
+# Absolute Error Loss
+
+Minimized by the median
+

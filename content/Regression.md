@@ -1,6 +1,8 @@
 
 # Regression
 
+In regression we are always modelling $Y|X$ and not just $Y$ since we are actually using the explanatory variable to fit $Y$.
+
 The MSE is minimized by the conditional expectation $E(Y|X)$. But we don't really know how to get this, so we take a step back and assume the form of $f(X)= \bm X \bm \beta + \epsilon$ in the risk minimization problem (called OLS, RSSQ) and then solve for the coefficients using matrix methods. 
 
   

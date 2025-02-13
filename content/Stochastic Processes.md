@@ -56,8 +56,14 @@ In the study of sp's we are interested in three types of questions:
 # Discrete
 Discrete time stochastic process: at discrete times $0 < t_1 < \dots t_N = 0$ we observe the respective stock prices $S_{t1} \dots S_{tN}$.
 
+## independence
+Any discrete time stochastic process with independent components satisfies the memory-less property.
+
+*Proof:*
+$$ P(X_{n+h} \leq x | X_1 \leq x_1, \dots, X_1 \leq x_n ) = \frac{P(X_{n+h} \leq x)  F(x_1, \dots x_n)}{F(x_1, \dots x_n)}$$
+
 # Continuous
-Continuous time sp: for continuous $0 < t < T$ we have $S_t$ is a function with solid lines (does not have to be continuous itself though). Can't express continuity in computers because we can't express sets of  infinite cardinalities, like subsets of the real line, with finite resources. 
+Continuous time stochastic process: for continuous $0 < t < T$ we have $S_t$ is a function with solid lines (does not have to be continuous itself though). Can't express continuity in computers because we can't express sets of  infinite cardinalities, like subsets of the real line, with finite resources. 
 
 
 # Multivariate 
