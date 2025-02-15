@@ -12,3 +12,7 @@ To check remote url
 ```
 git config --get remote.origin.url
 ```
+
+### clone
+The `git clone` command copies an existing Git repository.
+

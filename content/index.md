@@ -1,15 +1,23 @@
 ---
-title: Juan's Notes
+title: Hi there, I'm Juan 👋
 ---
->  “**If I have seen further it is by standing on the shoulders of Giants**
-> --- Isaac Newton
+
+## These are my notes
 
 >“When I was young, math was like a faraway land surrounded by giant walls that I could not climb... I dreamed of becoming a poet to express the inexpressible. I eventually learned that mathematics is a way of doing that.”
---- June Huh
+>
+> --- June Huh, 2022 Fields Medalist. 
+
+
+
+I’m a **Mathematics** graduate from the University of Waterloo, passionate about tackling challenging problems at the intersection of **software and mathematics**.
 
 These Computational Math notes are primarily compiled from my coursework at the University of Waterloo.
 
-I’m currently transcribing my old notes from .tex format. Since this involves revisiting and reorganizing topics, the notes currently focus on [[Probability Theory]], [[Game Theory]], [[Statistics]], [[Options]]. However, the goal is to use Obsidian to consolidate all my math notes, which will continue to grow over time.
+
+> [!note] Note on Notes
+> I'm transcribing my old notes from .tex format, revisiting and reorganizing topics as I go. The notes are currently incomplete and primarily focus on [[Probability Theory]], [[Statistics]], and [[Options]]. However, my goal is to consolidate all my math notes in Obsidian, which will continue to grow over time.
+
 
 # Current Focus
 
