@@ -1,0 +1,1 @@
+When you observe the stock price or predict it, you essentially, measure it, and next thing you know it is no longer there?

@@ -1,19 +1,41 @@
-  
-An **option** is a financial derivative/contract stipulated today ($t=0$) that gives the buyer the right to buy or sell an underlying security, often a stock, within a specified period up to maturity $t=T$ and at a specified *strike price*, $K$, independent of the asset value at that time $S_T$. 
+> [!quote] 
+> >*"I can calculate the motions of celestial bodies, but not the ==madness== of people."* \
+>> — Isaac Newton, after losing 1/3 of his money in stocks.
+
+Resources:
+* [Veritasium](https://www.youtube.com/watch?v=A5w-dEgIU1M&list=PLkahZjV5wKe-Z1RP3ZiYwe8JSAolmqF9M&ab_channel=Veritasium)
+
+An **option** is a financial derivative consisting of a contract stipulated today ($t=0$) that gives the buyer the right to buy or sell an underlying security, often a stock, within a specified period up to maturity $t=T$ and at a specified *strike price*, $K$, independent of the asset value at that time $S_T$. 
 
 In math terms, it's a bet contract, where you bet on where a scalar function of the stock over the time horizon $f : S_{[0,T]} \rightarrow \mathbb{R}$ lies in relation to the strike price. A [[#Call]] options bets on $f(S_t)>K$  and a [[#Put]]  on the opposite  $f(S_t)>K$.
 
-# Definitions
-* Security / Underlying: A tradable financial asset. A house, stock, etc. 
-* Derivative: A "secondary" security. A contract that derives its value and risk from  particular security. An option is a derivative of a stock because it is a "bet" on the stock, it has "derived" value from the stock.
+
+> [!fact] History
+> The first recorded options trade involved olives and the Greek philosopher Thales in the 6th century BC. Thales paid a deposit and secured the right to use olive presses at a fixed price, but he didn't have an obligation to use them. He profited from the trade when the olive harvest was bountiful.
+
+
+# Terminology
+* Underlying [[Securities| Security]]: A house, stock, etc. 
+* [[Derivatives]]: A "secondary" security. A contract that derives its value and risk from  particular security. An option is a derivative of a stock because it is a "bet" on the stock, it has "derived" value from the stock.
 * Strike-price K specified in the option contract $t=0$. 
 
 **Question:** If you are the issuer (short position) of an option how do you set a a strike price on the contract for short/put?
 
+# Positions
+An option is a bet on a binary outcome, the [[Securities#Short|short]] and [[Securities#Long|long]] positions are the two sides to the bet.
+
+In theory, short and long positions mirror each other: one party’s gain is the other’s loss. In practice, however, hidden fees exist.
+
 # Leverage
+
+*Win big loose big*
+
+
 Trading options is considered risky, we see how the payouts are all or nothing. trading options is considered  riskier than trading the stock. 
 
 This is the **leverage effect**: The relative loss in the option can be much more than the relative loss in the asset. Because of the all or nothing payout in options, you loose 100\% of what you paid to get into the bet $C_0 = V_0$.
+
+Options have natural leverage over the underlying. With one dollar worth of stocks you can influcnece the price of the stock by one dollar, but with one dollar worth of options might be able to influence the price by much more. 
 
 
 # Types
@@ -76,6 +98,8 @@ Average stock price of the evolution up-until maturity.
   
 
 # Pricing 
+
+Following [[Charachters#Louis Bachelier|Bechelier's]] idea, the fair price of an option should be what makes the expected return for buyers and sellers equal. Both parties should stand to gain or loose, the same amount. 
 
 Now the central questions is:  What is a fair price for $C_0$ i.e. the price of the option contract?
 

@@ -1,24 +1,5 @@
-\title{STAT 441 Study}
 
-\author{Juan Pablo Bello Gonzalez}
-
-\date{September 2024}
-
-  
-
-\begin{document}
-
-  
-
-\maketitle
-
-  
-
-\newpage
-
-  
-
-\section{1. Learning Concepts}
+#  Learning Concepts
 
 Learning:
 
@@ -30,71 +11,11 @@ Learning:
 
 \end{itemize}
 
-  
 
 Supervised: You have labels, ie right answers/confirmation for training data. Easier models than unsupervised. In unsupervised you have to make up distinctive features/categories, you don't even know how many clusters there are.
 
-  
 
-\textbf{Interpretation vs. prediction tradeoff}:
-
-Complex models like trees and neural netoworks are powerful at predicting but there is little interpretability to what the model coefficients actually mean.
-
-  
-
-You can restrict the class of models to allow for easy interpretation, ie trees with tunned hyperparameters. THEN optimize for prediction wihtin this class models.
-
-\subsection{Loss}
-
-MSE
-
-  
-
-\subsection{Bias-Variance Tradeoff}
-
-MSE loss can be decomposed into three sources of error: \textbf{Bias, Variance, and Irreducible error}
-
-\[ E [ (y_0 - \hat f(x_0))^2]
-
-= Var(\hat f(x_0))) + [Bias(\hat f(x_0)))]^2 + Var(\epsilon)
-
-\]
-
-All three are non-negarive.
-
-\begin{itemize}
-
-\item Variance: How well the model generalizes to other data sets.
-
-\item Bias: how well the model fits the training set.
-
-\end{itemize}
-
-  
-
-Overfitting: low bias high variance. Perfect fit from highly flexible model, usually with many hyperparameters, means that the model will have high variance and not predict other test sets as well as it predicts that one.
-
-  
-
-Explain the tradeoff:
-
-- Conflict of trying to simulataneously minimize the two sources of error that prevent supervised learning algorithms from generalizing beyond the training set.
-
-  
-
-MSE is the sum of three things, the graph of MSE makes a U, and the graphs of its three components are
-
-\begin{itemize}
-
-\item Irreducible error/Var(epsilon). Constant
-
-\item Variance. Increasing with flexibility. The more flexibility, the worse predictive power to data sets outside the training set the model will have.
-
-\item Bias. Decaying as flexibility increases. Higher flexibility $\implies$ lower bias $\implies$ better fit.
-
-\end{itemize}
-
-  
+[[Bias-Variance tradeoff]]
 
 \subsection{Bayes Classifier}
 

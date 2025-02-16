@@ -2,6 +2,8 @@
 # Risk-free rate
 Risk free interest rate $r$ is the rate an investor can expect to earn on an investment that carries 0 risk. 
 
+The safest asset:
+
 The 10-year US Treasury bond yield is often used as the risk-free rate for valuing securities and markets. As of February 3, 2025, the 10-year Treasury rate was ==4.54%==. This is the unofficial standard for risk free rate because the 'risk' of the US government defaulting on these bonds is very low. 
 
 Rates: Having money costs money. Moving it costs trasaction fees, holding it in a bank means you are loaning it to the bank, not using it in the moment, and so they are payig you an interest. Even hiding it under your bed costs you the inflation rate. 

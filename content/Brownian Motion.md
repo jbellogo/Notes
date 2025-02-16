@@ -1,46 +1,16 @@
 
+> A collection of random walks creates a normal distribution. The fact that we start at zero is key. 
 
-# Simple Random Walk
+# The Radiation of Probabilities
+[Louis Bachelier] Was the first one to attempt to price options and essentially use mathematics to model financial markets. He submitted his PhD thesis to some guy named [Henri Poincaré].
 
-The discrete preliminary of a brownian motion 
+Think of a [galton board](https://en.wikipedia.org/wiki/Galton_board), every ball essentially follows a random walk, as every time it hits a triangle, it  has a 50/50 change of going left or right. We can map the triangles to time (indexed by $\mathbb{N}$) and the motions of individual balls to random walks. Since all walks come from a hole at the center (0), and the triangles are positioned so that a ball can either go left by one unit or right by one unit when it hits it, we got ourselves a simultion of a lot of sample random walks! 
 
-THE fundamental discrete time stochastic process.
+What we find is that the balls follow a **normal distribution that broadens with time**!!!!!, and this is physics, empirical observation saying it!
 
-
-
-A R.V which is a \textbf{series} of \textbf{iid noise OR White noise} distributed R.V.s $S_t = \sum_{i=1}^t X_i$. Usually starting at zero. 
-
-
-  
-Denote our "steps of the walk" as $Y_i$ i.i.d random variables with: 
-
-$$
-Y_i = 
-\begin{cases}
-1 \text{,  with probability 1/2} \\
--1 \text{, with probability 1/2} \\
-\end{cases}
-$$
-
-then the **one-dimensional random** walk $X_t$ is: 
-
-$$X_0 = 0$$
-$$X_t = \sum_{i=1}^t Y_i  \forall t>0$$
-
-It is one dimensional analogous to a drunk guy walking forwards and backwards along a straight line. 
-  
-How does the random walk behave as time grows?
-
-What is the distribution at time $t$? This is [[Central Limit Theorem]] stuff, the variance will be $t$ and the mean will be zero. Why is the variance t? well that's the maximum height about zero that the walk can achieve at time $t$ and it is only achieved if all steps are in one direction. 
-  
-The random walk is theoretically bounded by the lines $t$ and $-t$ which correspond to all up-steps and all down steps up to time $t$. In practice however, there is a smaller "sort of bound." It's something like a confidence interval asymptote in the shape of a $y^2 = t$ parabola. You can prove that it will cross the $x-$axis and both the  upper $\sqrt{t}$ and lower $-\sqrt{t}$ sides of a parabola (so it is not an asymptote) an infinite amount of times. 
-
-  
-
-Properties: 
-* $E(X_k) = 0$
-* Independent increments: If $0=t_0 \leq t_1 \leq \dots \leq t_k$, then $X_{t_{i+1}} -X_{t_i}$ are mutually independent. Ie. any and all disjoint subintervals of the random walk are independent. 
-* Stationary: For all $h \geq 1, t \geq 0$ the distribution of $X_{t+h}-X_t$ is the same as the distribution of $X_n$.
+So while one path is impossible to predict, all the paths form a **predictable pattern**.
 
 
-A simple random walk is a [[Markov Chains]]markov chain: What happens at $t'$ just depends on where you were at time $t'-1$ since you can only go up or down one step at a time. 
+Robert Brown noticed that if you look close enough at particles making up something, they will be moving by tiny amounts in random directions.
+
+

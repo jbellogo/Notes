@@ -44,7 +44,24 @@ $$793*11 = [7][7+9][9+3][3] = 8723$$ Where we keep the remainder in place and sh
 ## Times 12
 $$a*(12) = a*10+a*2$$
 
-# Multiplying Teens*
+
+
+# Two digit numbers multiplied
+This actually extends to multiplying any two digit numbers together: 
+
+$$[ab]*[cd] = [a*c][a*d+b*c][b*d]$$
+
+As for $0<a,b,c,d \leq 9$:
+
+$$(a*10+b)(c*10+d) = a*c*10^2+[a*d+b*c]*10+c*d$$
+
+>[!examples]
+> * $37*76=21[3*6+7*7][7*6]=21[67][42]=28[1][2]=2812$
+>* $53*93=45[27+15][9]=49[2][9]=4929$
+>* $44* 46=16[24+16][24] = 16[42][4] = 2024$
+
+
+## Multiplying Teens
 $13*15 = [13+5][3*5] = 18[15]=195$
 We have $[ab]*[cd] = [ab+d][b*d]_{10}$
 We will add the last digit of the secondary number to the primary number for the first two position. For the third position, multiply the last two digits and take remainder 10. 
@@ -68,22 +85,6 @@ And of course, we add the quotients. mod ten to the position to the left.
 > **Examples**:
 > * $4324363*19 = 86,487,260 - 4,324,363 = 82,162,897$
 > * $15*19= 300-15=285$
-
-
-# Two digit numbers multiplied
-This actually extends to multiplying any two digit numbers together: 
-
-$$[ab]*[cd] = [a*c][a*d+b*c][b*d]$$
-
-As for $0<a,b,c,d \leq 9$:
-
-$$(a*10+b)(c*10+d) = a*c*10^2+[a*d+b*c]*10+c*d$$
-
->[!examples]
-> * $37*76=21[3*6+7*7][7*6]=21[67][42]=28[1][2]=2812$
->* $53*93=45[27+15][9]=49[2][9]=4929$
->* $44* 46=16[24+16][24] = 16[42][4] = 2024$
-
 
 ##  Special format \[a\]\[b\]\*\[a\]\[10-b\]
 
@@ -114,6 +115,11 @@ $$
 > $74*76 = [7*8][][24]= [56][2][4] 5624$
 
 
+## Squaring
+pass
+
+
+
 # Three digit numbers multiplied
 
 We are going to follow the following pattern, resulting in five of our inplace brackets \[\]
@@ -126,6 +132,6 @@ Exemplified as follows:
 >
 
 >[!warning] Warning
-> Since we are dealing with inplace numbers that can exceed 100 in our [#bracket notation
->, the quotient has two digits, we pass it to the second remainder to the left of the current place. Or just pass ist as it is, as a 10 to the first remainder to the left and this will force you to pass it as a 1 to the next remainder. 
+> Since we are dealing with inplace numbers that can exceed 100 in our [[#bracket notation]]
+>, the quotient has two digits, we pass it to the second remainder to the left of the current place. Or just pass is as is, as a 10 to the first remainder to the left and this will force you to pass it as a 1 to the next remainder. 
 >

@@ -9,3 +9,8 @@ Formally, an arbitrage stragy is one in which one of the two holds:
 
 * We start with $\pi_0 = 0$ and always have a gain, i,e,, $\pi_T > 0$ [[Convergence of Random Variables|almost surely]]. 
 * We start with debt and always repay it. ie $\pi_0 < 0$ and $\pi_T \geq 0$ [[Convergence of Random Variables|almost surely]].
+
+# Hedging 
+A way to protect against loses through balancing or compensating transactions.
+
+## Dynamic hedging
