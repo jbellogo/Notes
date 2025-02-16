@@ -1,5 +1,10 @@
+---
+aliases:
+  - options
+---
+
 > [!quote] 
-> >*"I can calculate the motions of celestial bodies, but not the ==madness== of people."* \
+>>*"I can calculate the motions of celestial bodies, but not ==the madness of people.=="* \
 >> — Isaac Newton, after losing 1/3 of his money in stocks.
 
 Resources:
@@ -16,10 +21,12 @@ In math terms, it's a bet contract, where you bet on where a scalar function of 
 
 # Terminology
 * Underlying [[Securities| Security]]: A house, stock, etc. 
-* [[Derivatives]]: A "secondary" security. A contract that derives its value and risk from  particular security. An option is a derivative of a stock because it is a "bet" on the stock, it has "derived" value from the stock.
-* Strike-price K specified in the option contract $t=0$. 
+* [[Derivatives]]: An option is a derivative of a stock because it is a "bet" on the stock, it has "derived" value from the stock.
+* Strike-price $K$ the agreed-upon price for the underlying if the option is exercised. Stipulated in the option contract at $t=0$. 
 
-**Question:** If you are the issuer (short position) of an option how do you set a a strike price on the contract for short/put?
+> [!question]
+  > If you are the issuer (short position) of an option how do you set a a strike price on the option contract? through cross validation?
+
 
 # Positions
 An option is a bet on a binary outcome, the [[Securities#Short|short]] and [[Securities#Long|long]] positions are the two sides to the bet.
