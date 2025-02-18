@@ -28,7 +28,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     // Component.Explorer(),
-    Component.RecentNotes(),
+    Component.RecentNotes(
+      {
+        title: "Recent Notes",
+        limit: 5,
+        showTags: false,
+
+      }
+    ),
   ],
   right: [
     Component.Graph({
