@@ -3,7 +3,6 @@ title: Juan Bello
 ---
 >[!quote] 
 >*"I dreamed of becoming a poet to express the inexpressible. I eventually learned that mathematics is a way of doing that.”*
->
 > **— June Huh (2022 Fields Medalist)** 
 
 > [!quote]
