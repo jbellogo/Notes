@@ -1,8 +1,12 @@
+Analysis of Variance between two models. 
 
+In R: 
+```r
 anova(model.fit.1::lm, model.fit.2::lm, etc)
+```
 
-Analysis of variance between two modesl. 
 
+# F-statistic
 The F statistic $p-$value tests 
 $$H_0: \beta_{\text{big model}} \setminus \beta_{\text{small model}} = 0 $$
 

@@ -4,7 +4,12 @@ title: Juan Bello
 >[!quote] 
 >*"I dreamed of becoming a poet to express the inexpressible. I eventually learned that mathematics is a way of doing that.”*
 >
-> --- June Huh (2022 Fields Medalist) 
+> **— June Huh (2022 Fields Medalist)** 
+
+> [!quote]
+> "Pure Mathematics is, in its way, the poetry of logical ideas"
+> **— Albert Einstein**
+
 
 
 ## Hi there, I'm Juan 👋
@@ -22,7 +27,7 @@ I’m a **Mathematics** graduate from the [University of Waterloo](https://uwa
 <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2NwZWVqaDFkOTQzdG4wN3U1aDMwdmJudnFleTdoY3hvcXdsaGt6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9D7dMTEskdstXHUOK2/giphy.gif" width="300" style="float:right; margin-left: 15px;" />
 
 - I interned at [Versa Networks](https://versa-networks.com/) as a ***cloud developer***, working on ==cybersecurity microservices==  within an API-driven data protection cluster.
-- I also interned at [Catalyst Technologies](https://catalystreaction.com/) as a ***backend developer***, contributing to the integration of ==blockchain technologies in the agricultural industry== as a ledger for carbon rebates obtained from environmentally friendly farming practices.
+- I also interned at [Catalyst Technologies](https://catalystreaction.com/) as a ***backend developer***, contributing to the integration of ==blockchain technologies in the agricultural industry== as a ledger for managing carbon rebates earned through environmentally friendly farming practices.
 - I worked at [SYMX.AI](https://symx.ai/), leveraging AWS technologies and communication protocols to ==integrate IoT functionality into mining drills==, enhancing operator training and improving mechanical efficiency through data-driven cloud analytics.
 
 
@@ -45,3 +50,5 @@ Obsidian is the note-taking tool used to create these notes. Its linking system 
 
 
 Since I started [[jiujitsu]], I realized that ==knowledge is best applied when it is well-organized.== As an aspiring mathematician, it felt natural to structure my own thoughts, interpretations, and frameworks—flawed as they may be—as abstract concepts that can be readily applied to different situations—a fundamental principle of mathematics.
+
+

@@ -1,5 +1,5 @@
 > [!def] Definition
->  A "secondary" security. A contract that derives its value and risk from  particular security.
+>  A "secondary" security. A contract that derives its value and risk from an underlying security.
 
 
 Types of derivatives: 
