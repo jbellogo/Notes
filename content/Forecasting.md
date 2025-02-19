@@ -1,3 +1,9 @@
+---
+aliases:
+  - forecasting
+---
+
+
 
 **Forecasting means prediction!!!** 
 

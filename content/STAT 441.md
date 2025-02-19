@@ -3,13 +3,9 @@
 
 Learning:
 
-\begin{itemize}
+* Classification: Categorical outcome
+* Regression: Continuous outcome
 
-\item Classification: Categorical outcome
-
-\item Regression: Continuous outcome
-
-\end{itemize}
 
 
 Supervised: You have labels, ie right answers/confirmation for training data. Easier models than unsupervised. In unsupervised you have to make up distinctive features/categories, you don't even know how many clusters there are.
