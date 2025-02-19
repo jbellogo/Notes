@@ -7,9 +7,9 @@ title: Juan Bello
 > **— June Huh (2022 Fields Medalist)** 
 
 > [!quote]
-> *"Pure Mathematics is, in its way, the poetry of logical ideas"*
+> *"I will find a way, or I will make one."*
 > 
-> **— Albert Einstein**
+> **— Hannibal Barca**
 
 
 # Hi there, I'm Juan 👋
@@ -39,7 +39,7 @@ I’m a **Mathematics** graduate from the [University of Waterloo](https://uwa
 
 
 > [!note] Note on Notes
-> I'm transcribing my computational mathematics notes compiled from my [[coursework]] at the University of Waterloo notes from .tex format, revisiting and reorganizing topics as I go. The notes are currently incomplete and primarily focus on [[Probability Theory]] and [[Options]], with [[Game Theory]],  [[Statistics]], and [[Enumeration]] coming soon. My goal is to consolidate all my math knowledge in [Obsidian](https://obsidian.md/), which will continue to grow over time. Also, If a link doesn’t work, it’s likely because I haven’t written anything for it yet. This is a work in progress.
+> These notes are intended as a personal reflection of my learning and therefore are a perpetual work in progress—they’ll never be finished. I'm in the process of transcribing my computational mathematics notes compiled from my [[coursework]] at the University of Waterloo, revisiting and reorganizing topics along the way. Right now, I'm working on [[Probability Theory]] and [[Options]], with [[Game Theory]],  [[Statistics]], and [[Enumeration]] coming up next. 
 
 ## Why Obsidian?
 
