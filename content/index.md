@@ -2,14 +2,11 @@
 title: Juan Bello
 ---
 >[!quote]  
->*"I dreamed of becoming a poet to express the inexpressible. I eventually learned that mathematics is a way of doing that.”*
->
-> **— June Huh (2022 Fields Medalist)** 
-
-> [!quote]
-> *"I will find a way, or I will make one."*
+> *"Transire suum pectus mundoque potiri"* 
 > 
-> **— Hannibal Barca**
+> *"To surpass one's understanding and master the world"*
+>
+> **—Manilius** 
 
 
 # Hi there, I'm Juan 👋
@@ -18,9 +15,8 @@ I’m a **Mathematics** graduate from the [University of Waterloo](https://uwa
 
 > [!check]  Currently Working On
 > * Developing a [multiplayer poker game](https://github.com/jbellogo/Poker) as a full-stack project.
-> * Formalizing [number theorems](https://github.com/jbellogo/Algebra) from basic Peano axioms using the [Coq proof asistant](https://coq.inria.fr/).
 > * Enhancing my data analysis and prediction skills in [Kaggle](https://www.kaggle.com/juanpablobellogonlez).
-> * Practicing algorithms in C++ with [LeetCode](https://leetcode.com/u/juan2536/).
+
 
 <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2NwZWVqaDFkOTQzdG4wN3U1aDMwdmJudnFleTdoY3hvcXdsaGt6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9D7dMTEskdstXHUOK2/giphy.gif" width="300" style="float:right; margin-left: 15px;" />
 

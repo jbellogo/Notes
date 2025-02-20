@@ -14,5 +14,5 @@ git config --get remote.origin.url
 ```
 
 ### clone
-The `git clone` command copies an existing Git repository.
+The `git clone` command copies an existing Git repository. It iwll create a folder with the name of the repo. So run it from within portfolio/ directly
 
