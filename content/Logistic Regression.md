@@ -1,9 +1,9 @@
 
 It outperforms most models in binary classification tasks. 
 
-also supports  multiclass classification but it often runs into convergence issues and will usually not outperform more complex, and uninterpretable, models like [[Regression Trees]], [[Neural Networks]], etc. 
+also supports  multi-class classification but it often runs into convergence issues and will usually not outperform more complex, and uninterpretable, models like [[Regression Trees]], [[Neural Networks]], etc. 
 
-
+# Interpretability
 Logistic regression is an interpretable model, unlike a random forest, which is more of a black-box method. the name regression comes from the RHS of the following equation, as you must assume a linear relationship $X \vec \beta$, note that like any [[Regression]], $X$ can be transformed to achieve  [[Regression#Polynomial|polynomial regression]]
 
 
@@ -13,13 +13,14 @@ $$
 
   
 
-## logit function
+# logit function
 $$\text{logit}(p) = \text{log} (\frac{p}{1-p})$$
 
-*  Recall that the logarithmic function is defined over the positive reals: $Range(log(p)) = \{x | x >0 \}$ . So logit($p$) is only defined on $\frac{p}{1-p} := p \in (0,1)$
+*  Recall that the logarithmic function is defined over the positive reals: $Range(log(x)) = \{x | x >0 \}$ . So $logit(p)$, is only defined for $p$ such that $\frac{p}{1-p}$ which ends up being $p \in (0,1)$ (easy to see graphically, need a full analysis of asymptotes and inflexions to prove rigorously).
 
-* logit has Range = $(-\infty, \infty)$ and domain $(0,1)$, so what it does, implicitly, is take values $p$ from $[0,1]$ onto the real line.
+# Mathematical principle
 
+The **logit function** has a range of $(-\infty, \infty)$ and a domain of $(0,1)$, meaning it **maps probabilities** $p$ from $(0,1)$ onto the real line. Its inverse function, known as the **expit (or sigmoid) function**, is perhaps more intuitive in the context of logistic regression: it **maps numerical values** from $X \vec{\beta}$ onto the probability range $p \in (0,1)$, ensuring the outputs represent valid probabilities.
 
 To recover the succcess/label 1 probability, p, we use the expit function:
 
@@ -34,21 +35,17 @@ As you would expect, p is equal to a function that takes the linear model onto t
   
 # ODDS
 
-\[odds = \frac{p}{1-p}\]
+$$odds = \frac{p}{1-p} $$
 
 log odds is exactly what it sounds.
 
   
-
-\textbf{A coefficient can be interpreted as a log odds ratio of a one unit differnce in the direction of its $x$ variable:}
+A coefficient can be interpreted as a log odds ratio of a one unit differnce in the direction of its $x$ variable:
 
 If
 
-  
-
 $logit(p_i) = \beta_0 + \beta_1x + \dots + \beta_p x_p$
 
-  
 
 and
 
