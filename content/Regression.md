@@ -128,4 +128,6 @@ If lots of coefficient $p-$values are large but the $p-$val of the $F-$statistic
 
 \end{itemize}
 
-  
+
+# Polynomial
+

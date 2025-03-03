@@ -2,11 +2,9 @@
 title: Juan Bello
 ---
 >[!quote]  
-> *"Transire suum pectus mundoque potiri"* 
+> *"Pure mathematics is, in its way, the poetry of logical ideas"*
 > 
-> *"To surpass one's understanding and master the world"*
->
-> **—Manilius** 
+> **—Albert Einstein** 
 
 
 # Hi there, I'm Juan 👋
@@ -15,7 +13,8 @@ I’m a **Mathematics** graduate from the [University of Waterloo](https://uwa
 
 > [!check]  Currently Working On
 > * Developing a [multiplayer poker game](https://github.com/jbellogo/Poker) as a full-stack project.
-> * Enhancing my data analysis and prediction skills in [Kaggle](https://www.kaggle.com/juanpablobellogonlez).
+> * Transcribing my notes on [[Stochastic Processes]] into obsidian.
+> * Working on  [leetcode](https://leetcode.com/u/juan2536/) problems in C++
 
 
 <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2NwZWVqaDFkOTQzdG4wN3U1aDMwdmJudnFleTdoY3hvcXdsaGt6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9D7dMTEskdstXHUOK2/giphy.gif" width="300" style="float:right; margin-left: 15px;" />

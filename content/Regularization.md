@@ -1,0 +1,1 @@
+The L1 penalty (Lasso) is commonly used for variable selection, while the L2 penalty (Ridge) helps prevent overfitting by shrinking coefficients rather than setting them to zero. Elastic Net combines both for a balance of regularization and feature selection.
