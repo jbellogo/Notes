@@ -21,19 +21,18 @@ $$\text{logit}(p) = \text{log} (\frac{p}{1-p})$$
 * logit has Range = $(-\infty, \infty)$ and domain $(0,1)$, so what it does, implicitly, is take values $p$ from $[0,1]$ onto the real line.
 
 
-To \textbf{recover} the succcess/label 1 probability, p, we use the \textbf{expit} function:
+To recover the succcess/label 1 probability, p, we use the expit function:
 
-\[ expit(x) = \frac{\exp(x)}{1+exp(x)}\]
+$$ expit(x) = \frac{\exp(x)}{1+exp(x)}$$
 
-\[ p = text{expit}(\beta_0 + \beta_1x) = \frac{\exp(\beta_0 + \beta_1x)}{1+\exp(\beta_0 + \beta_1x)}\]
+$$ p = text{expit}(\beta_0 + \beta_1x) = \frac{\exp(\beta_0 + \beta_1x)}{1+\exp(\beta_0 + \beta_1x)} $$
 
   
 
 As you would expect, p is equal to a function that takes the linear model onto the range $0,1$ which is fit for a probability.
 
   
-
-\subsubsection{Odds}
+# ODDS
 
 \[odds = \frac{p}{1-p}\]
 

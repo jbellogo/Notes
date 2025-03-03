@@ -13,7 +13,7 @@ I’m a **Mathematics** graduate from the [University of Waterloo](https://uwa
 
 > [!check]  Currently Working On
 > * Developing a [multiplayer poker game](https://github.com/jbellogo/Poker) as a full-stack project.
-> * Transcribing my notes on [[Stochastic Processes]] into obsidian.
+> * Transcribing my notes on [[Probability Theory]] into obsidian.
 > * Working on  [leetcode](https://leetcode.com/u/juan2536/) problems in C++
 
 
