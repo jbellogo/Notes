@@ -43,8 +43,10 @@ Obsidian is the note-taking tool used to create these notes. Its linking system 
 Since I started [[jiujitsu]], I realized that ==knowledge is best applied when it is well-organized.== As an aspiring mathematician, it felt natural to structure my own thoughts, interpretations, and frameworks—flawed as they may be—as abstract concepts that can be readily applied to different situations—a fundamental principle of mathematics.
 
 > [!tip] Homomorphisms  
-> The organization of ideas in Obsidian follows a more natural structure. For instance, the concept of **[[homomorphisms]]** is defined as *'a mapping between objects of the same type that preserves structure'*. However, this concept extends beyond mathematics—even into philosophy: Though we live different lives with unique details, we experience the same underlying themes—joy, grief, loss, growth, and so on. In this sense, there is a homomorphism in the human experience, mapping shared patterns across our individual lives.  Indeed, “*all the gods, all the heavens, all the hells are within you.”* 
-
+> The organization of ideas in Obsidian follows a more dynamic approach to knowledge storage. For instance, the concept of **[[homomorphisms]]** is defined as _“a mapping between objects of the same type that preserves structure.”_ Yet, this idea transcends mathematics. 
+> * An application of the concept: Consider a car and a small truck: there is a mapping between them, preserving the essential structure of a chassis with four wheels. 
+> 
+> * A philosophical reflection: Though our lives unfold in unique ways, they share a common underlying structure shaped by universal themes—joy, grief, loss, growth, and more. When someone says, _"I can relate to that person,"_ they have found a homomorphism between their experiences. Indeed, as Joseph Campbell wrote, _“All the gods, all the heavens, all the hells are within you.”_
 
 
 
