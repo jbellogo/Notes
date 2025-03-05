@@ -2,7 +2,7 @@
 Tradeoff between model fit and model predictive power. 
 
 
-\textbf{Interpretation vs. prediction tradeoff}:
+# Interpretation vs. prediction tradeoff:
 
 Complex models like trees and neural netoworks are powerful at predicting but there is little interpretability to what the model coefficients actually mean.
 

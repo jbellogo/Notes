@@ -1,6 +1,6 @@
 
 > [!quote] 
-> ***You have to 'date' the data. You don't just give the data a ring (a model), you first have to ask questions, get to know the data — do the due diligence.***
+> **“You must date the data: take it out for dinner, ask it questions before things get too serious.”**
 > *— Reza Ramezan*
 
 # Preprocessing 
