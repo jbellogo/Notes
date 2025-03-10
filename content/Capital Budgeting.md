@@ -1,3 +1,6 @@
+> [!quote] 
+> *Increase shareholder value* 
+
 
 Financial markets exist so companies and individuals can adjust **consumption** across time periods. And so, they provide instruments that facilitate borrowing and lending.
 

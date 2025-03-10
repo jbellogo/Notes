@@ -3,6 +3,8 @@ aliases: coursework
 ---
 
 
+# University of Waterloo 
+
 # Computer Science 
 
 **CS 476: *Numeric Computation for Financial Modeling***  

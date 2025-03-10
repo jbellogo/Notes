@@ -1,4 +1,7 @@
 
+# Pointers 
+the value of a pointer is an address. Whe. you dereference it, you retrieve the contents of the address. 
+
 # Integers
 There is no type that can handle a 100 digit number, for big numbers you need to represent them as ana array or a string, or a linked list and then write functionality for them. Ie write your own type class with its respective properties. 
 
@@ -30,3 +33,6 @@ they can be increased, akin to a 'node->next :: node' in a linekd list.
 
 # gdb
 For debugging
+
+# Complexitites
+Look up str.length(), vec.size() are both constant complexity.
