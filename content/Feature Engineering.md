@@ -1,3 +1,6 @@
+
+
+# Categorical variables
 If we have a categorical variable, we **must** perform one hot encoding, because even though it takes on numbers on a given range, they might as well be variable names, the don't cary the subsequent properties and scale of numbers. 
 
 Variate: transportation to school with Categories:

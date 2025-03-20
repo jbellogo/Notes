@@ -22,15 +22,24 @@ use [[NLP]]
 
 evolved from rule-based systems to Generative AI models 
 
+# Smart Assistants
 Smart assistants:
 * Siri
 * Google Assistant
 * Amazon Alexa
 * Microsoft Cortana
 
+How they work:
+1. Activiate with "hey siri"
+2. convert spoken words to text using speech-to-text ([[STT]])
+3. Interpret commands and construct responses (written or actionable ie play American Pie on spotify) using [[NLP]]
+4. Execute tasks by searching databases/devices.
+5. Respond to user by converting test to spoken words using text-to-speech ([[TTS]])
+
 Generative AI chatbots
-* ChatGPT
+* [[ChatGPT]]
 * Google gemini
+* Microsoft Copilo: can access the internet in real time. 
 
 Uses:
 * Customer service

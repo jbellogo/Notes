@@ -1,105 +1,101 @@
-Range of systems designed to mimic, enhance, or exceed human capabilities in tasks such as:
-- Learning 
-- Reasoning 
-- Problem solving
-- Decision Making
 
 
-# History 
+> [!quote]
+> *Imagine what it can do for the process of innovation, for discovering new materials, medicine, energy, climate, and so many of the present challenges that we face as a species."* 
+> 
+> — Darío Gil, IBM
 
-* 1980s Machine Learning Boom 
-* 1990s Neural Networks
-* 2000s Deep Learning 
-* 2010s NLP and computer vision
+## Definition
 
+Simulation of human intelligence in machines, enabling them to perform tasks such as:
 
-# Multidisciplinary Approach
-* Engineering and science: robots and hardware for efficiently training massive data models like GPUs
-* Math and statistics: The foundations of the models. 
-* Philosophy: ethics
-* Politics: Applications and ethics. 
+- Learning
+- Reasoning
+- Problem-solving
+- Decision-making
 
-# How do we define innate intelligence?
-It is tied to a purpose. intelligence of a see is what makes it grow into an oak tree.
+## Strength Levels
 
-How does AI learn, throu a lot of examples we provide it. Labelled. 
-
-
-Are we there yet? Do we trully have "Artificial Intelligence"?
-* If you ask your highschool biology teacher, it is memorizing a bunhc of stuff.... but that's a database, and they have been around for a while. 
-
-* If you say it is multiplying big numbers, again our calcualtor can do it. 
-
-* If you say it is playing chess, or achieving a mastery through years of experince and innate talent... but if that's your bar we already passed it well we have had DeepBlue beating the best human players in the world since.
-
-Classic problme to solve: 
-* Turing test: you have a human chatting with an AI and another human. without know who he is talking ot, can he decide which is which?
-Everytime we get closer we move the finish line... hahaha what a human thing to do. 
+- [[Weak AI]]
+- [[Strong AI]]
+- [[Super AI]]
 
 
+## Subsets of AI
 
-# AI in Daily Life
-* Personalizing experiences 
-Netflix recommends what you are most likely to watch
-Facebook and Instagram personalize content. 
-* Streamlining tasks with automation
-* Improving day to day convenience
-* PErosnal assistant: Speech like siri,Alexa or text like chatgpt.
-Some companies even have customer service chatbots.
-remind you to take medications
-* IoT: 
-	* Process real time data and Automate tasks like temperature control in your home. 
-* Security: 
-Enhance biometric recognizion, financial fraud deections.
+- [[Machine Learning]]
+    - [[Deep Learning]]
+    - [[Foundation Models]]
+        - [[LLMs]]
+- [[Generative AI]]
+- [[Reinforcement Learning]] (e.g., game AIs)
 
-* Ai powered wearables:
-monitor heart, oxygen levels and stuff during sleep.
+## History
 
-* Enables smartphone cameras with facial recognition, scene detection, portrait mode, etc
-* Image editing, removing backgrounds, silouttes, etc. 
-* autocorrect. 
+- **1960s**: Eliza mimics conversations.
+- **1980s**: Machine Learning boom.
+- **1990s**: Neural Networks.
+- **2000s**: Deep Learning.
+- **2010s**: NLP and computer vision.
 
-# Strenght Levels:
-* Weak AI: 
-	* can only performed specific tasks but not learn new ones. 
-	* Examples: Language trasnlators, virtual assitants, Recommendation engines, Prediction, Image Classification... pretty much what you know so far.
-* Strong AI (generalized AI)
-	* Diverse capabilities across unrelated tasks. 
-	* Posseses the ability to acquire new skills to tackle novel challenges. Achieving this by autonomously learning new approaches.
-	* Can perform at a human level of intelligence. Damn.
-	* ChatGPT, Gemini, etc.
-* Super AI (conscious AI):
-	* AI with human-level consciousness. 
-	* AI that is self aware, develops own thinking skills. 
-	* We are not able to define consciousness much less write an algorithm for it. 
-	* Robots in Start wars seem to be self aware, understand exepriences, lessons, emotions, etc.
+## Multidisciplinary Approach
 
+- **Engineering and Science**: Robots and hardware like GPUs for training massive data models.
+- **Math and Statistics**: Foundations of the models.
+- **Philosophy**: Ethics.
+- **Politics**: Applications and ethics.
 
-# Artificial vs Augmented
+## Defining Innate Intelligence
 
-Augmented:
-* Collision detection
-* machines and humans work together to enhance each other's effort.
-* they "augment" our abilities:
-	* Screen reader
-* act on our behalf in a way that *complements* our own capabilities.
+Innate intelligence is tied to a purpose. For example, the intelligence of a seed is what makes it grow into an oak tree.
 
-Artificial:
-- ability for machines to perform task that require human intelligence like reaosnsins, probelm solving.
-- *Replaces the need for a human.* 
+We have yet to define consciousness in speech, let alone in mathematics or code to create [[Super AI]], so it will not emerge anytime soon.
+### Do We Truly Have "Artificial Intelligence"?
 
+- **Memorization**: Databases have been around for a while.
+- **Calculation**: Calculators can multiply big numbers.
+- **Mastery**: DeepBlue has beaten the best human chess players.
+- **Turing Test**: Involves a human chatting with both an AI and another human. If the human can't distinguish between them, the AI passes the test.
 
-| Machines        | Humans                 |
-| --------------- | ---------------------- |
-| Ingesting Data  | Generalizing           |
-| Repetiive tasks | Creativity             |
-| Accurate        | Emotional Intelligence |
+## AI in Daily Life
+
+- **Personalizing Experiences**:
+    - Netflix recommends shows based on your preferences.
+    - Facebook and Instagram personalize content.
+- **Streamlining Tasks with Automation**: AI improves day-to-day convenience.
+- **Personal Assistants**:
+    - Speech-based like Siri and Alexa, or text-based like ChatGPT.
+    - Customer service chatbots.
+    - Medication reminders.
+- **Internet of Things ([[IoT]])**: Processes real-time data and automates tasks like home temperature control.
+- **Security**: Enhances biometric recognition and detects financial fraud.
+- **AI-Powered Wearables**: Monitors heart rate, oxygen levels, and other metrics during sleep.
+- **Smartphone Cameras**: Features facial recognition, scene detection, portrait mode, etc.
+- **Image Editing**: Removes backgrounds, silhouettes, etc.
+- **Autocorrect**: Improves text accuracy.
 
 
-# Types of learning
-* Supervised
-* Unsupervised
-* Reinforcement
+## Artificial vs Augmented Intelligence
+
+- **Augmented Intelligence**:
+    - Enhances human abilities (e.g., collision detection, screen readers).
+    - Machines and humans work together to complement each other's efforts.
+- **Artificial Intelligence**:
+    - Machines perform tasks requiring human intelligence (e.g., reasoning, problem-solving).
+    - Replaces the need for a human.
+
+|Machines|Humans|
+|---|---|
+|Ingesting Data|Generalizing|
+|Repetitive Tasks|Creativity|
+|Accurate|Emotional Intelligence|
+
+## Types of Learning
+
+- [[Supervised Learning]]
+- [[Unsupervised Learning]]
+- [[Reinforcement Learning]]
+
 
 
 # Types of AI
@@ -188,21 +184,11 @@ Artificial:
     * ***Autonomous learning:** Learns independently without human intervention.
     * *Adaptive behavior:** Adjusts behavior based on self-awareness.
     
-9. **Narrow AI (Weak AI):**
+9. **Narrow AI ([[Weak AI]]:**
     
-    Narrow AI is designed to perform a specific task or a limited range of tasks. It excels in a single area but lacks generalization capabilities. Most current AI applications fall under this category.
-    
-    **Capabilities:**
-    * ***Task specialization:** Excels in performing specific tasks.
-    * ***High accuracy:** Achieves high performance in its designated area.
-    * ***Efficiency:** Operates efficiently within its scope of specialization.
-    
-10. **General AI (Strong AI):**
-    
-    General AI, like human intelligence, can understand, learn, and apply knowledge across a wide range of tasks. It can also transfer knowledge from one domain to another and adapt to new situations autonomously.
-    
-    **Capabilities:**
-    * ***Cross-domain learning:** Applies knowledge across various domains.
-    * ***Autonomous decision making:** Makes decisions independently in diverse scenarios.
-    * ***Human-like understanding:** Understands and processes information similar to humans.
-    
+10. **General AI ([[Strong AI]])**
+
+
+
+# Future of AI
+It is not about one model, about ChatGPT or Deepseek, it is about multiple models applied. The 

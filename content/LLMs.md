@@ -12,4 +12,5 @@ Can perform a variety of [[NLP]] tasks:
 * Summarization.
 
 LLMs examples:
-* 
+
+They posees an enormous number of parameter, sometimes in the billions (neuron output weights?) and this enormity is what gives them a nuanced understanding and capability of human language.  

@@ -1,3 +1,8 @@
+---
+aliases:
+  - cloud
+---
+
 Cloud architectures may span different services and even providers. 
 
 A sample usecase:

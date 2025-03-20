@@ -80,3 +80,35 @@ if (low <= val && val <= high){
 }
 ...
 ```
+
+
+If you want an implementation capable of keeping track of the levels and frontiers, you can still use the priority queue but add a forloop inside of it to process children from the entire level at a time.
+```cpp
+void BFS(TreeNode* root) {
+
+	queue<TreeNode*>q;
+	
+	q.push(root);
+	
+	TreeNode* temp;
+	
+	while(!q.empty()){
+	
+		vector<int>level;
+		
+		for(int i = 0 ; i<q.size() ; i++){
+			temp = q.front();
+			q.pop();
+		
+			if(temp->right){
+				q.push(temp->right);	
+			}
+		
+		if(temp->left){
+			q.push(temp->left);
+		}
+		
+	}
+		
+}
+```
