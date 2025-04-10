@@ -95,6 +95,7 @@ We have yet to define consciousness in speech, let alone in mathematics or code 
 - [[Supervised Learning]]
 - [[Unsupervised Learning]]
 - [[Reinforcement Learning]]
+- [[Self-Supervised Learning]]
 
 
 

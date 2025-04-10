@@ -29,9 +29,3 @@ Google translate [[STT]] and [[TTS]]
 ### Customer Service
 [[Chatbots]] provide answers to repetittive qeustions. 
 Zendesk
-
-# AI career opportunities
-* AI  Engineer, applictions, researchers. 
-* Data Scientists
-* Robotics
-* NLP

@@ -3,32 +3,63 @@ aliases:
   - bfs
   - breadth-first-search
   - level order traversal
+  - BFS
+tags:
 ---
+[[Graph Traversal Techniques]]
 
-Breadth-First Search is a [[Graph Traversal Techniques]], as such it also easily applied to trees. 
+Goes Broad to neighbours before going deep.
 
-# Algorithm: 
+Breadth-First Search is also easily applied to trees. 
+
+# Algorithm
+
+In full generality:
+
+```cpp
+void BFS(int root, vector<vector<int>> &adj) {
+	// starting from root
+	
+	// next set of vertices to visit
+	queue<int> frontier;
+	frontier.push(root);
+
+	// non-trivial parents determine if a node has been visited before and from which source.
+	vector<int> parents(n,-1); 
+	parents[root] = -2; // needs to be differentiated from -1:='unvisited'
+
+	// keep track of levels(optional)
+	int level = 0;
+	vector<int> levels(n, 0);
+	
+	while(!frontier.empty()){
+		level++;
+		// This is loop is not strictly necessary
+		// It just helps you deal with children one level at a time.
+		
+		for(int i = 0 ; i < frontier.size() ; i++){
+		
+			int u = frontier.front();
+			
+			frontier.pop();
+			
+			for (auto &v : adj[u]){
+				if (parents[v] == -1){
+					// visiting previously unvisited node v at current level
+					parents[v] = u;
+					levels[v] = level;
+					frontier.push(v);
+				}
+			}
+		}
+	}
+}
 
 ```
-BFS(r, Adj):
-	level = {r : null}
-	parent = {s : null}
-	i = 1
-	frontier = [s];
-	while (frontier):
-		next = [];
-		for u in frontier:
-			for v in Adj[u]:
-				if v not in level:
-					level[v] = i;
-					parent[v] = u;
-					next.append(v);
-		frontier = next;
-		i++;
-```
 
 
-Resources: 
+
+
 # Implementation 
 Use a queue to store the frontier. 
 

@@ -36,3 +36,36 @@ For debugging
 
 # Complexitites
 Look up str.length(), vec.size() are both constant complexity.
+
+
+# tuple unpacking
+```cpp
+auto [type, str] = split_type_str(logs[i])
+```
+
+# Strings 
+strcmp(string_1, string_2) — Comparison of Strings The strcmp(str_1, str_2) function compares two character by character. If the first character of two strings is equal, next character of two strings is compared. This continues until the corresponding characters of two strings are different or a null character '\0' is reached. Return Value from strcmp() Return Value Remarks 0 if both strings are identical (equal) negative if the ASCII value of first unmatched character is less than second. positive integer if the ASCII value of first unmatched character is greater than second.
+
+
+# Vectors
+insert(position, element)
+```cpp
+letter_logs.insert(letter_logs.begin() + i, new_elem);
+```
+
+
+# Copies
+C++ will create a depp copy of vectors and arrays if you just set a new one equal to another one:
+```cpp
+vector<int> my_deep_copy = og_arr;
+```
+
+###  Copies of Structures 
+
+In C++, you can create a copy of an existing structure (or class instance) using the copy constructor. This copies the current state (i.e., the internal data) of the original object to a new instance:
+
+```cpp
+MyClassInstance my_deep_copy(ogClassInstance);
+```
+
+This technique is useful when you need a separate copy of an object. However, keep in mind that while it provides a simple way to duplicate data, it might not be the most efficient solution, especially when dealing with recursive structures. Recursive paths often require multiple copies at each step, which can lead to performance issues due to the overhead of creating and copying objects.

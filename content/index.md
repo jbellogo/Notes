@@ -28,7 +28,7 @@ I’m a **Mathematics** graduate from the [University of Waterloo](https://uwa
 
 ## Experience
 
-- I interned at [Versa Networks](https://versa-networks.com/) as a ==[[cloud]] developer==, working on cybersecurity microservices within an API-driven data protection cluster.
+- I interned at [Versa Networks](https://versa-networks.com/) as a [[cloud]] developer, working on cybersecurity microservices within an API-driven data protection cluster.
 - I also interned at [Catalyst Technologies](https://catalystreaction.com/) as a ==backend developer==, contributing to the integration of blockchain technologies in the agricultural industry to manage carbon rebates earned through sustainable farming practices.
 - I worked at [SYMX.AI](https://symx.ai/) as a ==software developer==, leveraging AWS technologies and communication protocols to integrate [[IoT]] functionality into mining drills, enhancing operator training and improving mechanical efficiency through data-driven cloud analytics.
 
