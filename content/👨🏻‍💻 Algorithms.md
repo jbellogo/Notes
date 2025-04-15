@@ -11,6 +11,10 @@ aliases:
 * [[Searching Algorithms]]
 * [[Sorting Algorithms]]
 
+Common algorithmic patterns:
+* [[Two pointers]]
+
+
 ### Performance 
 
 We use [[Big-O Notation]] to measure performance in relation to the input size. 

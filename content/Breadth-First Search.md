@@ -60,27 +60,38 @@ void BFS(int root, vector<vector<int>> &adj) {
 
 
 
-# Implementation 
-Use a queue to store the frontier. 
+# Binary Trees 🌳 Traversal 
+
+**Breadth-First Search (BFS)** is a traversal strategy that explores a tree **level by level**. It visits all nodes at depth `d` before moving to depth `d + 1`.
+
+---
+It is the same concept as BFS in graphs:  
+### 🧠 Core Idea
+It is the same concept as BFS in graphs:  
+
+- Use a queue to manage the **frontier** (nodes to visit next).
+- Begin with the root in the queue.
+- While the queue isn't empty:
+  - Pop a node,
+  - Visit it,
+  - Push its **unvisited** children to the queue.
+
+---
+
+### Example
 
 ```cpp
-int rangeSumBST(TreeNode* root, int low, int high) {
+int traversalBST(TreeNode* root, int low, int high) {
 	queue<TreeNode*> q;
 	q.push(root);
 
-
 	while (!q.empty()) {
-	
 		TreeNode* current = q.front();
 		
 		if (current != nullptr) {
 			TreeNode* left = current->left;
 			TreeNode* right = current->right;		
-
-			/*
-			visiting logic, queuing logic
-			*/
-		
+			/* visiting logic, queuing logic */
 			q.push(left) 
 			q.push(right)
 		}

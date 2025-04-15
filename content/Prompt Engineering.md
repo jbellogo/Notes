@@ -303,7 +303,7 @@ Solution: Mary had 8 radishes. She cooke dinner using 5 of them so, she had 8-5=
 ### Tree-of-Thought
 - expand capabilities of chain-of-thought 
 - enables [[Generative AI|generative model]] to demonstrate aadvanced reasoning capabilities. 
-- Involves hierarchically structuring a prompt or query akin to a a [[Tree]]
+- Involves hierarchically structuring a prompt or query akin to a a [[Trees]]
 
 Working behind the approach.
 * Involves generating multiple lines of thorught, resembling a decision tree. 

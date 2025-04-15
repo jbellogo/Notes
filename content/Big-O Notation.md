@@ -1,12 +1,15 @@
-How runtime of algorithms scales with respect to a measure of some input variable.
+---
+aliases:
+  - time complexity
+  - space complexity
+---
+Quantifies how runtime of algorithms scales with respect to a measure of some input variable.
 
 Rules: 
 1. Non-intersecting steps get their complexities added
 2. Drop constants
 3. Nested steps get multiplied.
 4. Different inputs-> different variabls O(E x V) is not O(E^2)
-
-
 
 You say " algorithm X is linear on the input"
 
@@ -17,6 +20,22 @@ Key terms in the definition are [[Measure Theory|measure]]: If i am trying to de
 	- area as a product of length x width  O(L*W)
 In both cases, my runtime is differnt:
 - linear in the area, but a product in the width, length input
+
+
+# Time complexity 
+
+
+# Space complexity 
+
+>[!quote]
+>If I were to give you chucnk of memory to run your program, how long does it have to be?
+
+An [[👨🏻‍💻 Algorithms|algorithm]] performance metric. 
+
+Comes from any memory you use, includes things like:
+- arrays, structures
+- call stack, how many times you call a function.
+
 
 # THEORETICAL PERFORMANCE
 
@@ -76,20 +95,6 @@ It is not just about the algorithm. it's also abbout the hardware.
 * memory usage
 * hardware specs
 
-
-# Time complexity 
-
-
-# Space complexity 
-
->[!quote]
->If I were to give you chucnk of memory to run your program, how long does it have to be?
-
-An [[👨🏻‍💻 Algorithms|algorithm]] performance metric. 
-
-Comes from any memory you use, includes things like:
-- arrays, structures
-- call stack, how many times you call a function.
 
 
 

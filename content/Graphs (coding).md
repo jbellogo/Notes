@@ -2,7 +2,8 @@
 aliases:
   - graph
 ---
-[[Graph Theory]]
+This is about the [[Data Structures|Data Structure]]
+See also [[Graph Theory]]
 
 # Implementations: 
 

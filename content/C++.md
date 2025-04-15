@@ -1,10 +1,11 @@
 
 # Pointers 
-the value of a pointer is an address. Whe. you dereference it, you retrieve the contents of the address. 
+the value of a pointer is an address. When. you dereference it, you retrieve the contents of the address. 
+[[Iterators]]
+
 
 # Integers
 There is no type that can handle a 100 digit number, for big numbers you need to represent them as ana array or a string, or a linked list and then write functionality for them. Ie write your own type class with its respective properties. 
-
 
 # Dependencies
 
@@ -12,39 +13,40 @@ When you use several modules, you need to linkl them together. you can just comp
 ```shell
 g++ -std=c++11 linked_list.cpp linked_list_tests.cpp  -g -o a.out
 ```
-# headers
+# modules
+
+### headers
 Unlike in python where modules are just imported. In C++ you need header files where you declare all classes and functions and anamespaces that you want to export, like an __init__.py. You then define them in a different .cpp file. The only exception is class constructors, which should be defined in .h files. 
 
+### Classes
+Same as structs but clases have all atrbutes and methods private by default. 
 
 # Segmentation faults 
-\*Sad trombone noises\*
+*Sad trombone noises
 
 they are not mysterious, they happen because you are accessing memory that you have no business accessing. 
 
 # Compilation
 Use the -g flag for compiling with debug option
 
-# Iterators
-Really just special types of pointers for things like vectors, arrays, and other *iterables.* 
 
-They can be derefenced to receover the value at the memory address. 
-They are memory addresses. 
-they can be increased, akin to a 'node->next :: node' in a linekd list. 
+
 
 # gdb
 For debugging
 
 # Complexitites
+[[Big-O Notation]]
 Look up str.length(), vec.size() are both constant complexity.
 
 
 # tuple unpacking
 ```cpp
-auto [type, str] = split_type_str(logs[i])
+auto &[type, str] = split_type_str(logs[i])
 ```
 
 # Strings 
-strcmp(string_1, string_2) — Comparison of Strings The strcmp(str_1, str_2) function compares two character by character. If the first character of two strings is equal, next character of two strings is compared. This continues until the corresponding characters of two strings are different or a null character '\0' is reached. Return Value from strcmp() Return Value Remarks 0 if both strings are identical (equal) negative if the ASCII value of first unmatched character is less than second. positive integer if the ASCII value of first unmatched character is greater than second.
+[[Strings (data structure)]]
 
 
 # Vectors
